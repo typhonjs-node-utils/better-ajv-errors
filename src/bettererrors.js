@@ -53,9 +53,20 @@ function betterErrors(errors, { file, highlightCode = true, wrapLength } = {})
       if (typeof error.keyword !== 'string') { continue; }
 
       // Create a hash of the error and test against the duplicate set to avoid handling duplicate errors.
-      const errorHash = hash(error);
-      if (duplicateSet.has(errorHash)) { continue; }
-      duplicateSet.add(errorHash);
+      {
+         // Store the schema path temporarily to create the error hash.
+         const tempSchemaPath = error.schemaPath;
+         delete error.schemaPath;
+
+         // Create the error hash and check against the duplicate set.
+         const errorHash = hash(error);
+         if (duplicateSet.has(errorHash)) { continue; }
+
+         duplicateSet.add(errorHash);
+
+         // Return the schema path to the error.
+         error.schemaPath = tempSchemaPath;
+      }
 
       const dataPath = error.dataPath;
       const keyword = error.keyword;
@@ -167,6 +178,7 @@ function formatItemArray(array, { conjunction = 'or', quote = false } = {})
 
    switch (array.length)
    {
+      /* istanbul ignore next */
       case 0:
          break;
 
@@ -215,7 +227,7 @@ function formatItemArray(array, { conjunction = 'or', quote = false } = {})
  * @returns {string} - The code frame captured.
  */
 function generateCodeFrame(file, jsonPointerLocs,
- { codeFrameNoColumn = false, highlightCode = true, linesAbove = 2, linesBelow = 3 } = {})
+ { codeFrameNoColumn, highlightCode, linesAbove = 2, linesBelow = 3 } = {})
 {
    let location;
 
@@ -247,7 +259,7 @@ function generateCodeFrame(file, jsonPointerLocs,
  *
  * @returns {string} Wrapped string.
  */
-function wrap(string, length = 80)
+function wrap(string, length)
 {
    return string.replace(new RegExp(`(?![^\\n]{1,${length}}$)([^\\n]{1,${length}})\\s`, 'g'), '$1\n');
 }
