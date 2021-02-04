@@ -1,0 +1,7 @@
+/enum-three should be equal to one of the allowed values: 'ONE', 'TWO', or 'THREE'
+  1 | {
+> 2 |   "enum-three": false
+    |                 ^^^^^
+  3 | }
+  4 | 
+

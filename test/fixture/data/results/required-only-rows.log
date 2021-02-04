@@ -1,0 +1,10 @@
+should have required property 'one'
+  1 | {
+> 2 |   "required": {
+> 3 |     "two": false,
+> 4 |     "three": false,
+> 5 |     "four": false,
+  6 |     "five": false,
+  7 |     "six": false,
+  8 |     "seven": false,
+

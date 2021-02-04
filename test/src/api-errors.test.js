@@ -1,5 +1,5 @@
-const {assert, expect}  = require('chai');
-const betterErrors      = require('../../src/bettererrors');
+const { assert, expect }   = require('chai');
+const betterErrors         = require('../../src/bettererrors');
 
 /**
  * Tests all of the API errors regarding invoking better errors as an external consumer.

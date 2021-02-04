@@ -1,0 +1,84 @@
+
+{
+  "$id": "test.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "object1": {
+      "type": "object"
+    },
+    "object2": {
+      "type": "object"
+    }
+  },
+  "properties": {
+    "additionalProperties": {
+      "type": "object",
+      "required": ["one"],
+      "properties": {
+        "one": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "duplicate": {
+      "allOf": [
+        { "$ref": "#/definitions/object1" },
+        { "$ref": "#/definitions/object2" }
+      ]
+    },
+    "enum-one": {
+      "enum": ["ONE"]
+    },
+    "enum-two": {
+      "enum": ["ONE", "TWO"]
+    },
+    "enum-three": {
+      "enum": ["ONE", "TWO", "THREE"]
+    },
+    "errorMessage": {
+      "type": "string",
+      "errorMessage": "should be a string"
+    },
+    "required": {
+      "type": "object",
+      "required": ["one"]
+    },
+    "type-string": {
+      "type": "string"
+    },
+    "type-string-null": {
+      "type": ["string", "null"]
+    },
+    "type-string-null-boolean": {
+      "type": ["string", "null", "boolean"]
+    },
+    "uniqueItems": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    }//,
+
+
+
+    //    "authors+": {
+//      "items": {
+//        "allOf": [
+//          { "$ref": "#/definitions/properties-author" },
+//          { "$ref": "#/definitions/properties-author+" }
+//        ],
+//        "type": "object",
+//        "title": "An object value"
+//      },
+//      "title": "An array of items",
+//      "type": "array"
+//    },
+//    "properties-author": {
+//      "properties" : {...}
+//    },
+//    "properties-author+": {
+//      "properties" : {...}
+//    }
+  }
+}
+

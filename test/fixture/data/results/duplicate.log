@@ -1,0 +1,7 @@
+/duplicate should be object
+  1 | {
+> 2 |   "duplicate": false
+    |                ^^^^^
+  3 | }
+  4 | 
+

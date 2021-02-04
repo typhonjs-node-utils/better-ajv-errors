@@ -1,0 +1,7 @@
+/type-string should be string
+  1 | {
+> 2 |   "type-string": false
+    |                  ^^^^^
+  3 | }
+  4 | 
+

@@ -1,0 +1,7 @@
+/errorMessage should be a string
+  1 | {
+> 2 |   "errorMessage": false
+    |                   ^^^^^
+  3 | }
+  4 | 
+

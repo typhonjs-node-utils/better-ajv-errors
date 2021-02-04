@@ -1,0 +1,7 @@
+/type-string-null-boolean should be string, null, or boolean
+  1 | {
+> 2 |   "type-string-null-boolean": 1
+    |                               ^
+  3 | }
+  4 | 
+

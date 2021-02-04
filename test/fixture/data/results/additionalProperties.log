@@ -1,0 +1,136 @@
+should NOT have additional properties: 'two'
+  1 | {
+> 2 |   "additionalProperties": {
+> 3 |     "one": "valid",
+> 4 |     "two": false,
+> 5 |     "three": false,
+  6 |     "four": false,
+  7 |     "five": false,
+  8 |     "six": false,
+
+should NOT have additional properties: 'three'
+  1 | {
+> 2 |   "additionalProperties": {
+    |                           ^
+> 3 |     "one": "valid",
+    | ^^^^^^^^^^^^^^^^^^^
+> 4 |     "two": false,
+    | ^^^^^^^^^^^^^^^^^^^
+> 5 |     "three": false,
+    | ^^^^
+  6 |     "four": false,
+  7 |     "five": false,
+  8 |     "six": false,
+
+should NOT have additional properties: 'four'
+  1 | {
+> 2 |   "additionalProperties": {
+    |                           ^
+> 3 |     "one": "valid",
+    | ^^^^^^^^^^^^^^^^^^^
+> 4 |     "two": false,
+    | ^^^^^^^^^^^^^^^^^^^
+> 5 |     "three": false,
+    | ^^^^
+  6 |     "four": false,
+  7 |     "five": false,
+  8 |     "six": false,
+
+should NOT have additional properties: 'five'
+  1 | {
+> 2 |   "additionalProperties": {
+    |                           ^
+> 3 |     "one": "valid",
+    | ^^^^^^^^^^^^^^^^^^^
+> 4 |     "two": false,
+    | ^^^^^^^^^^^^^^^^^^^
+> 5 |     "three": false,
+    | ^^^^
+  6 |     "four": false,
+  7 |     "five": false,
+  8 |     "six": false,
+
+should NOT have additional properties: 'six'
+  1 | {
+> 2 |   "additionalProperties": {
+    |                           ^
+> 3 |     "one": "valid",
+    | ^^^^^^^^^^^^^^^^^^^
+> 4 |     "two": false,
+    | ^^^^^^^^^^^^^^^^^^^
+> 5 |     "three": false,
+    | ^^^^
+  6 |     "four": false,
+  7 |     "five": false,
+  8 |     "six": false,
+
+should NOT have additional properties: 'seven'
+  1 | {
+> 2 |   "additionalProperties": {
+    |                           ^
+> 3 |     "one": "valid",
+    | ^^^^^^^^^^^^^^^^^^^
+> 4 |     "two": false,
+    | ^^^^^^^^^^^^^^^^^^^
+> 5 |     "three": false,
+    | ^^^^
+  6 |     "four": false,
+  7 |     "five": false,
+  8 |     "six": false,
+
+should NOT have additional properties: 'eight'
+  1 | {
+> 2 |   "additionalProperties": {
+    |                           ^
+> 3 |     "one": "valid",
+    | ^^^^^^^^^^^^^^^^^^^
+> 4 |     "two": false,
+    | ^^^^^^^^^^^^^^^^^^^
+> 5 |     "three": false,
+    | ^^^^
+  6 |     "four": false,
+  7 |     "five": false,
+  8 |     "six": false,
+
+should NOT have additional properties: 'nine'
+  1 | {
+> 2 |   "additionalProperties": {
+    |                           ^
+> 3 |     "one": "valid",
+    | ^^^^^^^^^^^^^^^^^^^
+> 4 |     "two": false,
+    | ^^^^^^^^^^^^^^^^^^^
+> 5 |     "three": false,
+    | ^^^^
+  6 |     "four": false,
+  7 |     "five": false,
+  8 |     "six": false,
+
+should NOT have additional properties: 'ten'
+  1 | {
+> 2 |   "additionalProperties": {
+    |                           ^
+> 3 |     "one": "valid",
+    | ^^^^^^^^^^^^^^^^^^^
+> 4 |     "two": false,
+    | ^^^^^^^^^^^^^^^^^^^
+> 5 |     "three": false,
+    | ^^^^
+  6 |     "four": false,
+  7 |     "five": false,
+  8 |     "six": false,
+
+should NOT have additional properties: 'eleven'
+  1 | {
+> 2 |   "additionalProperties": {
+    |                           ^
+> 3 |     "one": "valid",
+    | ^^^^^^^^^^^^^^^^^^^
+> 4 |     "two": false,
+    | ^^^^^^^^^^^^^^^^^^^
+> 5 |     "three": false,
+    | ^^^^
+  6 |     "four": false,
+  7 |     "five": false,
+  8 |     "six": false,
+
