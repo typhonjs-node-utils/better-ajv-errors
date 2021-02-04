@@ -70,11 +70,7 @@ class TestRunner
 
                   const msg = s_CREATE_RESULTS ? ' - creating it' : '';
 
-                  done(new Error(
-                   `Error data for'${resultKey}' missing${msg}:\n${JSON.stringify(validate.errors, null, 3)}`));
-
-                  // done(new Error(
-                  //  `Error data for'${resultKey}' missing${msg}:\n${betterOutput}`));
+                  done(new Error(`Error data for'${resultKey}' missing${msg}:\n${betterOutput}`));
                }
 
                chai.expect(betterOutput).to.be.deep.equal(results.get(resultKey).data);
