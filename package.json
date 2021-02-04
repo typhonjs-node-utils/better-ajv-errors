@@ -11,6 +11,8 @@
     "object-hash": "^2.0.0"
   },
   "devDependencies": {
+    "ajv": "^7.0.0",
+    "ajv-errors": "^2.0.0",
     "eslint": "^7.0.0",
     "mocha": "^8.0.0",
     "nyc": "^15.0.0",
