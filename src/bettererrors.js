@@ -249,7 +249,7 @@ function generateCodeFrame(file, jsonPointerLocs,
       };
    }
 
-   console.log(`!! generateCodeFrame - highlightCode: ${highlightCode}`);
+   process.stderr.write(`!! generateCodeFrame - highlightCode: ${highlightCode}\n`);
    return codeFrameColumns(file, location, { highlightCode, linesAbove, linesBelow });
 }
 
