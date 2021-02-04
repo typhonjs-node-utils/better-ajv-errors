@@ -19,7 +19,15 @@ describe('betterErrors various options', () =>
       // expect(betterErrors(s_ERRORS, { file: s_FILE })).to.be.deep.equal(s_RESULTS_JUST_FILE_WITH_HIGHLIGHTCODE);
    });
 
-   it(`errors 'entry' file + highlightCode: false, `, () =>
+   it(`errors 'entry' just file + highlightCode: true`, () =>
+   {
+      const results = betterErrors(s_ERRORS, { file: s_FILE, highlightCode: true });
+      console.log(`!!! results:\n${JSON.stringify(results)}`);
+      expect(results).to.be.deep.equal(s_RESULTS_JUST_FILE_WITH_HIGHLIGHTCODE);
+      // expect(betterErrors(s_ERRORS, { file: s_FILE })).to.be.deep.equal(s_RESULTS_JUST_FILE_WITH_HIGHLIGHTCODE);
+   });
+
+   it(`errors 'entry' file + highlightCode: false`, () =>
    {
       expect(betterErrors(s_ERRORS, { file: s_FILE, highlightCode: false })).to.be.deep.equal(
        s_RESULTS_FILE_WITH_HIGHLIGHTCODE_FALSE);

@@ -230,8 +230,6 @@ function formatItemArray(array, { conjunction = 'or', quote = false } = {})
 function generateCodeFrame(file, jsonPointerLocs,
  { codeFrameNoColumn, highlightCode, linesAbove = 2, linesBelow = 3 } = {})
 {
-   console.log(`!! generateCodeFrame - highlightCode: ${highlightCode}`);
-
    let location;
 
    if (codeFrameNoColumn)
@@ -251,6 +249,7 @@ function generateCodeFrame(file, jsonPointerLocs,
       };
    }
 
+   console.log(`!! generateCodeFrame - highlightCode: ${highlightCode}`);
    return codeFrameColumns(file, location, { highlightCode, linesAbove, linesBelow });
 }
 
