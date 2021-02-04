@@ -1,8 +1,6 @@
 const { expect }     = require('chai');
 const betterErrors   = require('../../src/bettererrors');
 
-console.error(`process.env:\n${JSON.stringify(process.env, null, 3)}`);
-
 /**
  * Tests all of the API options regarding invoking better errors as an external consumer.
  */
@@ -13,7 +11,8 @@ describe('betterErrors various options', () =>
       expect(betterErrors(s_ERRORS)).to.be.deep.equal(s_RESULTS_NO_OPTIONS);
    });
 
-   if (typeof process.env.CI !== 'boolean')
+   // Skip color tests on GH actions as terminal is redirected and @babel/codeframe defaults to no color.
+   if (process.env.CI !== 'true')
    {
       it(`errors 'entry' just file (default highlightCode: true), `, () =>
       {
