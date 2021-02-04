@@ -21,6 +21,7 @@ const hash                 = require('object-hash');
  */
 function betterErrors(errors, { file, highlightCode = true, wrapLength } = {})
 {
+console.log(`!! betterErrors - highlightCode: ${highlightCode}`);
    if (!Array.isArray(errors)) { throw new TypeError(`'errors' must be an array.`); }
 
    if (file !== void 0 && typeof file !== 'string')
