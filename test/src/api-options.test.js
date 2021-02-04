@@ -1,6 +1,8 @@
 const { expect }     = require('chai');
 const betterErrors   = require('../../src/bettererrors');
 
+console.error(`process.env:\n${JSON.stringify(process.env, null, 3)}`);
+
 /**
  * Tests all of the API options regarding invoking better errors as an external consumer.
  */
