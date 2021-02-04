@@ -37,7 +37,6 @@
   ],
   "repository": "typhonjs-node-utils/better-ajv-errors",
   "scripts": {
-    "report-coverage": "nyc report --reporter=text-lcov | codecov",
     "test": "nyc --reporter=lcov --reporter=text-summary mocha -colors \"test/src/**/*.test.js\""
   }
 }

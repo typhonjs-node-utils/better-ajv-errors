@@ -2,6 +2,7 @@
 {
   "$id": "test.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
   "definitions": {
     "object1": {
       "type": "object"

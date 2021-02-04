@@ -8,10 +8,10 @@ const stripJsonComments = require('strip-json-comments');
 
 const betterErrors      = require('../../src/bettererrors');
 
-const s_CREATE_RESULTS  = true;
+// Will create any results that are missing when true.
+const s_CREATE_RESULTS  = false;
 
-
-const ajv = new Ajv({ allErrors: true });
+const ajv = new Ajv({ allErrors: true, allowUnionTypes: true });
 
 // Ajv option allErrors is required
 require("ajv-errors")(ajv);
