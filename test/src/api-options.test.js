@@ -13,7 +13,10 @@ describe('betterErrors various options', () =>
 
    it(`errors 'entry' just file (default highlightCode: true), `, () =>
    {
-      expect(betterErrors(s_ERRORS, { file: s_FILE })).to.be.deep.equal(s_RESULTS_JUST_FILE_WITH_HIGHLIGHTCODE);
+      const results = betterErrors(s_ERRORS, { file: s_FILE });
+      console.log(`!!! results:\n${JSON.stringify(results)}`);
+      expect(results).to.be.deep.equal(s_RESULTS_JUST_FILE_WITH_HIGHLIGHTCODE);
+      // expect(betterErrors(s_ERRORS, { file: s_FILE })).to.be.deep.equal(s_RESULTS_JUST_FILE_WITH_HIGHLIGHTCODE);
    });
 
    it(`errors 'entry' file + highlightCode: false, `, () =>
@@ -26,14 +29,6 @@ describe('betterErrors various options', () =>
    {
       expect(betterErrors(s_ERRORS, { wrapLength: 20 })).to.be.deep.equal(s_RESULTS_WITH_WRAPLENGTH_20);
    });
-
-   // it(`errors 'entry' just wrapLength: 20`, () =>
-   // {
-   //    const results = betterErrors(s_ERRORS, { wrapLength: 20 });
-   //    console.log(JSON.stringify(results, null, 3));
-   //
-   //    // expect(betterErrors(s_ERRORS)).to.be.deep.equal(s_RESULTS_FILE_WITH_HIGHLIGHTCODE_FALSE);
-   // });
 });
 
 const s_ERRORS =
