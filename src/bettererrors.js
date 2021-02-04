@@ -23,9 +23,14 @@ function betterErrors(errors, { file, highlightCode = true, wrapLength } = {})
 {
    if (!Array.isArray(errors)) { throw new TypeError(`'errors' must be an array.`); }
 
+   if (file !== void 0 && typeof file !== 'string')
+   {
+      throw new TypeError(`'options.file' must be a string.`);
+   }
+
    if (typeof highlightCode !== 'boolean') { throw new TypeError(`'options.highlightCode' must be a boolean.`); }
 
-   if (wrapLength !== void 0 && !Number.isInteger(wrapLength) && wrapLength < 10)
+   if (wrapLength !== void 0 && (!Number.isInteger(wrapLength) || wrapLength < 10))
    {
       throw new TypeError(`'options.wrapLength' must be a positive integer greater than 10.`);
    }
