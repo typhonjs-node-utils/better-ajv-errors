@@ -13,6 +13,7 @@
   "devDependencies": {
     "ajv": "^7.0.0",
     "ajv-errors": "^2.0.0",
+    "chai": "^4.0.0",
     "eslint": "^7.0.0",
     "mocha": "^8.0.0",
     "nyc": "^15.0.0",
@@ -35,6 +36,6 @@
   ],
   "repository": "typhonjs-node-utils/better-ajv-errors",
   "scripts": {
-    "test": "npm run compile && nyc --reporter=lcov --reporter=text-summary mocha \"test/src/**/*.test.js\""
+    "test": "nyc --reporter=lcov --reporter=text-summary mocha \"test/src/**/*.test.js\""
   }
 }
