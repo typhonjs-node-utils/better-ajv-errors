@@ -38,6 +38,8 @@
   ],
   "repository": "typhonjs-node-utils/better-ajv-errors",
   "scripts": {
+    "eslint": "eslint .",
+    "prepublishOnly": "npm run eslint && npm run test",
     "test": "nyc --reporter=lcov --reporter=text-summary mocha -colors \"test/src/**/*.test.js\""
   }
 }
