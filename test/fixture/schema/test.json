@@ -1,4 +1,3 @@
-
 {
   "$id": "test.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -190,29 +189,8 @@
     },
     "type-string-pattern": {
       "type": "string",
-      "pattern": "^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$"  // A phone number
+      "pattern": "^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$"
     }
-
-
-
-    //    "authors+": {
-//      "items": {
-//        "allOf": [
-//          { "$ref": "#/definitions/properties-author" },
-//          { "$ref": "#/definitions/properties-author+" }
-//        ],
-//        "type": "object",
-//        "title": "An object value"
-//      },
-//      "title": "An array of items",
-//      "type": "array"
-//    },
-//    "properties-author": {
-//      "properties" : {...}
-//    },
-//    "properties-author+": {
-//      "properties" : {...}
-//    }
   }
 }
 

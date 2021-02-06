@@ -16,10 +16,10 @@
     "ajv-formats": "^1.0.0",
     "chai": "^4.0.0",
     "codecov": "^3.0.0",
+    "dir-compare": "^3.0.0",
     "eslint": "^7.0.0",
     "mocha": "^8.0.0",
     "nyc": "^15.0.0",
-    "strip-json-comments": "^3.0.0",
     "typhonjs-config-eslint": "^0.6.0"
   },
   "engines": {

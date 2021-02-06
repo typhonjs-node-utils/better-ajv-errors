@@ -2,9 +2,7 @@ const fs                = require('fs');
 const path              = require('path');
 
 const Ajv               = require("ajv").default;
-
 const chai              = require('chai');
-const stripJsonComments = require('strip-json-comments');
 
 const BetterErrors      = require('../../src/BetterErrors');
 
@@ -13,11 +11,11 @@ const s_CREATE_RESULTS  = true;
 
 const ajv = new Ajv({ allErrors: true, allowUnionTypes: true });
 
-// Ajv option allErrors is required
+// Ajv options allErrors & all-formats are required
 require("ajv-errors")(ajv);
 require("ajv-formats")(ajv);
 
-const schema = JSON.parse(stripJsonComments(fs.readFileSync('./test/fixture/schema/test.json5', 'utf8')));
+const schema = JSON.parse(fs.readFileSync('./test/fixture/schema/test.json', 'utf8'));
 
 const validate = ajv.compile(schema);
 
@@ -75,7 +73,7 @@ class TestRunner
 
                   if (s_CREATE_RESULTS)
                   {
-                     fs.writeFileSync(`${resultsJSON.$$path}${path.sep}${key}.json5`, resultJSONData);
+                     fs.writeFileSync(`${resultsJSON.$$path}${path.sep}${key}.json`, resultJSONData);
                   }
 
                   const msg = s_CREATE_RESULTS ? ' - creating it' : '';
@@ -104,7 +102,7 @@ class TestRunner
     *
     * @returns {Map<string, object>}
     */
-   static loadFiles(dir = '.', extension = '.json5')
+   static loadFiles(dir = '.', extension = '.json')
    {
       const results = new Map();
 
@@ -123,8 +121,8 @@ class TestRunner
 
             try
             {
-               file = stripJsonComments(fs.readFileSync(absPath, 'utf8'));
-               data = extension === '.json' || extension === '.json5' ? JSON.parse(file) : file;
+               file = fs.readFileSync(absPath, 'utf8');
+               data = extension === '.json' ? JSON.parse(file) : file;
             }
             catch (err)
             {
