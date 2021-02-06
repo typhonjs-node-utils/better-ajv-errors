@@ -1,0 +1,15 @@
+[
+   {
+      "codeFrame": "  1 | {\n> 2 |   \"not-type-string\": \"well it's a string\"\n    |                      ^^^^^^^^^^^^^^^^^^^^\n  3 | }\n  4 | ",
+      "dataPath": "/not-type-string",
+      "error": {
+         "keyword": "not",
+         "dataPath": "/not-type-string",
+         "params": {},
+         "message": "should NOT be valid",
+         "schemaPath": "#/properties/not-type-string/not"
+      },
+      "keyword": "not",
+      "message": "/not-type-string should NOT be valid"
+   }
+]

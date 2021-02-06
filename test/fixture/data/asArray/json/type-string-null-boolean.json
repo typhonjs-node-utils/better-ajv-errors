@@ -1,0 +1,21 @@
+[
+   {
+      "codeFrame": "  1 | {\n> 2 |   \"type-string-null-boolean\": 1\n    |                               ^\n  3 | }\n  4 | ",
+      "dataPath": "/type-string-null-boolean",
+      "error": {
+         "keyword": "type",
+         "dataPath": "/type-string-null-boolean",
+         "params": {
+            "type": [
+               "string",
+               "null",
+               "boolean"
+            ]
+         },
+         "message": "should be string,null,boolean",
+         "schemaPath": "#/properties/type-string-null-boolean/type"
+      },
+      "keyword": "type",
+      "message": "/type-string-null-boolean should be string, null, or boolean"
+   }
+]

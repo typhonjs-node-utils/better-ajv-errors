@@ -1,0 +1,35 @@
+{
+   "/type-object-propertyNames-pattern": [
+      {
+         "codeFrame": "  1 | {\n> 2 |   \"type-object-propertyNames-pattern\": {\n    |                                        ^\n> 3 |     \"not pattern [A-Z]\": false\n    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n> 4 |   }\n    | ^^^^\n  5 | }\n  6 | ",
+         "dataPath": "/type-object-propertyNames-pattern",
+         "error": {
+            "keyword": "pattern",
+            "dataPath": "/type-object-propertyNames-pattern",
+            "params": {
+               "pattern": "^[A-Z]$"
+            },
+            "propertyName": "not pattern [A-Z]",
+            "message": "should match pattern \"^[A-Z]$\"",
+            "schemaPath": "#/properties/type-object-propertyNames-pattern/propertyNames/pattern"
+         },
+         "keyword": "pattern",
+         "message": "/type-object-propertyNames-pattern should match pattern \"^[A-Z]$\""
+      },
+      {
+         "codeFrame": "  1 | {\n> 2 |   \"type-object-propertyNames-pattern\": {\n    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  3 |     \"not pattern [A-Z]\": false\n  4 |   }\n  5 | }",
+         "dataPath": "/type-object-propertyNames-pattern",
+         "error": {
+            "keyword": "propertyNames",
+            "dataPath": "/type-object-propertyNames-pattern",
+            "params": {
+               "propertyName": "not pattern [A-Z]"
+            },
+            "message": "property name 'not pattern [A-Z]' is invalid",
+            "schemaPath": "#/properties/type-object-propertyNames-pattern/propertyNames"
+         },
+         "keyword": "propertyNames",
+         "message": "/type-object-propertyNames-pattern property name 'not pattern [A-Z]' is invalid"
+      }
+   ]
+}

@@ -1,0 +1,17 @@
+[
+   {
+      "codeFrame": "  1 | {\n> 2 |   \"type-string-const\": \"not const\"\n    |                        ^^^^^^^^^^^\n  3 | }\n  4 | ",
+      "dataPath": "/type-string-const",
+      "error": {
+         "keyword": "const",
+         "dataPath": "/type-string-const",
+         "params": {
+            "allowedValue": "const"
+         },
+         "message": "should be equal to constant",
+         "schemaPath": "#/properties/type-string-const/const"
+      },
+      "keyword": "const",
+      "message": "/type-string-const should be equal to constant: 'const'"
+   }
+]

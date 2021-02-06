@@ -1,0 +1,17 @@
+[
+   {
+      "codeFrame": "  1 | {\n> 2 |   \"type-array-additionalItems-false\": [\n    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  3 |     \"is fine\",\n  4 |     true,\n  5 |     \"not fine\"",
+      "dataPath": "/type-array-additionalItems-false",
+      "error": {
+         "keyword": "additionalItems",
+         "dataPath": "/type-array-additionalItems-false",
+         "params": {
+            "limit": 2
+         },
+         "message": "should NOT have more than 2 items",
+         "schemaPath": "#/properties/type-array-additionalItems-false/additionalItems"
+      },
+      "keyword": "additionalItems",
+      "message": "/type-array-additionalItems-false should NOT have more than 2 items"
+   }
+]

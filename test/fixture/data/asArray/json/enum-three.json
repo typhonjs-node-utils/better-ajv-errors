@@ -1,0 +1,21 @@
+[
+   {
+      "codeFrame": "  1 | {\n> 2 |   \"enum-three\": false\n    |                 ^^^^^\n  3 | }\n  4 | ",
+      "dataPath": "/enum-three",
+      "error": {
+         "keyword": "enum",
+         "dataPath": "/enum-three",
+         "params": {
+            "allowedValues": [
+               "ONE",
+               "TWO",
+               "THREE"
+            ]
+         },
+         "message": "should be equal to one of the allowed values",
+         "schemaPath": "#/properties/enum-three/enum"
+      },
+      "keyword": "enum",
+      "message": "/enum-three should be equal to one of the allowed values: 'ONE', 'TWO', or 'THREE'"
+   }
+]

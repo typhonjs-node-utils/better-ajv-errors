@@ -1,0 +1,19 @@
+{
+   "/type-string-pattern": [
+      {
+         "codeFrame": "  1 | {\n> 2 |   \"type-string-pattern\": \"not phone number\"\n    |                          ^^^^^^^^^^^^^^^^^^\n  3 | }\n  4 | ",
+         "dataPath": "/type-string-pattern",
+         "error": {
+            "keyword": "pattern",
+            "dataPath": "/type-string-pattern",
+            "params": {
+               "pattern": "^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$"
+            },
+            "message": "should match pattern \"^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$\"",
+            "schemaPath": "#/properties/type-string-pattern/pattern"
+         },
+         "keyword": "pattern",
+         "message": "/type-string-pattern should match pattern \"^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$\""
+      }
+   ]
+}

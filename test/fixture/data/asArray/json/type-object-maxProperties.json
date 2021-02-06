@@ -1,0 +1,17 @@
+[
+   {
+      "codeFrame": "  1 | {\n> 2 |   \"type-object-maxProperties\": {\n    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  3 |     \"one\": false,\n  4 |     \"too\": \"many\"\n  5 |   }",
+      "dataPath": "/type-object-maxProperties",
+      "error": {
+         "keyword": "maxProperties",
+         "dataPath": "/type-object-maxProperties",
+         "params": {
+            "limit": 1
+         },
+         "message": "should NOT have more than 1 items",
+         "schemaPath": "#/properties/type-object-maxProperties/maxProperties"
+      },
+      "keyword": "maxProperties",
+      "message": "/type-object-maxProperties should NOT have more than 1 items"
+   }
+]

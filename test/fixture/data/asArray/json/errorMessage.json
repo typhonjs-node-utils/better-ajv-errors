@@ -1,0 +1,28 @@
+[
+   {
+      "codeFrame": "  1 | {\n> 2 |   \"errorMessage\": false\n    |                   ^^^^^\n  3 | }\n  4 | ",
+      "dataPath": "/errorMessage",
+      "error": {
+         "keyword": "errorMessage",
+         "dataPath": "/errorMessage",
+         "params": {
+            "errors": [
+               {
+                  "keyword": "type",
+                  "dataPath": "/errorMessage",
+                  "schemaPath": "#/properties/errorMessage/type",
+                  "params": {
+                     "type": "string"
+                  },
+                  "message": "should be string",
+                  "emUsed": true
+               }
+            ]
+         },
+         "message": "should be a string",
+         "schemaPath": "#/properties/errorMessage/errorMessage"
+      },
+      "keyword": "errorMessage",
+      "message": "/errorMessage should be a string"
+   }
+]
