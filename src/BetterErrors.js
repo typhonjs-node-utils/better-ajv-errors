@@ -349,7 +349,12 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
          case 'required':
          case 'uniqueItems':
             message = `${dataPath} ${error.message}`;
-            jsonPointerIndex = 'key';
+
+            // If there is an associated key switch to the key otherwise stay on the 'value' as the pointer index.
+            if (jsonPointerLocs !== null && jsonPointerLocs.key !== void 0)
+            {
+               jsonPointerIndex = 'key';
+            }
             break;
 
          // Use the `additionalProperty` param value to highlight the specific key.
@@ -360,7 +365,12 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
             {
                jsonPointerLocs = JSON.parse(JSON.stringify(
                 jsonData.pointers[`${dataPath}/${error.params.additionalProperty}`]));
-               jsonPointerIndex = 'key';
+
+               // If there is an associated key switch to the key otherwise stay on the 'value' as the pointer index.
+               if (jsonPointerLocs !== null && jsonPointerLocs.key !== void 0)
+               {
+                  jsonPointerIndex = 'key';
+               }
             }
             break;
 

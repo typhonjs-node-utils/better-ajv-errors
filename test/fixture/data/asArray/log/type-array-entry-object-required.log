@@ -1,0 +1,6 @@
+/type-array-entry-object-required/0 should have required property 'key'
+  1 | {
+> 2 |   "type-array-entry-object-required": [{}]
+    |                                        ^^
+  3 | }
+  4 | 

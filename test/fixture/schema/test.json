@@ -57,6 +57,16 @@
       "contains": { "type": "boolean"  },
       "type": "array"
     },
+    "type-array-entry-object-required": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key"],
+        "properties": {
+          "key": { "type": "string" }
+        }
+      }
+    },
     "type-array-maxItems": {
       "items": { "type": "string"  },
       "type": "array",
