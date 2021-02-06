@@ -20,25 +20,25 @@ for (const testFunction of s_FUNCTIONS)
       it(`'options.file' must be a string.`, () =>
       {
          assert.throw(() => { BetterErrors[testFunction]([], { file: false }); }, TypeError,
-            `'options.file' must be a string.`);
+          `'options.file' must be a string.`);
       });
 
       it(`'options.highlightCode' must be a boolean.`, () =>
       {
          assert.throw(() => { BetterErrors[testFunction]([], { highlightCode: 1 }); }, TypeError,
-            `'options.highlightCode' must be a boolean.`);
+          `'options.highlightCode' must be a boolean.`);
       });
 
       it(`'options.wrapLength' must be a positive integer`, () =>
       {
          assert.throw(() => { BetterErrors[testFunction]([], { wrapLength: false }); }, TypeError,
-            `'options.wrapLength' must be a positive integer greater than 10.`);
+          `'options.wrapLength' must be a positive integer greater than 10.`);
       });
 
       it(`'options.wrapLength' must be a positive integer greater than 10.`, () =>
       {
          assert.throw(() => { BetterErrors[testFunction]([], { wrapLength: 5 }); }, TypeError,
-            `'options.wrapLength' must be a positive integer greater than 10.`);
+          `'options.wrapLength' must be a positive integer greater than 10.`);
       });
    });
 
@@ -67,3 +67,18 @@ for (const testFunction of s_FUNCTIONS)
    });
 }
 
+/**
+ * Tests all of the API errors regarding invoking better errors as an external consumer.
+ */
+describe(`betterErrors API errors iterator()`, () =>
+{
+   it(`'betterErrors' must be an array or object.`, () =>
+   {
+      assert.throw(() => { BetterErrors.iterator().next(); }, TypeError, `'betterErrors' is not an array or object.`);
+   });
+
+   it(`'regex' must be a RegExp.`, () =>
+   {
+      assert.throw(() => { BetterErrors.iterator([], false).next(); }, TypeError, `'regex' is not a RegExp.`);
+   });
+});

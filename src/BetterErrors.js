@@ -60,40 +60,125 @@ class BetterErrors
    }
 
    /**
-    * Return a string for the better errors array or object.
+    * Returns an integer length for the better errors array or object.
     *
     * @param {object}   betterErrors - Better errors array or object.
     *
-    * @returns {string}
+    * @param {RegExp}   [regex] - An optional regex to filter errors for matching JSON pointers.
+    *
+    * @returns {number}
     */
-   static toString(betterErrors)
+   static length(betterErrors, regex)
    {
-      let result = '';
+      let cntr = 0;
+
+      // eslint-disable-next-line no-unused-vars
+      for (const error of BetterErrors.iterator(betterErrors, regex))
+      {
+         cntr++;
+      }
+
+      return cntr;
+   }
+
+   /**
+    * Provides an iterator for the better errors array or object that returns entries; [count, error].
+    *
+    * @param {object}   betterErrors - Better errors array or object.
+    *
+    * @param {RegExp}   [regex] - An optional regex to filter errors for matching JSON pointers.
+    */
+   static *entries(betterErrors, regex)
+   {
+      let cntr = 0;
+
+      for (const error of BetterErrors.iterator(betterErrors, regex))
+      {
+         yield [cntr++, error];
+      }
+   }
+
+   /**
+    * Provides an iterator for the better errors array or object.
+    *
+    * @param {object}   betterErrors - Better errors array or object.
+    *
+    * @param {RegExp}   [regex] - An optional regex to filter errors for matching JSON pointers.
+    */
+   static *iterator(betterErrors, regex)
+   {
+      if (!Array.isArray(betterErrors) && typeof betterErrors !== 'object')
+      {
+         throw new TypeError(`'betterErrors' is not an array or object.`);
+      }
+
+      if (regex !== void 0 && regex !== null && !(regex instanceof RegExp))
+      {
+         throw new TypeError(`'regex' is not a RegExp.`);
+      }
 
       if (Array.isArray(betterErrors))
       {
-         for (const [cntr, error] of betterErrors.entries())
+         for (const error of betterErrors)
          {
-            result += error.codeFrame !== '' ? `${error.message}\n${error.codeFrame}` : `${error.message}`;
-            result += cntr < betterErrors.length - 1 ? '\n\n' : '';
+            if (regex)
+            {
+               if (regex.test(error.dataPath))
+               {
+                  yield error;
+               }
+            }
+            else
+            {
+               yield error;
+            }
          }
       }
       else if (typeof betterErrors === 'object')
       {
-         const objectKeys = Object.keys(betterErrors);
-
-         for (const [cntr, dataPath] of objectKeys.entries())
+         for (const dataPath in betterErrors)
          {
-            const betterData = betterErrors[dataPath];
-
-            for (const [cntr2, error] of betterData.entries())
+            // eslint-disable-next-line no-prototype-builtins
+            if (betterErrors.hasOwnProperty(dataPath))
             {
-               result += error.codeFrame !== '' ? `${error.message}\n${error.codeFrame}` : `${error.message}`;
-               result += cntr2 < betterData.length - 1 ? '\n\n' : '';
+               for (const error of betterErrors[dataPath])
+               {
+                  if (regex)
+                  {
+                     if (regex.test(error.dataPath))
+                     {
+                        yield error;
+                     }
+                  }
+                  else
+                  {
+                     yield error;
+                  }
+               }
             }
-
-            result += cntr < objectKeys.length - 1 ? '\n\n' : '';
          }
+      }
+   }
+
+   /**
+    * Return a string for the better errors array or object.
+    *
+    * @param {object}   betterErrors - Better errors array or object.
+    *
+    * @param {RegExp}   [regex] - An optional regex to filter errors for matching JSON pointers.
+    *
+    * @returns {string}
+    */
+   static toString(betterErrors, regex)
+   {
+      let result = '';
+
+      const length = BetterErrors.length(betterErrors, regex);
+
+      for (const [cntr, error] of BetterErrors.entries(betterErrors, regex))
+      {
+         result += error.codeFrame !== '' ? `${error.message}\n${error.codeFrame}` : `${error.message}`;
+         result += cntr < length - 1 ? '\n\n' : '';
       }
 
       return result;

@@ -59,4 +59,39 @@ describe('betterErrors compare output', () =>
 
       expect(BetterErrors.toString(betterErrors)).to.be.deep.equal(betterLog);
    });
+
+   it(`Test toString() regex against first two entries of type-array-contains log (asArray)`, () =>
+   {
+      const betterErrors = JSON.parse(fs.readFileSync(
+       './test/fixture/data/asArray/json/type-array-contains.json', 'utf-8'));
+
+      expect(BetterErrors.toString(betterErrors, /^\/type-array-contains\/[0-1]/)).to.be.deep.equal(s_RESULT_REGEX);
+   });
+
+   it(`Test toString() regex against first two entries of type-array-contains json (asObject)`, () =>
+   {
+      const betterErrors = JSON.parse(fs.readFileSync(
+       './test/fixture/data/asObject/json/type-array-contains.json', 'utf-8'));
+
+      expect(BetterErrors.toString(betterErrors, /^\/type-array-contains\/[0-1]/)).to.be.deep.equal(s_RESULT_REGEX);
+   });
 });
+
+const s_RESULT_REGEX =
+`/type-array-contains/0 should be boolean
+  1 | {
+  2 |   "type-array-contains": [
+> 3 |     "not boolean",
+    |     ^^^^^^^^^^^^^
+  4 |     "not boolean",
+  5 |     "not boolean",
+  6 |     "not boolean"
+
+/type-array-contains/1 should be boolean
+  2 |   "type-array-contains": [
+  3 |     "not boolean",
+> 4 |     "not boolean",
+    |     ^^^^^^^^^^^^^
+  5 |     "not boolean",
+  6 |     "not boolean"
+  7 |   ]`;
