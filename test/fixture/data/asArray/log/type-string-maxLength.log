@@ -1,0 +1,6 @@
+/type-string-maxLength should NOT have more than 3 characters
+  1 | {
+> 2 |   "type-string-maxLength": "max3"
+    |                            ^^^^^^
+  3 | }
+  4 | 

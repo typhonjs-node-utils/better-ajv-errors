@@ -1,0 +1,7 @@
+/type-array-uniqueItems should NOT have duplicate items (items ## 1 and 0 are identical)
+  1 | {
+> 2 |   "type-array-uniqueItems": [
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |     "sameItem",
+  4 |     "sameItem"
+  5 |   ]

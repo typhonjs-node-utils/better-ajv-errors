@@ -1,0 +1,6 @@
+/not-type-string should NOT be valid
+  1 | {
+> 2 |   "not-type-string": "well it's a string"
+    |                      ^^^^^^^^^^^^^^^^^^^^
+  3 | }
+  4 | 

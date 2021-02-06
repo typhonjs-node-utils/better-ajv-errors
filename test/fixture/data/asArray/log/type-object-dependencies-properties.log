@@ -1,0 +1,10 @@
+/type-object-dependencies-properties should have property two when property one is present
+  1 | {
+> 2 |   "type-object-dependencies-properties": {
+    |                                          ^
+> 3 |     "one": "depends on two"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 4 |   }
+    | ^^^^
+  5 | }
+  6 | 

@@ -1,0 +1,20 @@
+{
+   "/type-number-minimum": [
+      {
+         "codeFrame": "  1 | {\n> 2 |   \"type-number-minimum\": 0\n    |                          ^\n  3 | }\n  4 | ",
+         "dataPath": "/type-number-minimum",
+         "error": {
+            "keyword": "minimum",
+            "dataPath": "/type-number-minimum",
+            "params": {
+               "comparison": ">=",
+               "limit": 1
+            },
+            "message": "should be >= 1",
+            "schemaPath": "#/properties/type-number-minimum/minimum"
+         },
+         "keyword": "minimum",
+         "message": "/type-number-minimum should be >= 1"
+      }
+   ]
+}

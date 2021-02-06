@@ -6,15 +6,16 @@ const Ajv               = require("ajv").default;
 const chai              = require('chai');
 const stripJsonComments = require('strip-json-comments');
 
-const betterErrors      = require('../../src/bettererrors');
+const BetterErrors      = require('../../src/BetterErrors');
 
 // Will create any results that are missing when true.
-const s_CREATE_RESULTS  = false;
+const s_CREATE_RESULTS  = true;
 
 const ajv = new Ajv({ allErrors: true, allowUnionTypes: true });
 
 // Ajv option allErrors is required
 require("ajv-errors")(ajv);
+require("ajv-formats")(ajv);
 
 const schema = JSON.parse(stripJsonComments(fs.readFileSync('./test/fixture/schema/test.json5', 'utf8')));
 
@@ -29,15 +30,18 @@ class TestRunner
     * Handles invalid validation tests opening a source JSON file and comparing validation errors to stored error data.
     *
     * @param {string}   dirPath - The directory to open error and invalid data.
+    * @param {string}   testFunction - The test function to test and directory for results.
     */
-   static invalid(dirPath)
+   static invalid(dirPath, testFunction)
    {
       const invalidPath = `${dirPath}${path.sep}invalid`;
-      const resultsPath = `${dirPath}${path.sep}results`;
+      const resultsLogPath = `${dirPath}${path.sep}${testFunction}${path.sep}log`;
+      const resultsJSONPath = `${dirPath}${path.sep}${testFunction}${path.sep}json`;
 
-      if (!fs.existsSync(resultsPath) || !fs.existsSync(invalidPath)) { return; }
+      if (!fs.existsSync(resultsLogPath) || !fs.existsSync(invalidPath)) { return; }
 
-      const results = TestRunner.loadFiles(resultsPath, '.log');
+      const resultsLog = TestRunner.loadFiles(resultsLogPath, '.log');
+      const resultsJSON = TestRunner.loadFiles(resultsJSONPath);
       const invalidData = TestRunner.loadFiles(invalidPath);
 
       for (const key of invalidData.keys())
@@ -50,31 +54,39 @@ class TestRunner
 
             if (Array.isArray(validate.errors) && validate.errors.length > 0)
             {
-               const resultKey = `${invalid.baseNameNoExt}.log`;
-               const betterData = betterErrors(validate.errors, { file: invalid.file, highlightCode: false });
+               const resultLog = resultsLog.get(key);
+               const resultJSON = resultsJSON.get(key);
 
-               const result = results.get(resultKey);
+               const betterData = BetterErrors[testFunction](validate.errors,
+                { file: invalid.file, highlightCode: false });
 
-               let betterOutput = '';
-               for (const betterEntry of betterData)
-               {
-                  betterOutput += `${betterEntry.message}\n${betterEntry.codeFrame}\n\n`;
-               }
-
-               if (result === void 0)
+               if (resultLog === void 0)
                {
                   if (s_CREATE_RESULTS)
                   {
-                     fs.writeFileSync(`${dirPath}${path.sep}results${path.sep}${resultKey}`, betterOutput);
+                     fs.writeFileSync(`${resultsLog.$$path}${path.sep}${key}.log`,
+                      BetterErrors.toString(betterData));
+                  }
+               }
+
+               if (resultJSON === void 0)
+               {
+                  const resultJSONData = JSON.stringify(betterData, null, 3);
+
+                  if (s_CREATE_RESULTS)
+                  {
+                     fs.writeFileSync(`${resultsJSON.$$path}${path.sep}${key}.json5`, resultJSONData);
                   }
 
                   const msg = s_CREATE_RESULTS ? ' - creating it' : '';
 
-                  done(new Error(`Error data for'${resultKey}' missing${msg}:\n${betterOutput}`));
+                  done(new Error(`Error data for '${key}' missing${msg}:\n${resultJSONData}`));
                }
-
-               chai.expect(betterOutput).to.be.deep.equal(results.get(resultKey).data);
-               done();
+               else
+               {
+                  chai.expect(betterData).to.be.deep.equal(resultJSON.data);
+                  done();
+               }
             }
             else
             {
@@ -120,7 +132,7 @@ class TestRunner
                throw err;
             }
 
-            results.set(baseName, {
+            results.set(baseNameNoExt, {
                absPath,
                baseName,
                baseNameNoExt,
@@ -129,6 +141,8 @@ class TestRunner
             });
          }
       });
+
+      results.$$path = dir;
 
       return results;
    }
@@ -140,7 +154,8 @@ class TestRunner
    {
       describe(`betterErrors invalid results`, () =>
       {
-         TestRunner.invalid(`./test/fixture/data`);
+         TestRunner.invalid(`./test/fixture/data`, 'asArray');
+         TestRunner.invalid(`./test/fixture/data`, 'asObject');
       });
    }
 }

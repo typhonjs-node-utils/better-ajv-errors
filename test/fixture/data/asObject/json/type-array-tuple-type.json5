@@ -1,0 +1,19 @@
+{
+   "/type-array-tuple-type/0": [
+      {
+         "codeFrame": "  1 | {\n  2 |   \"type-array-tuple-type\": [\n> 3 |     false,\n    |     ^^^^^\n  4 |     false\n  5 |   ]\n  6 | }",
+         "dataPath": "/type-array-tuple-type/0",
+         "error": {
+            "keyword": "type",
+            "dataPath": "/type-array-tuple-type/0",
+            "params": {
+               "type": "string"
+            },
+            "message": "should be string",
+            "schemaPath": "#/properties/type-array-tuple-type/items/0/type"
+         },
+         "keyword": "type",
+         "message": "/type-array-tuple-type/0 should be string"
+      }
+   ]
+}

@@ -1,0 +1,17 @@
+[
+   {
+      "codeFrame": "  1 | {\n> 2 |   \"type-string-format-time\": \"not time\"\n    |                              ^^^^^^^^^^\n  3 | }\n  4 | ",
+      "dataPath": "/type-string-format-time",
+      "error": {
+         "keyword": "format",
+         "dataPath": "/type-string-format-time",
+         "params": {
+            "format": "time"
+         },
+         "message": "should match format \"time\"",
+         "schemaPath": "#/properties/type-string-format-time/format"
+      },
+      "keyword": "format",
+      "message": "/type-string-format-time should match format \"time\""
+   }
+]

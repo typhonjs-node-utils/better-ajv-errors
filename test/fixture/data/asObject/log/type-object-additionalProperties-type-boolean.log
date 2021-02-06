@@ -1,0 +1,8 @@
+/type-object-additionalProperties-type-boolean/three should be boolean
+  3 |     "one": "valid",
+  4 |     "two": false,
+> 5 |     "three": "not boolean"
+    |              ^^^^^^^^^^^^^
+  6 |   }
+  7 | }
+  8 | 

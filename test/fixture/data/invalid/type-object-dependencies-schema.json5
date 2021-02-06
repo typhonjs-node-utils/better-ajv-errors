@@ -1,0 +1,6 @@
+{
+  "type-object-dependencies-schema": {
+    "one": "depends on two",
+    "two": false
+  }
+}

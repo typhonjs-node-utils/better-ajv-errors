@@ -1,0 +1,22 @@
+{
+   "/type-object-dependencies-properties": [
+      {
+         "codeFrame": "  1 | {\n> 2 |   \"type-object-dependencies-properties\": {\n    |                                          ^\n> 3 |     \"one\": \"depends on two\"\n    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n> 4 |   }\n    | ^^^^\n  5 | }\n  6 | ",
+         "dataPath": "/type-object-dependencies-properties",
+         "error": {
+            "keyword": "dependencies",
+            "dataPath": "/type-object-dependencies-properties",
+            "params": {
+               "property": "one",
+               "missingProperty": "two",
+               "depsCount": 1,
+               "deps": "two"
+            },
+            "message": "should have property two when property one is present",
+            "schemaPath": "#/properties/type-object-dependencies-properties/dependencies"
+         },
+         "keyword": "dependencies",
+         "message": "/type-object-dependencies-properties should have property two when property one is present"
+      }
+   ]
+}

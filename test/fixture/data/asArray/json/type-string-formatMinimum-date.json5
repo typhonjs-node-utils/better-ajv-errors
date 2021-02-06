@@ -1,0 +1,18 @@
+[
+   {
+      "codeFrame": "  1 | {\n> 2 |   \"type-string-formatMinimum-date\": \"2020-01-01\"\n    |                                     ^^^^^^^^^^^^\n  3 | }\n  4 | ",
+      "dataPath": "/type-string-formatMinimum-date",
+      "error": {
+         "keyword": "formatMinimum",
+         "dataPath": "/type-string-formatMinimum-date",
+         "params": {
+            "comparison": ">=",
+            "limit": "2021-01-01"
+         },
+         "message": "should be >= 2021-01-01",
+         "schemaPath": "#/properties/type-string-formatMinimum-date/formatMinimum"
+      },
+      "keyword": "formatMinimum",
+      "message": "/type-string-formatMinimum-date should be >= 2021-01-01"
+   }
+]

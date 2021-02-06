@@ -1,7 +1,0 @@
-/enum-two should be equal to one of the allowed values: 'ONE' or 'TWO'
-  1 | {
-> 2 |   "enum-two": false
-    |               ^^^^^
-  3 | }
-  4 | 
-

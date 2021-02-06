@@ -1,0 +1,18 @@
+/type-object-propertyNames-pattern should match pattern "^[A-Z]$"
+  1 | {
+> 2 |   "type-object-propertyNames-pattern": {
+    |                                        ^
+> 3 |     "not pattern [A-Z]": false
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 4 |   }
+    | ^^^^
+  5 | }
+  6 | 
+
+/type-object-propertyNames-pattern property name 'not pattern [A-Z]' is invalid
+  1 | {
+> 2 |   "type-object-propertyNames-pattern": {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |     "not pattern [A-Z]": false
+  4 |   }
+  5 | }

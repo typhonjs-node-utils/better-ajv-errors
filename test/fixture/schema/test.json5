@@ -12,14 +12,6 @@
     }
   },
   "properties": {
-    "additionalProperties": {
-      "type": "object",
-      "required": ["one"],
-      "properties": {
-        "one": { "type": "string" }
-      },
-      "additionalProperties": false
-    },
     "duplicate": {
       "allOf": [
         { "$ref": "#/definitions/object1" },
@@ -39,12 +31,156 @@
       "type": "string",
       "errorMessage": "should be a string"
     },
-    "required": {
+    "oneOf-type-string-number-object": {
+      "oneOf":  [
+        { "type": "string" },
+        { "type": "number" },
+        { "type": "object" }
+      ]
+    },
+    "type-array-additionalItems-false": {
+      "items": [
+        { "type": "string" },
+        { "type": "boolean" }
+      ],
+      "type": "array",
+      "additionalItems": false
+    },
+    "type-array-additionalItems-type-boolean": {
+      "items": [
+        { "type": "string" },
+        { "type": "boolean" }
+      ],
+      "type": "array",
+      "additionalItems": { "type": "boolean" }
+    },
+    "type-array-contains": {
+      "contains": { "type": "boolean"  },
+      "type": "array"
+    },
+    "type-array-maxItems": {
+      "items": { "type": "string"  },
+      "type": "array",
+      "maxItems": 1
+    },
+    "type-array-minItems": {
+      "items": { "type": "string" },
+      "type": "array",
+      "minItems": 2
+    },
+    "type-array-tuple-type": {
+      "items": [
+        { "type": "string" },
+        { "type": "boolean" }
+      ],
+      "type": "array",
+      "maxItems": 2,
+      "minItems": 2
+    },
+    "type-array-uniqueItems": {
+      "items": { "type": "string" },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "type-number-minimum": {
+      "type": "number",
+      "minimum": 1
+    },
+    "type-number-multipleOf": {
+      "type": "number",
+      "multipleOf": 10
+    },
+    "type-object-additionalProperties-false": {
+      "type": "object",
+      "required": ["one"],
+      "properties": {
+        "one": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "type-object-additionalProperties-type-boolean": {
+      "type": "object",
+      "required": ["one"],
+      "properties": {
+        "one": { "type": "string" }
+      },
+      "additionalProperties": { "type":  "boolean" }
+    },
+    "type-object-dependencies-properties": {
+      "type": "object",
+      "dependencies": { "one": ["two"] }
+    },
+    "type-object-dependencies-schema": {
+      "type": "object",
+      "dependencies": {
+        "one": {
+          "properties": {
+            "two": { "type": "string" }
+          },
+          "required": ["two"]
+        }
+      }
+    },
+    "type-object-maxProperties": {
+      "type": "object",
+      "maxProperties": 1
+    },
+    "type-object-minProperties": {
+      "type": "object",
+      "minProperties": 2
+    },
+    "type-object-patternProperties": {
+      "type": "object",
+      "patternProperties": {
+        "^S_": { "type": "string" },
+        "^I_": { "type": "integer" }
+      },
+      "additionalProperties": false
+    },
+    "type-object-propertyNames-pattern": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^[A-Z]$"
+      }
+    },
+    "type-object-required": {
       "type": "object",
       "required": ["one"]
     },
     "type-string": {
       "type": "string"
+    },
+    "not-type-string": {
+      "not": { "type": "string" }
+    },
+    "type-string-const": {
+      "type": "string",
+      "const": "const"
+    },
+    "type-string-format-date": {
+      "type": "string",
+      "format": "date"
+    },
+    "type-string-format-date-time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "type-string-format-time": {
+      "type": "string",
+      "format": "time"
+    },
+    "type-string-formatMinimum-date": {
+      "type": "string",
+      "format": "date",
+      "formatMinimum": "2021-01-01"
+    },
+    "type-string-maxLength": {
+      "type": "string",
+      "maxLength": 3
+    },
+    "type-string-minLength": {
+      "type": "string",
+      "minLength": 6
     },
     "type-string-null": {
       "type": ["string", "null"]
@@ -52,13 +188,10 @@
     "type-string-null-boolean": {
       "type": ["string", "null", "boolean"]
     },
-    "uniqueItems": {
-      "items": {
-        "type": "string"
-      },
-      "type": "array",
-      "uniqueItems": true
-    }//,
+    "type-string-pattern": {
+      "type": "string",
+      "pattern": "^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$"  // A phone number
+    }
 
 
 

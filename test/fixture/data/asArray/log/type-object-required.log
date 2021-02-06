@@ -1,0 +1,7 @@
+/type-object-required should have required property 'one'
+  1 | {
+> 2 |   "type-object-required": {
+    |   ^^^^^^^^^^^^^^^^^^^^^^
+  3 |     "two": false
+  4 |   }
+  5 | }

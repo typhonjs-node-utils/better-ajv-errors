@@ -1,0 +1,17 @@
+/type-object-additionalProperties-false should NOT have additional properties: 'two'
+  2 |   "type-object-additionalProperties-false": {
+  3 |     "one": "valid",
+> 4 |     "two": false,
+    |     ^^^^^
+  5 |     "three": false
+  6 |   }
+  7 | }
+
+/type-object-additionalProperties-false should NOT have additional properties: 'three'
+  3 |     "one": "valid",
+  4 |     "two": false,
+> 5 |     "three": false
+    |     ^^^^^^^
+  6 |   }
+  7 | }
+  8 | 

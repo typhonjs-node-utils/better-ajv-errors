@@ -1,0 +1,6 @@
+/type-number-multipleOf should be multiple of 10
+  1 | {
+> 2 |   "type-number-multipleOf": 5
+    |                             ^
+  3 | }
+  4 | 

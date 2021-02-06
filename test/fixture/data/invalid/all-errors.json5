@@ -1,0 +1,87 @@
+{
+  "duplicate": false,
+  "enum-one": false,
+  "enum-three": false,
+  "enum-two": false,
+  "errorMessage": false,
+  "not-type-string": "well it's a string",
+  "type-array-additionalItems-false": [
+    "is fine",
+    true,
+    "not fine"
+  ],
+  "type-array-additionalItems-type-boolean": [
+    "is fine",
+    true,
+    "not fine"
+  ],
+  "type-array-contains": [
+    "not boolean",
+    "not boolean",
+    "not boolean",
+    "not boolean"
+  ],
+  "type-array-maxItems": [
+    "onlyOneA",
+    "onlyOneB"
+  ],
+  "type-array-minItems": [
+    "needTwo"
+  ],
+  "type-array-tuple-type": [
+    false,
+    false
+  ],
+  "type-array-uniqueItems": [
+    "sameItem",
+    "sameItem"
+  ],
+  "type-number-minimum": 0,
+  "type-number-multipleOf": 5,
+  "type-object-additionalProperties-false": {
+    "one": "valid",
+    "two": false,
+    "three": false
+  },
+  "type-object-additionalProperties-type-boolean": {
+    "one": "valid",
+    "two": false,
+    "three": "not boolean"
+  },
+  "type-object-dependencies-properties": {
+    "one": "depends on two"
+  },
+  "type-object-dependencies-schema": {
+    "one": "depends on two",
+    "two": false
+  },
+  "type-object-maxProperties": {
+    "one": false,
+    "too": "many"
+  },
+  "type-object-minProperties": {
+    "too": "few"
+  },
+  "type-object-patternProperties": {
+    "S_1": "ok",
+    "I_1": 1,
+    "S_2": false
+  },
+  "type-object-propertyNames-pattern": {
+    "not pattern [A-Z]": false
+  },
+  "type-object-required": {
+    "two": false
+  },
+  "type-string": false,
+  "type-string-const": "not const",
+  "type-string-format-date": "not date",
+  "type-string-format-date-time": "not date time",
+  "type-string-format-time": "not time",
+  "type-string-formatMinimum-date": "2020-01-01",
+  "type-string-maxLength": "max3",
+  "type-string-minLength": "need6",
+  "type-string-null": false,
+  "type-string-null-boolean": 1,
+  "type-string-pattern": "not phone number"
+}

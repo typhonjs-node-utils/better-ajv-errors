@@ -1,0 +1,6 @@
+{
+  "type-object-maxProperties": {
+    "one": false,
+    "too": "many"
+  }
+}

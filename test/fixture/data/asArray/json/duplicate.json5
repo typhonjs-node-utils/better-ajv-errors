@@ -1,0 +1,17 @@
+[
+   {
+      "codeFrame": "  1 | {\n> 2 |   \"duplicate\": false\n    |                ^^^^^\n  3 | }\n  4 | ",
+      "dataPath": "/duplicate",
+      "error": {
+         "keyword": "type",
+         "dataPath": "/duplicate",
+         "params": {
+            "type": "object"
+         },
+         "message": "should be object",
+         "schemaPath": "#/definitions/object1/type"
+      },
+      "keyword": "type",
+      "message": "/duplicate should be object"
+   }
+]

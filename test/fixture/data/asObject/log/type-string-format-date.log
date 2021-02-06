@@ -1,0 +1,6 @@
+/type-string-format-date should match format "date"
+  1 | {
+> 2 |   "type-string-format-date": "not date"
+    |                              ^^^^^^^^^^
+  3 | }
+  4 | 

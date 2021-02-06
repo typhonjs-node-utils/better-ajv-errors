@@ -1,0 +1,7 @@
+{
+  "type-array-additionalItems-false": [
+    "is fine",
+    true,
+    "not fine"
+  ]
+}

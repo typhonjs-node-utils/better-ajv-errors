@@ -1,0 +1,8 @@
+/type-object-patternProperties/S_2 should be string
+  3 |     "S_1": "ok",
+  4 |     "I_1": 1,
+> 5 |     "S_2": false
+    |            ^^^^^
+  6 |   }
+  7 | }
+  8 | 

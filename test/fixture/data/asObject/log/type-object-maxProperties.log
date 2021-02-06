@@ -1,0 +1,7 @@
+/type-object-maxProperties should NOT have more than 1 items
+  1 | {
+> 2 |   "type-object-maxProperties": {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |     "one": false,
+  4 |     "too": "many"
+  5 |   }

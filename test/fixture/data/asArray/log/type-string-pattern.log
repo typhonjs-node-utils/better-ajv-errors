@@ -1,0 +1,6 @@
+/type-string-pattern should match pattern "^(\([0-9]{3}\))?[0-9]{3}-[0-9]{4}$"
+  1 | {
+> 2 |   "type-string-pattern": "not phone number"
+    |                          ^^^^^^^^^^^^^^^^^^
+  3 | }
+  4 | 

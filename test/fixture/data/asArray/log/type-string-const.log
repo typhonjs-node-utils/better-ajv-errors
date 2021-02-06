@@ -1,0 +1,6 @@
+/type-string-const should be equal to constant: 'const'
+  1 | {
+> 2 |   "type-string-const": "not const"
+    |                        ^^^^^^^^^^^
+  3 | }
+  4 | 

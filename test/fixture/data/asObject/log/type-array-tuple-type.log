@@ -1,0 +1,8 @@
+/type-array-tuple-type/0 should be string
+  1 | {
+  2 |   "type-array-tuple-type": [
+> 3 |     false,
+    |     ^^^^^
+  4 |     false
+  5 |   ]
+  6 | }

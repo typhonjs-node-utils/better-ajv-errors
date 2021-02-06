@@ -1,0 +1,5 @@
+{
+  "type-object-dependencies-properties": {
+    "one": "depends on two"
+  }
+}

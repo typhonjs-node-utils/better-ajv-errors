@@ -1,0 +1,6 @@
+/type-string-formatMinimum-date should be >= 2021-01-01
+  1 | {
+> 2 |   "type-string-formatMinimum-date": "2020-01-01"
+    |                                     ^^^^^^^^^^^^
+  3 | }
+  4 | 

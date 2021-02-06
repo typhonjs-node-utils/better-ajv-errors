@@ -1,0 +1,8 @@
+/type-array-additionalItems-type-boolean/2 should be boolean
+  3 |     "is fine",
+  4 |     true,
+> 5 |     "not fine"
+    |     ^^^^^^^^^^
+  6 |   ]
+  7 | }
+  8 | 

@@ -1,0 +1,5 @@
+{
+  "type-object-propertyNames-pattern": {
+    "not pattern [A-Z]": false
+  }
+}

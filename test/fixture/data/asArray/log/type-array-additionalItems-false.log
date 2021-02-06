@@ -1,0 +1,7 @@
+/type-array-additionalItems-false should NOT have more than 2 items
+  1 | {
+> 2 |   "type-array-additionalItems-false": [
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |     "is fine",
+  4 |     true,
+  5 |     "not fine"

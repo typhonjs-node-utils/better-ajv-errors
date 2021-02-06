@@ -1,0 +1,6 @@
+/type-string-format-time should match format "time"
+  1 | {
+> 2 |   "type-string-format-time": "not time"
+    |                              ^^^^^^^^^^
+  3 | }
+  4 | 

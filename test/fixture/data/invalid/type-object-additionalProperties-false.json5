@@ -1,0 +1,7 @@
+{
+  "type-object-additionalProperties-false": {
+    "one": "valid",
+    "two": false,
+    "three": false
+  }
+}

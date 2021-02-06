@@ -1,0 +1,7 @@
+/type-array-maxItems should NOT have more than 1 items
+  1 | {
+> 2 |   "type-array-maxItems": [
+    |   ^^^^^^^^^^^^^^^^^^^^^
+  3 |     "onlyOneA",
+  4 |     "onlyOneB"
+  5 |   ]

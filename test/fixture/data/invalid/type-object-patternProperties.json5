@@ -1,0 +1,7 @@
+{
+  "type-object-patternProperties": {
+    "S_1": "ok",
+    "I_1": 1,
+    "S_2": false
+  }
+}

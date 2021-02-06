@@ -1,0 +1,43 @@
+/type-array-contains/0 should be boolean
+  1 | {
+  2 |   "type-array-contains": [
+> 3 |     "not boolean",
+    |     ^^^^^^^^^^^^^
+  4 |     "not boolean",
+  5 |     "not boolean",
+  6 |     "not boolean"
+
+/type-array-contains/1 should be boolean
+  2 |   "type-array-contains": [
+  3 |     "not boolean",
+> 4 |     "not boolean",
+    |     ^^^^^^^^^^^^^
+  5 |     "not boolean",
+  6 |     "not boolean"
+  7 |   ]
+
+/type-array-contains/2 should be boolean
+  3 |     "not boolean",
+  4 |     "not boolean",
+> 5 |     "not boolean",
+    |     ^^^^^^^^^^^^^
+  6 |     "not boolean"
+  7 |   ]
+  8 | }
+
+/type-array-contains/3 should be boolean
+  4 |     "not boolean",
+  5 |     "not boolean",
+> 6 |     "not boolean"
+    |     ^^^^^^^^^^^^^
+  7 |   ]
+  8 | }
+  9 | 
+
+/type-array-contains should contain at least 1 valid item(s)
+  1 | {
+> 2 |   "type-array-contains": [
+    |   ^^^^^^^^^^^^^^^^^^^^^
+  3 |     "not boolean",
+  4 |     "not boolean",
+  5 |     "not boolean",

@@ -1,0 +1,7 @@
+/type-object-minProperties should NOT have fewer than 2 items
+  1 | {
+> 2 |   "type-object-minProperties": {
+    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |     "too": "few"
+  4 |   }
+  5 | }
