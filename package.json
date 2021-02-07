@@ -1,7 +1,7 @@
 {
   "name": "@typhonjs-node-utils/better-ajv-errors",
   "description": "Provides parsing of `ajv` errors output to format error messages and create code frames.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "typhonrt",
   "bugs": "https://github.com/typhonjs-node-utils/better-ajv-errors/issues",
   "license": "MPL-2.0",
