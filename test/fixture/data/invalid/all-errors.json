@@ -21,6 +21,13 @@
     "not boolean",
     "not boolean"
   ],
+  "type-array-entry-object-required": [{}],
+  "type-array-entry-object-required-long": [{
+    "notkey": false,
+    "notkey1": false,
+    "notkey2": false,
+    "notkey3": false
+  }],
   "type-array-maxItems": [
     "onlyOneA",
     "onlyOneB"

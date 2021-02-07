@@ -1,0 +1,19 @@
+{
+   "/type-array-entry-object-required-long/0": [
+      {
+         "codeFrame": "  1 | {\n> 2 |   \"type-array-entry-object-required-long\": [{\n> 3 |     \"notkey\": false,\n> 4 |     \"notkey1\": false,\n  5 |     \"notkey2\": false,\n  6 |     \"notkey3\": false\n  7 |   }]",
+         "dataPath": "/type-array-entry-object-required-long/0",
+         "error": {
+            "keyword": "required",
+            "dataPath": "/type-array-entry-object-required-long/0",
+            "params": {
+               "missingProperty": "key"
+            },
+            "message": "should have required property 'key'",
+            "schemaPath": "#/properties/type-array-entry-object-required-long/items/required"
+         },
+         "keyword": "required",
+         "message": "/type-array-entry-object-required-long/0 should have required property 'key'"
+      }
+   ]
+}

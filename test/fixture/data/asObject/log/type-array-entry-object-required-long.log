@@ -1,0 +1,8 @@
+/type-array-entry-object-required-long/0 should have required property 'key'
+  1 | {
+> 2 |   "type-array-entry-object-required-long": [{
+> 3 |     "notkey": false,
+> 4 |     "notkey1": false,
+  5 |     "notkey2": false,
+  6 |     "notkey3": false
+  7 |   }]

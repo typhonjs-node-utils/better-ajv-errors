@@ -30,13 +30,6 @@
       "type": "string",
       "errorMessage": "should be a string"
     },
-    "oneOf-type-string-number-object": {
-      "oneOf":  [
-        { "type": "string" },
-        { "type": "number" },
-        { "type": "object" }
-      ]
-    },
     "type-array-additionalItems-false": {
       "items": [
         { "type": "string" },
@@ -58,6 +51,16 @@
       "type": "array"
     },
     "type-array-entry-object-required": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key"],
+        "properties": {
+          "key": { "type": "string" }
+        }
+      }
+    },
+    "type-array-entry-object-required-long": {
       "type": "array",
       "items": {
         "type": "object",

@@ -321,10 +321,13 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
       let message = '';
       let jsonPointerLocs = null;
       let jsonPointerIndex = 'value';
+      let codeFrameNoColumn = false;
+      let jsonPointerLines = 0;
 
       if (jsonData !== null)
       {
          jsonPointerLocs = JSON.parse(JSON.stringify(jsonData.pointers[dataPath]));
+         jsonPointerLines = jsonPointerLocs.valueEnd.line - jsonPointerLocs.value.line;
       }
 
       switch (keyword)
@@ -351,9 +354,22 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
             message = `${dataPath} ${error.message}`;
 
             // If there is an associated key switch to the key otherwise stay on the 'value' as the pointer index.
-            if (jsonPointerLocs !== null && jsonPointerLocs.key !== void 0)
+            if (jsonPointerLocs !== null)
             {
-               jsonPointerIndex = 'key';
+               if (jsonPointerLocs.key !== void 0)
+               {
+                  jsonPointerIndex = 'key';
+               }
+               else
+               {
+                  // Limit total lines and turn off columns for code frames if lines greater than 2.
+                  if (jsonPointerLines > 2)
+                  {
+                     codeFrameNoColumn = true;
+                     jsonPointerLocs.valueEnd.line = Math.min(jsonPointerLocs.valueEnd.line,
+                      jsonPointerLocs.value.line + 2);
+                  }
+               }
             }
             break;
 
@@ -403,7 +419,7 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
 
       if (jsonData !== null && jsonPointerLocs !== null && codeFrame === '')
       {
-         codeFrame = generateCodeFrame(file, jsonPointerLocs, jsonPointerIndex, { highlightCode });
+         codeFrame = generateCodeFrame(file, jsonPointerLocs, jsonPointerIndex, { codeFrameNoColumn, highlightCode });
       }
 
       handler.push({ codeFrame, dataPath, error, keyword, message });
@@ -470,7 +486,7 @@ function formatItemArray(array, { conjunction = 'or', quote = false } = {})
  * @param {string}   jsonPointerIndex - A string indicating 'key' or 'value' determining the attribute type to
  *                                      highlight.
  *
- * @param {boolean}  [codeFrameNoColumn=false] - A boolean indicating if columns should be highlighted
+ * @param {boolean}  codeFrameNoColumn - A boolean indicating if columns should be highlighted
  *
  * @param {boolean}  [highlightCode=true] - Highlight code w/ escape colors.
  *
@@ -481,7 +497,7 @@ function formatItemArray(array, { conjunction = 'or', quote = false } = {})
  * @returns {string} - The code frame captured.
  */
 function generateCodeFrame(file, jsonPointerLocs, jsonPointerIndex,
- { codeFrameNoColumn = false, highlightCode, linesAbove = 2, linesBelow = 3 } = {})
+ { codeFrameNoColumn, highlightCode, linesAbove = 2, linesBelow = 3 } = {})
 {
    let location;
 

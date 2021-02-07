@@ -174,7 +174,7 @@
    ],
    "/type-array-contains/2": [
       {
-         "codeFrame": "  19 |     \"not boolean\",\n  20 |     \"not boolean\",\n> 21 |     \"not boolean\",\n     |     ^^^^^^^^^^^^^\n  22 |     \"not boolean\"\n  23 |   ],\n  24 |   \"type-array-maxItems\": [",
+         "codeFrame": "  19 |     \"not boolean\",\n  20 |     \"not boolean\",\n> 21 |     \"not boolean\",\n     |     ^^^^^^^^^^^^^\n  22 |     \"not boolean\"\n  23 |   ],\n  24 |   \"type-array-entry-object-required\": [{}],",
          "dataPath": "/type-array-contains/2",
          "error": {
             "keyword": "type",
@@ -191,7 +191,7 @@
    ],
    "/type-array-contains/3": [
       {
-         "codeFrame": "  20 |     \"not boolean\",\n  21 |     \"not boolean\",\n> 22 |     \"not boolean\"\n     |     ^^^^^^^^^^^^^\n  23 |   ],\n  24 |   \"type-array-maxItems\": [\n  25 |     \"onlyOneA\",",
+         "codeFrame": "  20 |     \"not boolean\",\n  21 |     \"not boolean\",\n> 22 |     \"not boolean\"\n     |     ^^^^^^^^^^^^^\n  23 |   ],\n  24 |   \"type-array-entry-object-required\": [{}],\n  25 |   \"type-array-entry-object-required-long\": [{",
          "dataPath": "/type-array-contains/3",
          "error": {
             "keyword": "type",
@@ -223,9 +223,43 @@
          "message": "/type-array-contains should contain at least 1 valid item(s)"
       }
    ],
+   "/type-array-entry-object-required/0": [
+      {
+         "codeFrame": "  22 |     \"not boolean\"\n  23 |   ],\n> 24 |   \"type-array-entry-object-required\": [{}],\n     |                                        ^^\n  25 |   \"type-array-entry-object-required-long\": [{\n  26 |     \"notkey\": false,\n  27 |     \"notkey1\": false,",
+         "dataPath": "/type-array-entry-object-required/0",
+         "error": {
+            "keyword": "required",
+            "dataPath": "/type-array-entry-object-required/0",
+            "params": {
+               "missingProperty": "key"
+            },
+            "message": "should have required property 'key'",
+            "schemaPath": "#/properties/type-array-entry-object-required/items/required"
+         },
+         "keyword": "required",
+         "message": "/type-array-entry-object-required/0 should have required property 'key'"
+      }
+   ],
+   "/type-array-entry-object-required-long/0": [
+      {
+         "codeFrame": "  23 |   ],\n  24 |   \"type-array-entry-object-required\": [{}],\n> 25 |   \"type-array-entry-object-required-long\": [{\n> 26 |     \"notkey\": false,\n> 27 |     \"notkey1\": false,\n  28 |     \"notkey2\": false,\n  29 |     \"notkey3\": false\n  30 |   }],",
+         "dataPath": "/type-array-entry-object-required-long/0",
+         "error": {
+            "keyword": "required",
+            "dataPath": "/type-array-entry-object-required-long/0",
+            "params": {
+               "missingProperty": "key"
+            },
+            "message": "should have required property 'key'",
+            "schemaPath": "#/properties/type-array-entry-object-required-long/items/required"
+         },
+         "keyword": "required",
+         "message": "/type-array-entry-object-required-long/0 should have required property 'key'"
+      }
+   ],
    "/type-array-maxItems": [
       {
-         "codeFrame": "  22 |     \"not boolean\"\n  23 |   ],\n> 24 |   \"type-array-maxItems\": [\n     |   ^^^^^^^^^^^^^^^^^^^^^\n  25 |     \"onlyOneA\",\n  26 |     \"onlyOneB\"\n  27 |   ],",
+         "codeFrame": "  29 |     \"notkey3\": false\n  30 |   }],\n> 31 |   \"type-array-maxItems\": [\n     |   ^^^^^^^^^^^^^^^^^^^^^\n  32 |     \"onlyOneA\",\n  33 |     \"onlyOneB\"\n  34 |   ],",
          "dataPath": "/type-array-maxItems",
          "error": {
             "keyword": "maxItems",
@@ -242,7 +276,7 @@
    ],
    "/type-array-minItems": [
       {
-         "codeFrame": "  26 |     \"onlyOneB\"\n  27 |   ],\n> 28 |   \"type-array-minItems\": [\n     |   ^^^^^^^^^^^^^^^^^^^^^\n  29 |     \"needTwo\"\n  30 |   ],\n  31 |   \"type-array-tuple-type\": [",
+         "codeFrame": "  33 |     \"onlyOneB\"\n  34 |   ],\n> 35 |   \"type-array-minItems\": [\n     |   ^^^^^^^^^^^^^^^^^^^^^\n  36 |     \"needTwo\"\n  37 |   ],\n  38 |   \"type-array-tuple-type\": [",
          "dataPath": "/type-array-minItems",
          "error": {
             "keyword": "minItems",
@@ -259,7 +293,7 @@
    ],
    "/type-array-tuple-type/0": [
       {
-         "codeFrame": "  30 |   ],\n  31 |   \"type-array-tuple-type\": [\n> 32 |     false,\n     |     ^^^^^\n  33 |     false\n  34 |   ],\n  35 |   \"type-array-uniqueItems\": [",
+         "codeFrame": "  37 |   ],\n  38 |   \"type-array-tuple-type\": [\n> 39 |     false,\n     |     ^^^^^\n  40 |     false\n  41 |   ],\n  42 |   \"type-array-uniqueItems\": [",
          "dataPath": "/type-array-tuple-type/0",
          "error": {
             "keyword": "type",
@@ -276,7 +310,7 @@
    ],
    "/type-array-uniqueItems": [
       {
-         "codeFrame": "  33 |     false\n  34 |   ],\n> 35 |   \"type-array-uniqueItems\": [\n     |   ^^^^^^^^^^^^^^^^^^^^^^^^\n  36 |     \"sameItem\",\n  37 |     \"sameItem\"\n  38 |   ],",
+         "codeFrame": "  40 |     false\n  41 |   ],\n> 42 |   \"type-array-uniqueItems\": [\n     |   ^^^^^^^^^^^^^^^^^^^^^^^^\n  43 |     \"sameItem\",\n  44 |     \"sameItem\"\n  45 |   ],",
          "dataPath": "/type-array-uniqueItems",
          "error": {
             "keyword": "uniqueItems",
@@ -294,7 +328,7 @@
    ],
    "/type-number-minimum": [
       {
-         "codeFrame": "  37 |     \"sameItem\"\n  38 |   ],\n> 39 |   \"type-number-minimum\": 0,\n     |                          ^\n  40 |   \"type-number-multipleOf\": 5,\n  41 |   \"type-object-additionalProperties-false\": {\n  42 |     \"one\": \"valid\",",
+         "codeFrame": "  44 |     \"sameItem\"\n  45 |   ],\n> 46 |   \"type-number-minimum\": 0,\n     |                          ^\n  47 |   \"type-number-multipleOf\": 5,\n  48 |   \"type-object-additionalProperties-false\": {\n  49 |     \"one\": \"valid\",",
          "dataPath": "/type-number-minimum",
          "error": {
             "keyword": "minimum",
@@ -312,7 +346,7 @@
    ],
    "/type-number-multipleOf": [
       {
-         "codeFrame": "  38 |   ],\n  39 |   \"type-number-minimum\": 0,\n> 40 |   \"type-number-multipleOf\": 5,\n     |                             ^\n  41 |   \"type-object-additionalProperties-false\": {\n  42 |     \"one\": \"valid\",\n  43 |     \"two\": false,",
+         "codeFrame": "  45 |   ],\n  46 |   \"type-number-minimum\": 0,\n> 47 |   \"type-number-multipleOf\": 5,\n     |                             ^\n  48 |   \"type-object-additionalProperties-false\": {\n  49 |     \"one\": \"valid\",\n  50 |     \"two\": false,",
          "dataPath": "/type-number-multipleOf",
          "error": {
             "keyword": "multipleOf",
@@ -329,7 +363,7 @@
    ],
    "/type-object-additionalProperties-false": [
       {
-         "codeFrame": "  41 |   \"type-object-additionalProperties-false\": {\n  42 |     \"one\": \"valid\",\n> 43 |     \"two\": false,\n     |     ^^^^^\n  44 |     \"three\": false\n  45 |   },\n  46 |   \"type-object-additionalProperties-type-boolean\": {",
+         "codeFrame": "  48 |   \"type-object-additionalProperties-false\": {\n  49 |     \"one\": \"valid\",\n> 50 |     \"two\": false,\n     |     ^^^^^\n  51 |     \"three\": false\n  52 |   },\n  53 |   \"type-object-additionalProperties-type-boolean\": {",
          "dataPath": "/type-object-additionalProperties-false",
          "error": {
             "keyword": "additionalProperties",
@@ -344,7 +378,7 @@
          "message": "/type-object-additionalProperties-false should NOT have additional properties: 'two'"
       },
       {
-         "codeFrame": "  42 |     \"one\": \"valid\",\n  43 |     \"two\": false,\n> 44 |     \"three\": false\n     |     ^^^^^^^\n  45 |   },\n  46 |   \"type-object-additionalProperties-type-boolean\": {\n  47 |     \"one\": \"valid\",",
+         "codeFrame": "  49 |     \"one\": \"valid\",\n  50 |     \"two\": false,\n> 51 |     \"three\": false\n     |     ^^^^^^^\n  52 |   },\n  53 |   \"type-object-additionalProperties-type-boolean\": {\n  54 |     \"one\": \"valid\",",
          "dataPath": "/type-object-additionalProperties-false",
          "error": {
             "keyword": "additionalProperties",
@@ -361,7 +395,7 @@
    ],
    "/type-object-additionalProperties-type-boolean/three": [
       {
-         "codeFrame": "  47 |     \"one\": \"valid\",\n  48 |     \"two\": false,\n> 49 |     \"three\": \"not boolean\"\n     |              ^^^^^^^^^^^^^\n  50 |   },\n  51 |   \"type-object-dependencies-properties\": {\n  52 |     \"one\": \"depends on two\"",
+         "codeFrame": "  54 |     \"one\": \"valid\",\n  55 |     \"two\": false,\n> 56 |     \"three\": \"not boolean\"\n     |              ^^^^^^^^^^^^^\n  57 |   },\n  58 |   \"type-object-dependencies-properties\": {\n  59 |     \"one\": \"depends on two\"",
          "dataPath": "/type-object-additionalProperties-type-boolean/three",
          "error": {
             "keyword": "type",
@@ -378,7 +412,7 @@
    ],
    "/type-object-dependencies-properties": [
       {
-         "codeFrame": "  49 |     \"three\": \"not boolean\"\n  50 |   },\n> 51 |   \"type-object-dependencies-properties\": {\n     |                                          ^\n> 52 |     \"one\": \"depends on two\"\n     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n> 53 |   },\n     | ^^^^\n  54 |   \"type-object-dependencies-schema\": {\n  55 |     \"one\": \"depends on two\",\n  56 |     \"two\": false",
+         "codeFrame": "  56 |     \"three\": \"not boolean\"\n  57 |   },\n> 58 |   \"type-object-dependencies-properties\": {\n     |                                          ^\n> 59 |     \"one\": \"depends on two\"\n     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n> 60 |   },\n     | ^^^^\n  61 |   \"type-object-dependencies-schema\": {\n  62 |     \"one\": \"depends on two\",\n  63 |     \"two\": false",
          "dataPath": "/type-object-dependencies-properties",
          "error": {
             "keyword": "dependencies",
@@ -398,7 +432,7 @@
    ],
    "/type-object-dependencies-schema/two": [
       {
-         "codeFrame": "  54 |   \"type-object-dependencies-schema\": {\n  55 |     \"one\": \"depends on two\",\n> 56 |     \"two\": false\n     |            ^^^^^\n  57 |   },\n  58 |   \"type-object-maxProperties\": {\n  59 |     \"one\": false,",
+         "codeFrame": "  61 |   \"type-object-dependencies-schema\": {\n  62 |     \"one\": \"depends on two\",\n> 63 |     \"two\": false\n     |            ^^^^^\n  64 |   },\n  65 |   \"type-object-maxProperties\": {\n  66 |     \"one\": false,",
          "dataPath": "/type-object-dependencies-schema/two",
          "error": {
             "keyword": "type",
@@ -415,7 +449,7 @@
    ],
    "/type-object-maxProperties": [
       {
-         "codeFrame": "  56 |     \"two\": false\n  57 |   },\n> 58 |   \"type-object-maxProperties\": {\n     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  59 |     \"one\": false,\n  60 |     \"too\": \"many\"\n  61 |   },",
+         "codeFrame": "  63 |     \"two\": false\n  64 |   },\n> 65 |   \"type-object-maxProperties\": {\n     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  66 |     \"one\": false,\n  67 |     \"too\": \"many\"\n  68 |   },",
          "dataPath": "/type-object-maxProperties",
          "error": {
             "keyword": "maxProperties",
@@ -432,7 +466,7 @@
    ],
    "/type-object-minProperties": [
       {
-         "codeFrame": "  60 |     \"too\": \"many\"\n  61 |   },\n> 62 |   \"type-object-minProperties\": {\n     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  63 |     \"too\": \"few\"\n  64 |   },\n  65 |   \"type-object-patternProperties\": {",
+         "codeFrame": "  67 |     \"too\": \"many\"\n  68 |   },\n> 69 |   \"type-object-minProperties\": {\n     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  70 |     \"too\": \"few\"\n  71 |   },\n  72 |   \"type-object-patternProperties\": {",
          "dataPath": "/type-object-minProperties",
          "error": {
             "keyword": "minProperties",
@@ -449,7 +483,7 @@
    ],
    "/type-object-patternProperties/S_2": [
       {
-         "codeFrame": "  66 |     \"S_1\": \"ok\",\n  67 |     \"I_1\": 1,\n> 68 |     \"S_2\": false\n     |            ^^^^^\n  69 |   },\n  70 |   \"type-object-propertyNames-pattern\": {\n  71 |     \"not pattern [A-Z]\": false",
+         "codeFrame": "  73 |     \"S_1\": \"ok\",\n  74 |     \"I_1\": 1,\n> 75 |     \"S_2\": false\n     |            ^^^^^\n  76 |   },\n  77 |   \"type-object-propertyNames-pattern\": {\n  78 |     \"not pattern [A-Z]\": false",
          "dataPath": "/type-object-patternProperties/S_2",
          "error": {
             "keyword": "type",
@@ -466,7 +500,7 @@
    ],
    "/type-object-propertyNames-pattern": [
       {
-         "codeFrame": "  68 |     \"S_2\": false\n  69 |   },\n> 70 |   \"type-object-propertyNames-pattern\": {\n     |                                        ^\n> 71 |     \"not pattern [A-Z]\": false\n     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n> 72 |   },\n     | ^^^^\n  73 |   \"type-object-required\": {\n  74 |     \"two\": false\n  75 |   },",
+         "codeFrame": "  75 |     \"S_2\": false\n  76 |   },\n> 77 |   \"type-object-propertyNames-pattern\": {\n     |                                        ^\n> 78 |     \"not pattern [A-Z]\": false\n     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n> 79 |   },\n     | ^^^^\n  80 |   \"type-object-required\": {\n  81 |     \"two\": false\n  82 |   },",
          "dataPath": "/type-object-propertyNames-pattern",
          "error": {
             "keyword": "pattern",
@@ -482,7 +516,7 @@
          "message": "/type-object-propertyNames-pattern should match pattern \"^[A-Z]$\""
       },
       {
-         "codeFrame": "  68 |     \"S_2\": false\n  69 |   },\n> 70 |   \"type-object-propertyNames-pattern\": {\n     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  71 |     \"not pattern [A-Z]\": false\n  72 |   },\n  73 |   \"type-object-required\": {",
+         "codeFrame": "  75 |     \"S_2\": false\n  76 |   },\n> 77 |   \"type-object-propertyNames-pattern\": {\n     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  78 |     \"not pattern [A-Z]\": false\n  79 |   },\n  80 |   \"type-object-required\": {",
          "dataPath": "/type-object-propertyNames-pattern",
          "error": {
             "keyword": "propertyNames",
@@ -499,7 +533,7 @@
    ],
    "/type-object-required": [
       {
-         "codeFrame": "  71 |     \"not pattern [A-Z]\": false\n  72 |   },\n> 73 |   \"type-object-required\": {\n     |   ^^^^^^^^^^^^^^^^^^^^^^\n  74 |     \"two\": false\n  75 |   },\n  76 |   \"type-string\": false,",
+         "codeFrame": "  78 |     \"not pattern [A-Z]\": false\n  79 |   },\n> 80 |   \"type-object-required\": {\n     |   ^^^^^^^^^^^^^^^^^^^^^^\n  81 |     \"two\": false\n  82 |   },\n  83 |   \"type-string\": false,",
          "dataPath": "/type-object-required",
          "error": {
             "keyword": "required",
@@ -516,7 +550,7 @@
    ],
    "/type-string": [
       {
-         "codeFrame": "  74 |     \"two\": false\n  75 |   },\n> 76 |   \"type-string\": false,\n     |                  ^^^^^\n  77 |   \"type-string-const\": \"not const\",\n  78 |   \"type-string-format-date\": \"not date\",\n  79 |   \"type-string-format-date-time\": \"not date time\",",
+         "codeFrame": "  81 |     \"two\": false\n  82 |   },\n> 83 |   \"type-string\": false,\n     |                  ^^^^^\n  84 |   \"type-string-const\": \"not const\",\n  85 |   \"type-string-format-date\": \"not date\",\n  86 |   \"type-string-format-date-time\": \"not date time\",",
          "dataPath": "/type-string",
          "error": {
             "keyword": "type",
@@ -548,7 +582,7 @@
    ],
    "/type-string-const": [
       {
-         "codeFrame": "  75 |   },\n  76 |   \"type-string\": false,\n> 77 |   \"type-string-const\": \"not const\",\n     |                        ^^^^^^^^^^^\n  78 |   \"type-string-format-date\": \"not date\",\n  79 |   \"type-string-format-date-time\": \"not date time\",\n  80 |   \"type-string-format-time\": \"not time\",",
+         "codeFrame": "  82 |   },\n  83 |   \"type-string\": false,\n> 84 |   \"type-string-const\": \"not const\",\n     |                        ^^^^^^^^^^^\n  85 |   \"type-string-format-date\": \"not date\",\n  86 |   \"type-string-format-date-time\": \"not date time\",\n  87 |   \"type-string-format-time\": \"not time\",",
          "dataPath": "/type-string-const",
          "error": {
             "keyword": "const",
@@ -565,7 +599,7 @@
    ],
    "/type-string-format-date": [
       {
-         "codeFrame": "  76 |   \"type-string\": false,\n  77 |   \"type-string-const\": \"not const\",\n> 78 |   \"type-string-format-date\": \"not date\",\n     |                              ^^^^^^^^^^\n  79 |   \"type-string-format-date-time\": \"not date time\",\n  80 |   \"type-string-format-time\": \"not time\",\n  81 |   \"type-string-formatMinimum-date\": \"2020-01-01\",",
+         "codeFrame": "  83 |   \"type-string\": false,\n  84 |   \"type-string-const\": \"not const\",\n> 85 |   \"type-string-format-date\": \"not date\",\n     |                              ^^^^^^^^^^\n  86 |   \"type-string-format-date-time\": \"not date time\",\n  87 |   \"type-string-format-time\": \"not time\",\n  88 |   \"type-string-formatMinimum-date\": \"2020-01-01\",",
          "dataPath": "/type-string-format-date",
          "error": {
             "keyword": "format",
@@ -582,7 +616,7 @@
    ],
    "/type-string-format-date-time": [
       {
-         "codeFrame": "  77 |   \"type-string-const\": \"not const\",\n  78 |   \"type-string-format-date\": \"not date\",\n> 79 |   \"type-string-format-date-time\": \"not date time\",\n     |                                   ^^^^^^^^^^^^^^^\n  80 |   \"type-string-format-time\": \"not time\",\n  81 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n  82 |   \"type-string-maxLength\": \"max3\",",
+         "codeFrame": "  84 |   \"type-string-const\": \"not const\",\n  85 |   \"type-string-format-date\": \"not date\",\n> 86 |   \"type-string-format-date-time\": \"not date time\",\n     |                                   ^^^^^^^^^^^^^^^\n  87 |   \"type-string-format-time\": \"not time\",\n  88 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n  89 |   \"type-string-maxLength\": \"max3\",",
          "dataPath": "/type-string-format-date-time",
          "error": {
             "keyword": "format",
@@ -599,7 +633,7 @@
    ],
    "/type-string-format-time": [
       {
-         "codeFrame": "  78 |   \"type-string-format-date\": \"not date\",\n  79 |   \"type-string-format-date-time\": \"not date time\",\n> 80 |   \"type-string-format-time\": \"not time\",\n     |                              ^^^^^^^^^^\n  81 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n  82 |   \"type-string-maxLength\": \"max3\",\n  83 |   \"type-string-minLength\": \"need6\",",
+         "codeFrame": "  85 |   \"type-string-format-date\": \"not date\",\n  86 |   \"type-string-format-date-time\": \"not date time\",\n> 87 |   \"type-string-format-time\": \"not time\",\n     |                              ^^^^^^^^^^\n  88 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n  89 |   \"type-string-maxLength\": \"max3\",\n  90 |   \"type-string-minLength\": \"need6\",",
          "dataPath": "/type-string-format-time",
          "error": {
             "keyword": "format",
@@ -616,7 +650,7 @@
    ],
    "/type-string-formatMinimum-date": [
       {
-         "codeFrame": "  79 |   \"type-string-format-date-time\": \"not date time\",\n  80 |   \"type-string-format-time\": \"not time\",\n> 81 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n     |                                     ^^^^^^^^^^^^\n  82 |   \"type-string-maxLength\": \"max3\",\n  83 |   \"type-string-minLength\": \"need6\",\n  84 |   \"type-string-null\": false,",
+         "codeFrame": "  86 |   \"type-string-format-date-time\": \"not date time\",\n  87 |   \"type-string-format-time\": \"not time\",\n> 88 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n     |                                     ^^^^^^^^^^^^\n  89 |   \"type-string-maxLength\": \"max3\",\n  90 |   \"type-string-minLength\": \"need6\",\n  91 |   \"type-string-null\": false,",
          "dataPath": "/type-string-formatMinimum-date",
          "error": {
             "keyword": "formatMinimum",
@@ -634,7 +668,7 @@
    ],
    "/type-string-maxLength": [
       {
-         "codeFrame": "  80 |   \"type-string-format-time\": \"not time\",\n  81 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n> 82 |   \"type-string-maxLength\": \"max3\",\n     |                            ^^^^^^\n  83 |   \"type-string-minLength\": \"need6\",\n  84 |   \"type-string-null\": false,\n  85 |   \"type-string-null-boolean\": 1,",
+         "codeFrame": "  87 |   \"type-string-format-time\": \"not time\",\n  88 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n> 89 |   \"type-string-maxLength\": \"max3\",\n     |                            ^^^^^^\n  90 |   \"type-string-minLength\": \"need6\",\n  91 |   \"type-string-null\": false,\n  92 |   \"type-string-null-boolean\": 1,",
          "dataPath": "/type-string-maxLength",
          "error": {
             "keyword": "maxLength",
@@ -651,7 +685,7 @@
    ],
    "/type-string-minLength": [
       {
-         "codeFrame": "  81 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n  82 |   \"type-string-maxLength\": \"max3\",\n> 83 |   \"type-string-minLength\": \"need6\",\n     |                            ^^^^^^^\n  84 |   \"type-string-null\": false,\n  85 |   \"type-string-null-boolean\": 1,\n  86 |   \"type-string-pattern\": \"not phone number\"",
+         "codeFrame": "  88 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n  89 |   \"type-string-maxLength\": \"max3\",\n> 90 |   \"type-string-minLength\": \"need6\",\n     |                            ^^^^^^^\n  91 |   \"type-string-null\": false,\n  92 |   \"type-string-null-boolean\": 1,\n  93 |   \"type-string-pattern\": \"not phone number\"",
          "dataPath": "/type-string-minLength",
          "error": {
             "keyword": "minLength",
@@ -668,7 +702,7 @@
    ],
    "/type-string-null": [
       {
-         "codeFrame": "  82 |   \"type-string-maxLength\": \"max3\",\n  83 |   \"type-string-minLength\": \"need6\",\n> 84 |   \"type-string-null\": false,\n     |                       ^^^^^\n  85 |   \"type-string-null-boolean\": 1,\n  86 |   \"type-string-pattern\": \"not phone number\"\n  87 | }",
+         "codeFrame": "  89 |   \"type-string-maxLength\": \"max3\",\n  90 |   \"type-string-minLength\": \"need6\",\n> 91 |   \"type-string-null\": false,\n     |                       ^^^^^\n  92 |   \"type-string-null-boolean\": 1,\n  93 |   \"type-string-pattern\": \"not phone number\"\n  94 | }",
          "dataPath": "/type-string-null",
          "error": {
             "keyword": "type",
@@ -688,7 +722,7 @@
    ],
    "/type-string-null-boolean": [
       {
-         "codeFrame": "  83 |   \"type-string-minLength\": \"need6\",\n  84 |   \"type-string-null\": false,\n> 85 |   \"type-string-null-boolean\": 1,\n     |                               ^\n  86 |   \"type-string-pattern\": \"not phone number\"\n  87 | }\n  88 | ",
+         "codeFrame": "  90 |   \"type-string-minLength\": \"need6\",\n  91 |   \"type-string-null\": false,\n> 92 |   \"type-string-null-boolean\": 1,\n     |                               ^\n  93 |   \"type-string-pattern\": \"not phone number\"\n  94 | }\n  95 | ",
          "dataPath": "/type-string-null-boolean",
          "error": {
             "keyword": "type",
@@ -709,7 +743,7 @@
    ],
    "/type-string-pattern": [
       {
-         "codeFrame": "  84 |   \"type-string-null\": false,\n  85 |   \"type-string-null-boolean\": 1,\n> 86 |   \"type-string-pattern\": \"not phone number\"\n     |                          ^^^^^^^^^^^^^^^^^^\n  87 | }\n  88 | ",
+         "codeFrame": "  91 |   \"type-string-null\": false,\n  92 |   \"type-string-null-boolean\": 1,\n> 93 |   \"type-string-pattern\": \"not phone number\"\n     |                          ^^^^^^^^^^^^^^^^^^\n  94 | }\n  95 | ",
          "dataPath": "/type-string-pattern",
          "error": {
             "keyword": "pattern",
