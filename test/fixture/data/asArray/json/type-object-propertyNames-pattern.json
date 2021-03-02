@@ -1,6 +1,6 @@
 [
    {
-      "codeFrame": "  1 | {\n> 2 |   \"type-object-propertyNames-pattern\": {\n    |                                        ^\n> 3 |     \"not pattern [A-Z]\": false\n    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n> 4 |   }\n    | ^^^^\n  5 | }\n  6 | ",
+      "codeFrame": "  1 | {\n> 2 |   \"type-object-propertyNames-pattern\": {\n    |                                        ^\n> 3 |     \"not pattern [A-Z]\": false\n    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n> 4 |   }\n    | ^^^^\n  5 | }\n  6 |",
       "dataPath": "/type-object-propertyNames-pattern",
       "error": {
          "keyword": "pattern",

@@ -1,7 +1,7 @@
 {
    "/type-number-multipleOf": [
       {
-         "codeFrame": "  1 | {\n> 2 |   \"type-number-multipleOf\": 5\n    |                             ^\n  3 | }\n  4 | ",
+         "codeFrame": "  1 | {\n> 2 |   \"type-number-multipleOf\": 5\n    |                             ^\n  3 | }\n  4 |",
          "dataPath": "/type-number-multipleOf",
          "error": {
             "keyword": "multipleOf",

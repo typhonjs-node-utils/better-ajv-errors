@@ -1,7 +1,7 @@
 {
    "/type-object-additionalProperties-type-boolean/three": [
       {
-         "codeFrame": "  3 |     \"one\": \"valid\",\n  4 |     \"two\": false,\n> 5 |     \"three\": \"not boolean\"\n    |              ^^^^^^^^^^^^^\n  6 |   }\n  7 | }\n  8 | ",
+         "codeFrame": "  3 |     \"one\": \"valid\",\n  4 |     \"two\": false,\n> 5 |     \"three\": \"not boolean\"\n    |              ^^^^^^^^^^^^^\n  6 |   }\n  7 | }\n  8 |",
          "dataPath": "/type-object-additionalProperties-type-boolean/three",
          "error": {
             "keyword": "type",

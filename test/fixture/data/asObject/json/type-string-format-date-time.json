@@ -1,7 +1,7 @@
 {
    "/type-string-format-date-time": [
       {
-         "codeFrame": "  1 | {\n> 2 |   \"type-string-format-date-time\": \"not date time\"\n    |                                   ^^^^^^^^^^^^^^^\n  3 | }\n  4 | ",
+         "codeFrame": "  1 | {\n> 2 |   \"type-string-format-date-time\": \"not date time\"\n    |                                   ^^^^^^^^^^^^^^^\n  3 | }\n  4 |",
          "dataPath": "/type-string-format-date-time",
          "error": {
             "keyword": "format",

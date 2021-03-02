@@ -1,6 +1,6 @@
 [
    {
-      "codeFrame": "  1 | {\n> 2 |   \"duplicate\": false\n    |                ^^^^^\n  3 | }\n  4 | ",
+      "codeFrame": "  1 | {\n> 2 |   \"duplicate\": false\n    |                ^^^^^\n  3 | }\n  4 |",
       "dataPath": "/duplicate",
       "error": {
          "keyword": "type",

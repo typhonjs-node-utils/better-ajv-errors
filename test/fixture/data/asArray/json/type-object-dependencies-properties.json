@@ -1,6 +1,6 @@
 [
    {
-      "codeFrame": "  1 | {\n> 2 |   \"type-object-dependencies-properties\": {\n    |                                          ^\n> 3 |     \"one\": \"depends on two\"\n    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n> 4 |   }\n    | ^^^^\n  5 | }\n  6 | ",
+      "codeFrame": "  1 | {\n> 2 |   \"type-object-dependencies-properties\": {\n    |                                          ^\n> 3 |     \"one\": \"depends on two\"\n    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n> 4 |   }\n    | ^^^^\n  5 | }\n  6 |",
       "dataPath": "/type-object-dependencies-properties",
       "error": {
          "keyword": "dependencies",

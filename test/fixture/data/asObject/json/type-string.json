@@ -1,7 +1,7 @@
 {
    "/type-string": [
       {
-         "codeFrame": "  1 | {\n> 2 |   \"type-string\": false\n    |                  ^^^^^\n  3 | }\n  4 | ",
+         "codeFrame": "  1 | {\n> 2 |   \"type-string\": false\n    |                  ^^^^^\n  3 | }\n  4 |",
          "dataPath": "/type-string",
          "error": {
             "keyword": "type",

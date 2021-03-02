@@ -1,6 +1,6 @@
 [
    {
-      "codeFrame": "  2 |   \"type-object-dependencies-schema\": {\n  3 |     \"one\": \"depends on two\",\n> 4 |     \"two\": false\n    |            ^^^^^\n  5 |   }\n  6 | }\n  7 | ",
+      "codeFrame": "  2 |   \"type-object-dependencies-schema\": {\n  3 |     \"one\": \"depends on two\",\n> 4 |     \"two\": false\n    |            ^^^^^\n  5 |   }\n  6 | }\n  7 |",
       "dataPath": "/type-object-dependencies-schema/two",
       "error": {
          "keyword": "type",

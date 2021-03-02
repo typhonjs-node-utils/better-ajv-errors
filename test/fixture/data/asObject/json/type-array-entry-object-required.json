@@ -1,7 +1,7 @@
 {
    "/type-array-entry-object-required/0": [
       {
-         "codeFrame": "  1 | {\n> 2 |   \"type-array-entry-object-required\": [{}]\n    |                                        ^^\n  3 | }\n  4 | ",
+         "codeFrame": "  1 | {\n> 2 |   \"type-array-entry-object-required\": [{}]\n    |                                        ^^\n  3 | }\n  4 |",
          "dataPath": "/type-array-entry-object-required/0",
          "error": {
             "keyword": "required",

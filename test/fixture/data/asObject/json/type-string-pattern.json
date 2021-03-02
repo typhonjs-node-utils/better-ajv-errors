@@ -1,7 +1,7 @@
 {
    "/type-string-pattern": [
       {
-         "codeFrame": "  1 | {\n> 2 |   \"type-string-pattern\": \"not phone number\"\n    |                          ^^^^^^^^^^^^^^^^^^\n  3 | }\n  4 | ",
+         "codeFrame": "  1 | {\n> 2 |   \"type-string-pattern\": \"not phone number\"\n    |                          ^^^^^^^^^^^^^^^^^^\n  3 | }\n  4 |",
          "dataPath": "/type-string-pattern",
          "error": {
             "keyword": "pattern",

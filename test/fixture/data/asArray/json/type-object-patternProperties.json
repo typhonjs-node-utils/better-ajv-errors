@@ -1,6 +1,6 @@
 [
    {
-      "codeFrame": "  3 |     \"S_1\": \"ok\",\n  4 |     \"I_1\": 1,\n> 5 |     \"S_2\": false\n    |            ^^^^^\n  6 |   }\n  7 | }\n  8 | ",
+      "codeFrame": "  3 |     \"S_1\": \"ok\",\n  4 |     \"I_1\": 1,\n> 5 |     \"S_2\": false\n    |            ^^^^^\n  6 |   }\n  7 | }\n  8 |",
       "dataPath": "/type-object-patternProperties/S_2",
       "error": {
          "keyword": "type",

@@ -1,6 +1,6 @@
 [
    {
-      "codeFrame": "  1 | {\n> 2 |   \"type-string-formatMinimum-date\": \"2020-01-01\"\n    |                                     ^^^^^^^^^^^^\n  3 | }\n  4 | ",
+      "codeFrame": "  1 | {\n> 2 |   \"type-string-formatMinimum-date\": \"2020-01-01\"\n    |                                     ^^^^^^^^^^^^\n  3 | }\n  4 |",
       "dataPath": "/type-string-formatMinimum-date",
       "error": {
          "keyword": "formatMinimum",

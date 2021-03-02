@@ -382,7 +382,7 @@
      |                               ^
   93 |   "type-string-pattern": "not phone number"
   94 | }
-  95 | 
+  95 |
 
 /type-string-pattern should match pattern "^(\([0-9]{3}\))?[0-9]{3}-[0-9]{4}$"
   91 |   "type-string-null": false,
@@ -390,4 +390,4 @@
 > 93 |   "type-string-pattern": "not phone number"
      |                          ^^^^^^^^^^^^^^^^^^
   94 | }
-  95 | 
+  95 |

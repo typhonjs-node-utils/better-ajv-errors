@@ -45,7 +45,7 @@
       "message": "/type-array-contains/2 should be boolean"
    },
    {
-      "codeFrame": "  4 |     \"not boolean\",\n  5 |     \"not boolean\",\n> 6 |     \"not boolean\"\n    |     ^^^^^^^^^^^^^\n  7 |   ]\n  8 | }\n  9 | ",
+      "codeFrame": "  4 |     \"not boolean\",\n  5 |     \"not boolean\",\n> 6 |     \"not boolean\"\n    |     ^^^^^^^^^^^^^\n  7 |   ]\n  8 | }\n  9 |",
       "dataPath": "/type-array-contains/3",
       "error": {
          "keyword": "type",

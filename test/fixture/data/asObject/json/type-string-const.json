@@ -1,7 +1,7 @@
 {
    "/type-string-const": [
       {
-         "codeFrame": "  1 | {\n> 2 |   \"type-string-const\": \"not const\"\n    |                        ^^^^^^^^^^^\n  3 | }\n  4 | ",
+         "codeFrame": "  1 | {\n> 2 |   \"type-string-const\": \"not const\"\n    |                        ^^^^^^^^^^^\n  3 | }\n  4 |",
          "dataPath": "/type-string-const",
          "error": {
             "keyword": "const",

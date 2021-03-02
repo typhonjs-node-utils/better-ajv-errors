@@ -722,7 +722,7 @@
    ],
    "/type-string-null-boolean": [
       {
-         "codeFrame": "  90 |   \"type-string-minLength\": \"need6\",\n  91 |   \"type-string-null\": false,\n> 92 |   \"type-string-null-boolean\": 1,\n     |                               ^\n  93 |   \"type-string-pattern\": \"not phone number\"\n  94 | }\n  95 | ",
+         "codeFrame": "  90 |   \"type-string-minLength\": \"need6\",\n  91 |   \"type-string-null\": false,\n> 92 |   \"type-string-null-boolean\": 1,\n     |                               ^\n  93 |   \"type-string-pattern\": \"not phone number\"\n  94 | }\n  95 |",
          "dataPath": "/type-string-null-boolean",
          "error": {
             "keyword": "type",
@@ -743,7 +743,7 @@
    ],
    "/type-string-pattern": [
       {
-         "codeFrame": "  91 |   \"type-string-null\": false,\n  92 |   \"type-string-null-boolean\": 1,\n> 93 |   \"type-string-pattern\": \"not phone number\"\n     |                          ^^^^^^^^^^^^^^^^^^\n  94 | }\n  95 | ",
+         "codeFrame": "  91 |   \"type-string-null\": false,\n  92 |   \"type-string-null-boolean\": 1,\n> 93 |   \"type-string-pattern\": \"not phone number\"\n     |                          ^^^^^^^^^^^^^^^^^^\n  94 | }\n  95 |",
          "dataPath": "/type-string-pattern",
          "error": {
             "keyword": "pattern",
