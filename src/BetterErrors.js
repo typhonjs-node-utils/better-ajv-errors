@@ -443,9 +443,10 @@ function formatItemArray(array, { conjunction = 'or', quote = false } = {})
 
    switch (array.length)
    {
-      /* istanbul ignore next */
+      /* c8 ignore start */
       case 0:
          break;
+      /* c8 ignore stop */
 
       case 1:
          result = quote ? `'${array[0]}'` : `${array[0]}`;
