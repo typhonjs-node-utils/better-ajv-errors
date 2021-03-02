@@ -1,5 +1,5 @@
-const { assert, expect }   = require('chai');
-const BetterErrors         = require('../../src/BetterErrors');
+import { assert, expect }  from 'chai';
+import BetterErrors        from '../../src/BetterErrors.js';
 
 const s_FUNCTIONS = ['asArray', 'asObject'];
 

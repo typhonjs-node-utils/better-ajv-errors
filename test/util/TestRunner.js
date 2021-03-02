@@ -1,19 +1,21 @@
-const fs                = require('fs');
-const path              = require('path');
+import fs            from 'fs';
+import path          from 'path';
 
-const Ajv               = require("ajv").default;
-const chai              = require('chai');
+import Ajv           from 'ajv';
+import ajvErrors     from 'ajv-errors';
+import ajvFormats    from 'ajv-formats';
+import chai          from 'chai';
 
-const BetterErrors      = require('../../src/BetterErrors');
+import BetterErrors  from '../../src/BetterErrors.js';
 
 // Will create any results that are missing when true.
-const s_CREATE_RESULTS  = true;
+const s_CREATE_RESULTS  = false;
 
-const ajv = new Ajv({ allErrors: true, allowUnionTypes: true });
+const ajv = new Ajv.default({ allErrors: true, allowUnionTypes: true });
 
 // Ajv options allErrors & all-formats are required
-require("ajv-errors")(ajv);
-require("ajv-formats")(ajv);
+ajvErrors(ajv);
+ajvFormats(ajv);
 
 const schema = JSON.parse(fs.readFileSync('./test/fixture/schema/test.json', 'utf8'));
 
@@ -22,7 +24,7 @@ const validate = ajv.compile(schema);
 /**
  * Provides convenience methods to setup Mocha tests based on JSON data files.
  */
-class TestRunner
+export default class TestRunner
 {
    /**
     * Handles invalid validation tests opening a source JSON file and comparing validation errors to stored error data.
@@ -157,5 +159,3 @@ class TestRunner
       });
    }
 }
-
-module.exports = TestRunner;

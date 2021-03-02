@@ -1,5 +1,5 @@
-const { expect }     = require('chai');
-const BetterErrors   = require('../../src/BetterErrors');
+import { expect }    from 'chai';
+import BetterErrors  from '../../src/BetterErrors.js';
 
 /**
  * Tests all of the API options regarding invoking better errors as an external consumer.
@@ -87,7 +87,7 @@ const s_RESULTS_NO_OPTIONS =
 const s_RESULTS_JUST_FILE_WITH_HIGHLIGHTCODE =
 [
    {
-      codeFrame: "\u001b[0m \u001b[90m 1 | \u001b[39m{\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 2 | \u001b[39m   \u001b[32m\"author\"\u001b[39m\u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   | \u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 3 | \u001b[39m}\u001b[0m",
+      codeFrame: "\u001b[0m \u001b[90m 1 |\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 2 |\u001b[39m    \u001b[32m\"author\"\u001b[39m\u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 3 |\u001b[39m }\u001b[0m",
       dataPath: "/author",
       error: {
          keyword: "type",

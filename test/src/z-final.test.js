@@ -1,9 +1,9 @@
-const fs                   = require('fs');
+import fs                  from 'fs';
 
-const { assert, expect }   = require('chai');
-const dircompare           = require('dir-compare');
+import { assert, expect }  from 'chai';
+import dircompare          from 'dir-compare';
 
-const BetterErrors         = require('../../src/BetterErrors');
+import BetterErrors        from '../../src/BetterErrors.js';
 
 /**
  * Tests all of the API options regarding invoking better errors as an external consumer.

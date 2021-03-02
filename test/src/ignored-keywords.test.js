@@ -1,5 +1,5 @@
-const { expect }     = require('chai');
-const BetterErrors   = require('../../src/BetterErrors');
+import { expect }    from 'chai';
+import BetterErrors  from '../../src/BetterErrors.js';
 
 const s_FUNCTIONS = ['asArray', 'asObject'];
 const s_RESULTS = { asArray: [], asObject: {} };

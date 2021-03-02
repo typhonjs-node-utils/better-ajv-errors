@@ -1,6 +1,6 @@
-const { codeFrameColumns } = require('@babel/code-frame');
-const jsonMap              = require('json-source-map');
-const hash                 = require('object-hash');
+import { codeFrameColumns }   from '@babel/code-frame';
+import jsonMap                from 'json-source-map';
+import hash                   from 'object-hash';
 
 /**
  * Provides a mechanism to convert AJV validation errors output to human readable messages including optional
@@ -12,7 +12,7 @@ const hash                 = require('object-hash');
  * create iterators that also have optional regex parsing capabilities to iterate over specific JSON pointer error
  * data.
  */
-class BetterErrors
+export default class BetterErrors
 {
    /**
     * Accepts an array of `ajv` errors and returns an array of JSON data with better error messages suitable for
@@ -184,8 +184,6 @@ class BetterErrors
       return result;
    }
 }
-
-module.exports = BetterErrors;
 
 /**
  * Stores converted AJV errors in an array.
