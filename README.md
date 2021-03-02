@@ -4,7 +4,7 @@
 [![Code Style](https://img.shields.io/badge/code%20style-allman-yellowgreen.svg?style=flat)](https://en.wikipedia.org/wiki/Indent_style#Allman_style)
 [![License](https://img.shields.io/badge/license-MPLv2-yellowgreen.svg?style=flat)](https://github.com/typhonjs-node-utils/better-ajv-errors/blob/main/LICENSE)
 
-![Build Status](https://github.com/typhonjs-node-utils/better-ajv-errors/workflows/CI/CD/badge.svg)
+[![Build Status](https://github.com/typhonjs-node-utils/better-ajv-errors/workflows/CI/CD/badge.svg)](#)
 [![Coverage](https://img.shields.io/codecov/c/github/typhonjs-node-utils/better-ajv-errors.svg)](https://codecov.io/github/typhonjs-node-utils/better-ajv-errors)
 [![Dependency Status](https://david-dm.org/typhonjs-node-utils/better-ajv-errors.svg)](https://david-dm.org/typhonjs-node-utils/better-ajv-errors)
 
