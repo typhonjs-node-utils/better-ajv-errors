@@ -60,6 +60,20 @@ export default class BetterErrors
    }
 
    /**
+    * @param {object[]} ajvErrors - An array of `ajv` errors.
+    *
+    * @param {object}   options - An array options.
+    *
+    * @param {RegExp}   [regex] - An optional regex to filter errors for matching JSON pointers.
+    *
+    * @returns {string}
+    */
+   static asString(ajvErrors, options, regex)
+   {
+      return BetterErrors.toString(BetterErrors.asArray(ajvErrors, options), regex);
+   }
+
+   /**
     * Returns an integer length for the better errors array or object.
     *
     * @param {object}   betterErrors - Better errors array or object.
@@ -182,6 +196,25 @@ export default class BetterErrors
       }
 
       return result;
+   }
+
+   /**
+    * Wires up ValidateManifest on the plugin eventbus.
+    *
+    * @param {object} ev - PluginEvent - The plugin event.
+    *
+    * @see https://www.npmjs.com/package/typhonjs-plugin-manager
+    *
+    * @ignore
+    */
+   static onPluginLoad(ev)
+   {
+      const eventbus = ev.eventbus;
+
+      eventbus.on(`typhonjs:util:better:ajv:errors:as:array`, BetterErrors.asArray);
+      eventbus.on(`typhonjs:util:better:ajv:errors:as:object`, BetterErrors.asObject);
+      eventbus.on(`typhonjs:util:better:ajv:errors:as:string`, BetterErrors.asString);
+      eventbus.on(`typhonjs:util:better:ajv:errors:to:string`, BetterErrors.toString);
    }
 }
 
