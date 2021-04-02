@@ -19,8 +19,8 @@ describe('betterErrors compare output', () =>
       {
          result.diffSet.forEach((diff) =>
          {
-            console.log(`Difference - name1: ${diff.name1}, type1: ${diff.type1}, name2: ${diff.name2}, `
-             + `type2: ${diff.type2}, state: ${diff.state}`);
+            console.log(`Difference - name1: ${diff.name1}, type1: ${diff.type1}, name2: ${diff.name2}, ` +
+             `type2: ${diff.type2}, state: ${diff.state}`);
          });
       }
 
@@ -36,8 +36,8 @@ describe('betterErrors compare output', () =>
       {
          result.diffSet.forEach((diff) =>
          {
-            console.log(`Difference - name1: ${diff.name1}, type1: ${diff.type1}, name2: ${diff.name2}, `
-             + `type2: ${diff.type2}, state: ${diff.state}`);
+            console.log(`Difference - name1: ${diff.name1}, type1: ${diff.type1}, name2: ${diff.name2}, ` +
+             `type2: ${diff.type2}, state: ${diff.state}`);
          });
       }
 
