@@ -1,7 +1,7 @@
 {
   "name": "@typhonjs-node-utils/better-ajv-errors",
   "description": "Provides parsing of `ajv` errors output to format error messages and create code frames.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "typhonrt",
   "bugs": "https://github.com/typhonjs-node-utils/better-ajv-errors/issues",
   "license": "MPL-2.0",
@@ -14,16 +14,11 @@
     "object-hash": "^2.0.0"
   },
   "devDependencies": {
+    "@typhonjs-node-utils/build-test": "^0.1.0",
     "ajv": "^7.0.0",
     "ajv-errors": "^2.0.0",
     "ajv-formats": "^1.0.0",
-    "c8": "^7.0.0",
-    "chai": "^4.0.0",
-    "codecov": "^3.0.0",
-    "dir-compare": "^3.0.0",
-    "eslint": "^7.0.0",
-    "mocha": "^8.0.0",
-    "typhonjs-config-eslint": "^0.6.0"
+    "dir-compare": "^3.0.0"
   },
   "engines": {
     "node": ">=14.0.0"
