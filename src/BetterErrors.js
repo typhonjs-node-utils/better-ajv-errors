@@ -348,6 +348,9 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
       const dataPath = error.dataPath;
       const keyword = error.keyword;
 
+      // Provide a space between dataPath and message only if dataPath is defined.
+      const space = dataPath !== '' ? ' ' : '';
+
       let codeFrame = '';
       let message = '';
       let jsonPointerLocs = null;
@@ -382,7 +385,7 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
          case 'propertyNames':
          case 'required':
          case 'uniqueItems':
-            message = `${dataPath} ${error.message}`;
+            message = `${dataPath}${space}${error.message}`;
 
             // If there is an associated key switch to the key otherwise stay on the 'value' as the pointer index.
             if (jsonPointerLocs !== null)
@@ -406,7 +409,7 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
 
          // Use the `additionalProperty` param value to highlight the specific key.
          case 'additionalProperties':
-            message = `${dataPath} ${error.message}: '${error.params.additionalProperty}'`;
+            message = `${dataPath}${space}${error.message}: '${error.params.additionalProperty}'`;
 
             if (jsonData !== null)
             {
@@ -423,22 +426,24 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
 
          // Use the `allowedValue` param to include the actual const value in the message.
          case 'const':
-            message = `${dataPath} ${error.message}: '${error.params.allowedValue}'`;
+            message = `${dataPath}${space}${error.message}: '${error.params.allowedValue}'`;
             break;
 
          // Use the `allowedValues` param to include the actual enum values in the message.
          case 'enum':
-            message = `${dataPath} ${error.message}: ${formatItemArray(error.params.allowedValues, { quote: true })}`;
+            message = `${dataPath}${space}${error.message}: ${formatItemArray(error.params.allowedValues, 
+             { quote: true })}`;
             break;
 
          // Use the `type` param to include the actual type values when more than one apply.
          case 'type':
-            message = Array.isArray(error.params.type) ? `${dataPath} should be ${formatItemArray(error.params.type)}` :
-             `${dataPath} ${error.message}`;
+            message = Array.isArray(error.params.type) ?
+             `${dataPath}${space}should be ${formatItemArray(error.params.type)}` :
+              `${dataPath}${space}${error.message}`;
             break;
 
          default:
-            message = `${dataPath} ${error.message}`;
+            message = `${dataPath}${space}${error.message}`;
             break;
       }
 
