@@ -1,7 +1,7 @@
 {
   "name": "@typhonjs-node-utils/better-ajv-errors",
   "description": "Provides parsing of `ajv` errors output to format error messages and create code frames.",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "typhonrt",
   "bugs": "https://github.com/typhonjs-node-utils/better-ajv-errors/issues",
   "license": "MPL-2.0",
@@ -36,7 +36,8 @@
   "repository": "typhonjs-node-utils/better-ajv-errors",
   "scripts": {
     "eslint": "eslint .",
-    "prepublishOnly": "npm run eslint && npm run test",
+    "posttest": "npm run eslint",
+    "prepublishOnly": "npm run test",
     "test": "c8 --reporter=lcov --reporter=text-summary mocha -colors \"test/src/**/*.test.js\""
   }
 }

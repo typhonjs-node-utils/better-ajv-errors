@@ -1,6 +1,6 @@
-import { codeFrameColumns }   from '@babel/code-frame';
-import jsonMap                from 'json-source-map';
-import hash                   from 'object-hash';
+import CodeFrame  from '@babel/code-frame';
+import jsonMap    from 'json-source-map';
+import hash       from 'object-hash';
 
 /**
  * Provides a mechanism to convert AJV validation errors output to human readable messages including optional
@@ -29,7 +29,7 @@ export default class BetterErrors
     *
     * @param {number}   [options.wrapLength] - An integer specifying a line length to wrap the output message.
     *
-    * @returns {{codeFrame: string, error: object, keyword: string, message: string, dataPath: string}[]}
+    * @returns {{codeFrame: string, error: object, keyword: string, message: string, dataPath: string}[]} -
     */
    static asArray(ajvErrors, options)
    {
@@ -52,7 +52,7 @@ export default class BetterErrors
     *
     * @param {number}   [options.wrapLength] - An integer specifying a line length to wrap the output message.
     *
-    * @returns {{codeFrame: string, error: object, keyword: string, message: string, dataPath: string}[]}
+    * @returns {{codeFrame: string, error: object, keyword: string, message: string, dataPath: string}[]} -
     */
    static asObject(ajvErrors, options)
    {
@@ -60,13 +60,15 @@ export default class BetterErrors
    }
 
    /**
+    * Returns a string representation of the AJV errors.
+    *
     * @param {object[]} ajvErrors - An array of `ajv` errors.
     *
     * @param {object}   options - An array options.
     *
     * @param {RegExp}   [regex] - An optional regex to filter errors for matching JSON pointers.
     *
-    * @returns {string}
+    * @returns {string} -
     */
    static asString(ajvErrors, options, regex)
    {
@@ -80,7 +82,7 @@ export default class BetterErrors
     *
     * @param {RegExp}   [regex] - An optional regex to filter errors for matching JSON pointers.
     *
-    * @returns {number}
+    * @returns {number} -
     */
    static length(betterErrors, regex)
    {
@@ -101,6 +103,8 @@ export default class BetterErrors
     * @param {object}   betterErrors - Better errors array or object.
     *
     * @param {RegExp}   [regex] - An optional regex to filter errors for matching JSON pointers.
+    *
+    * @yields
     */
    static *entries(betterErrors, regex)
    {
@@ -118,6 +122,8 @@ export default class BetterErrors
     * @param {object}   betterErrors - Better errors array or object.
     *
     * @param {RegExp}   [regex] - An optional regex to filter errors for matching JSON pointers.
+    *
+    * @yields
     */
    static *iterator(betterErrors, regex)
    {
@@ -181,7 +187,7 @@ export default class BetterErrors
     *
     * @param {RegExp}   [regex] - An optional regex to filter errors for matching JSON pointers.
     *
-    * @returns {string}
+    * @returns {string} -
     */
    static toString(betterErrors, regex)
    {
@@ -223,18 +229,18 @@ export default class BetterErrors
  */
 class HandlerArray
 {
-   /**
-    */
    constructor() { this._results = []; }
 
    /**
     * Returns the data gathered.
-    * @returns {[]}
+    *
+    * @returns {object[]} -
     */
    get data() { return this._results; }
 
    /**
     * Pushes the converted AJV error to the results array.
+    *
     * @param {object}   data - better error data for a single AJV error.
     */
    push(data) { this._results.push(data); }
@@ -254,7 +260,8 @@ class HandlerObject
 
    /**
     * Returns the data gathered.
-    * @returns {[]}
+    *
+    * @returns {object} -
     */
    get data()
    {
@@ -263,6 +270,7 @@ class HandlerObject
 
    /**
     * Pushes the converted AJV error to the results object.
+    *
     * @param {object}   data - better error data for a single AJV error.
     */
    push(data)
@@ -296,7 +304,7 @@ class HandlerObject
  *
  * @param {number}   [options.wrapLength] - An integer specifying a line length to wrap the output message.
  *
- * @returns {{codeFrame: string, error: object, keyword: string, message: string, dataPath: string}[]}
+ * @returns {{codeFrame: string, error: object, keyword: string, message: string, dataPath: string}[]} -
  */
 function betterErrors(errors, handler, { file, highlightCode = true, wrapLength } = {})
 {
@@ -469,9 +477,11 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
  *
  * @param {string[]} array - Array to format.
  *
- * @param {string} [conjunction='or'] - Optional conjunction.
+ * @param {object} [options] - Options
  *
- * @param {boolean} [quote=false] - Optional quoting of items.
+ * @param {string} [options.conjunction='or'] - Optional conjunction.
+ *
+ * @param {boolean} [options.quote=false] - Optional quoting of items.
  *
  * @returns {string} Formatted string.
  */
@@ -523,13 +533,15 @@ function formatItemArray(array, { conjunction = 'or', quote = false } = {})
  * @param {string}   jsonPointerIndex - A string indicating 'key' or 'value' determining the attribute type to
  *                                      highlight.
  *
- * @param {boolean}  codeFrameNoColumn - A boolean indicating if columns should be highlighted
+ * @param {object}  options - Options
  *
- * @param {boolean}  [highlightCode=true] - Highlight code w/ escape colors.
+ * @param {boolean}  options.codeFrameNoColumn - A boolean indicating if columns should be highlighted
  *
- * @param {number}   [linesAbove=2] - Lines to include above location indicated in `jsonPointerLocs`
+ * @param {boolean}  options.highlightCode - Highlight code w/ escape colors.
  *
- * @param {number}   [linesBelow=3] - Lines to include below location indicated in `jsonPointerLocs`
+ * @param {number}   [options.linesAbove=2] - Lines to include above location indicated in `jsonPointerLocs`
+ *
+ * @param {number}   [options.linesBelow=3] - Lines to include below location indicated in `jsonPointerLocs`
  *
  * @returns {string} - The code frame captured.
  */
@@ -559,7 +571,7 @@ function generateCodeFrame(file, jsonPointerLocs, jsonPointerIndex,
       };
    }
 
-   return codeFrameColumns(file, location, { highlightCode, linesAbove, linesBelow });
+   return CodeFrame.codeFrameColumns(file, location, { highlightCode, linesAbove, linesBelow });
 }
 
 /**

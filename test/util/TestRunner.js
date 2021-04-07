@@ -102,7 +102,7 @@ export default class TestRunner
     * @param {string} dir - Directory to read.
     * @param {string} extension - File extension to read.
     *
-    * @returns {Map<string, object>}
+    * @returns {Map<string, object>} -
     */
    static loadFiles(dir = '.', extension = '.json')
    {
