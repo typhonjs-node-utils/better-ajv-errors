@@ -217,10 +217,10 @@ export default class BetterErrors
    {
       const eventbus = ev.eventbus;
 
-      eventbus.on(`typhonjs:util:better:ajv:errors:as:array`, BetterErrors.asArray);
-      eventbus.on(`typhonjs:util:better:ajv:errors:as:object`, BetterErrors.asObject);
-      eventbus.on(`typhonjs:util:better:ajv:errors:as:string`, BetterErrors.asString);
-      eventbus.on(`typhonjs:util:better:ajv:errors:to:string`, BetterErrors.toString);
+      eventbus.on(`typhonjs:utils:better:ajv:errors:as:array`, BetterErrors.asArray, BetterErrors, true);
+      eventbus.on(`typhonjs:utils:better:ajv:errors:as:object`, BetterErrors.asObject, BetterErrors, true);
+      eventbus.on(`typhonjs:utils:better:ajv:errors:as:string`, BetterErrors.asString, BetterErrors, true);
+      eventbus.on(`typhonjs:utils:better:ajv:errors:to:string`, BetterErrors.toString, BetterErrors, true);
    }
 }
 
