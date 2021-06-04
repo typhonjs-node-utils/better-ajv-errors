@@ -217,10 +217,20 @@ export default class BetterErrors
    {
       const eventbus = ev.eventbus;
 
-      eventbus.on(`typhonjs:utils:better:ajv:errors:as:array`, BetterErrors.asArray, BetterErrors, true);
-      eventbus.on(`typhonjs:utils:better:ajv:errors:as:object`, BetterErrors.asObject, BetterErrors, true);
-      eventbus.on(`typhonjs:utils:better:ajv:errors:as:string`, BetterErrors.asString, BetterErrors, true);
-      eventbus.on(`typhonjs:utils:better:ajv:errors:to:string`, BetterErrors.toString, BetterErrors, true);
+      const options = ev.pluginOptions;
+
+      let guard = true;
+
+      // Apply any plugin options.
+      if (typeof options === 'object')
+      {
+         if (typeof options.guard === 'boolean') { guard = options.guard; }
+      }
+
+      eventbus.on(`typhonjs:utils:better:ajv:errors:as:array`, BetterErrors.asArray, BetterErrors, { guard });
+      eventbus.on(`typhonjs:utils:better:ajv:errors:as:object`, BetterErrors.asObject, BetterErrors, { guard });
+      eventbus.on(`typhonjs:utils:better:ajv:errors:as:string`, BetterErrors.asString, BetterErrors, { guard });
+      eventbus.on(`typhonjs:utils:better:ajv:errors:to:string`, BetterErrors.toString, BetterErrors, { guard });
    }
 }
 
@@ -578,6 +588,7 @@ function generateCodeFrame(file, jsonPointerLocs, jsonPointerIndex,
  * Wraps a string to the given line length.
  *
  * @param {string}   string - String to wrap.
+ *
  * @param {number}   [length=80] - Integer line length.
  *
  * @returns {string} Wrapped string.

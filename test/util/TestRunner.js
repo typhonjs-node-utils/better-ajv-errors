@@ -30,6 +30,7 @@ export default class TestRunner
     * Handles invalid validation tests opening a source JSON file and comparing validation errors to stored error data.
     *
     * @param {string}   dirPath - The directory to open error and invalid data.
+    *
     * @param {string}   testFunction - The test function to test and directory for results.
     */
    static invalid(dirPath, testFunction)
@@ -100,6 +101,7 @@ export default class TestRunner
     * Returns a Map of all files found in the directory provided.
     *
     * @param {string} dir - Directory to read.
+    *
     * @param {string} extension - File extension to read.
     *
     * @returns {Map<string, object>} -
