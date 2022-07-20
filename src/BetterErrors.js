@@ -29,7 +29,7 @@ export default class BetterErrors
     *
     * @param {number}   [options.wrapLength] - An integer specifying a line length to wrap the output message.
     *
-    * @returns {{codeFrame: string, error: object, keyword: string, message: string, dataPath: string}[]} -
+    * @returns {{codeFrame: string, error: object, keyword: string, message: string, instancePath: string}[]} -
     */
    static asArray(ajvErrors, options)
    {
@@ -52,7 +52,7 @@ export default class BetterErrors
     *
     * @param {number}   [options.wrapLength] - An integer specifying a line length to wrap the output message.
     *
-    * @returns {{codeFrame: string, error: object, keyword: string, message: string, dataPath: string}[]} -
+    * @returns {{codeFrame: string, error: object, keyword: string, message: string, instancePath: string}[]} -
     */
    static asObject(ajvErrors, options)
    {
@@ -143,7 +143,7 @@ export default class BetterErrors
          {
             if (regex)
             {
-               if (regex.test(error.dataPath))
+               if (regex.test(error.instancePath))
                {
                   yield error;
                }
@@ -156,16 +156,16 @@ export default class BetterErrors
       }
       else if (typeof betterErrors === 'object')
       {
-         for (const dataPath in betterErrors)
+         for (const instancePath in betterErrors)
          {
             // eslint-disable-next-line no-prototype-builtins
-            if (betterErrors.hasOwnProperty(dataPath))
+            if (betterErrors.hasOwnProperty(instancePath))
             {
-               for (const error of betterErrors[dataPath])
+               for (const error of betterErrors[instancePath])
                {
                   if (regex)
                   {
-                     if (regex.test(error.dataPath))
+                     if (regex.test(error.instancePath))
                      {
                         yield error;
                      }
@@ -285,13 +285,13 @@ class HandlerObject
     */
    push(data)
    {
-      if (this._results[data.dataPath] === void 0)
+      if (this._results[data.instancePath] === void 0)
       {
-         this._results[data.dataPath] = [data];
+         this._results[data.instancePath] = [data];
       }
       else
       {
-         this._results[data.dataPath].push(data);
+         this._results[data.instancePath].push(data);
       }
    }
 }
@@ -314,7 +314,7 @@ class HandlerObject
  *
  * @param {number}   [options.wrapLength] - An integer specifying a line length to wrap the output message.
  *
- * @returns {{codeFrame: string, error: object, keyword: string, message: string, dataPath: string}[]} -
+ * @returns {{codeFrame: string, error: object, keyword: string, message: string, instancePath: string}[]} -
  */
 function betterErrors(errors, handler, { file, highlightCode = true, wrapLength } = {})
 {
@@ -344,7 +344,7 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
    for (const error of errors)
    {
       if (typeof error !== 'object') { continue; }
-      if (typeof error.dataPath !== 'string') { continue; }
+      if (typeof error.instancePath !== 'string') { continue; }
       if (typeof error.keyword !== 'string') { continue; }
 
       // Create a hash of the error and test against the duplicate set to avoid handling duplicate errors.
@@ -363,11 +363,11 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
          error.schemaPath = tempSchemaPath;
       }
 
-      const dataPath = error.dataPath;
+      const instancePath = error.instancePath;
       const keyword = error.keyword;
 
-      // Provide a space between dataPath and message only if dataPath is defined.
-      const space = dataPath !== '' ? ' ' : '';
+      // Provide a space between instancePath and message only if instancePath is defined.
+      const space = instancePath !== '' ? ' ' : '';
 
       let codeFrame = '';
       let message = '';
@@ -378,7 +378,7 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
 
       if (jsonData !== null)
       {
-         jsonPointerLocs = JSON.parse(JSON.stringify(jsonData.pointers[dataPath]));
+         jsonPointerLocs = JSON.parse(JSON.stringify(jsonData.pointers[instancePath]));
          jsonPointerLines = jsonPointerLocs.valueEnd.line - jsonPointerLocs.value.line;
       }
 
@@ -403,7 +403,7 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
          case 'propertyNames':
          case 'required':
          case 'uniqueItems':
-            message = `${dataPath}${space}${error.message}`;
+            message = `${instancePath}${space}${error.message}`;
 
             // If there is an associated key switch to the key otherwise stay on the 'value' as the pointer index.
             if (jsonPointerLocs !== null)
@@ -427,12 +427,12 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
 
          // Use the `additionalProperty` param value to highlight the specific key.
          case 'additionalProperties':
-            message = `${dataPath}${space}${error.message}: '${error.params.additionalProperty}'`;
+            message = `${instancePath}${space}${error.message}: '${error.params.additionalProperty}'`;
 
             if (jsonData !== null)
             {
                jsonPointerLocs = JSON.parse(JSON.stringify(
-                jsonData.pointers[`${dataPath}/${error.params.additionalProperty}`]));
+                jsonData.pointers[`${instancePath}/${error.params.additionalProperty}`]));
 
                // If there is an associated key switch to the key otherwise stay on the 'value' as the pointer index.
                if (jsonPointerLocs !== null && jsonPointerLocs.key !== void 0)
@@ -444,24 +444,24 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
 
          // Use the `allowedValue` param to include the actual const value in the message.
          case 'const':
-            message = `${dataPath}${space}${error.message}: '${error.params.allowedValue}'`;
+            message = `${instancePath}${space}${error.message}: '${error.params.allowedValue}'`;
             break;
 
          // Use the `allowedValues` param to include the actual enum values in the message.
          case 'enum':
-            message = `${dataPath}${space}${error.message}: ${formatItemArray(error.params.allowedValues, 
+            message = `${instancePath}${space}${error.message}: ${formatItemArray(error.params.allowedValues, 
              { quote: true })}`;
             break;
 
          // Use the `type` param to include the actual type values when more than one apply.
          case 'type':
             message = Array.isArray(error.params.type) ?
-             `${dataPath}${space}should be ${formatItemArray(error.params.type)}` :
-              `${dataPath}${space}${error.message}`;
+             `${instancePath}${space}should be ${formatItemArray(error.params.type)}` :
+              `${instancePath}${space}${error.message}`;
             break;
 
          default:
-            message = `${dataPath}${space}${error.message}`;
+            message = `${instancePath}${space}${error.message}`;
             break;
       }
 
@@ -476,7 +476,7 @@ function betterErrors(errors, handler, { file, highlightCode = true, wrapLength 
          codeFrame = generateCodeFrame(file, jsonPointerLocs, jsonPointerIndex, { codeFrameNoColumn, highlightCode });
       }
 
-      handler.push({ codeFrame, dataPath, error, keyword, message });
+      handler.push({ codeFrame, instancePath, error, keyword, message });
    }
 
    return handler.data;
