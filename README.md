@@ -10,3 +10,8 @@
 
 Provides parsing of `ajv` errors output to format error messages and create code frames.
 
+The following releases correspond to AJV releases:
+- Use `^0.1.0` release for AJV v7.
+- Use `^0.2.0` release for AJV v8.
+
+
