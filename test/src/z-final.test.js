@@ -46,18 +46,26 @@ describe('betterErrors compare output', () =>
 
    it(`Test toString() on all-errors (asArray)`, () =>
    {
-      const betterErrors = JSON.parse(fs.readFileSync('./test/fixture/data/asArray/json/all-errors.json', 'utf-8'));
-      const betterLog = fs.readFileSync('./test/fixture/data/asArray/log/all-errors.log', 'utf-8');
+      let betterErrors = JSON.parse(fs.readFileSync('./test/fixture/data/asArray/json/all-errors.json', 'utf-8'));
+      let betterLog = fs.readFileSync('./test/fixture/data/asArray/log/all-errors.log', 'utf-8');
 
-      expect(BetterErrors.toString(betterErrors)).to.be.deep.equal(betterLog);
+      // Must strip line terminators for correct tests across OSes.
+      betterErrors = BetterErrors.toString(betterErrors).replace(/[\r\n]/gm, '');
+      betterLog = betterLog.replace(/[\r\n]/gm, '');
+
+      expect(betterErrors).to.be.deep.equal(betterLog);
    });
 
    it(`Test toString() on all-errors (asObject)`, () =>
    {
-      const betterErrors = JSON.parse(fs.readFileSync('./test/fixture/data/asObject/json/all-errors.json', 'utf-8'));
-      const betterLog = fs.readFileSync('./test/fixture/data/asObject/log/all-errors.log', 'utf-8');
+      let betterErrors = JSON.parse(fs.readFileSync('./test/fixture/data/asObject/json/all-errors.json', 'utf-8'));
+      let betterLog = fs.readFileSync('./test/fixture/data/asObject/log/all-errors.log', 'utf-8');
 
-      expect(BetterErrors.toString(betterErrors)).to.be.deep.equal(betterLog);
+      // Must strip line terminators for correct tests across OSes.
+      betterErrors = BetterErrors.toString(betterErrors).replace(/[\r\n]/gm, '');
+      betterLog = betterLog.replace(/[\r\n]/gm, '');
+
+      expect(betterErrors).to.be.deep.equal(betterLog);
    });
 
    it(`Test toString() regex against first two entries of type-array-contains log (asArray)`, () =>
