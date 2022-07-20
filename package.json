@@ -1,7 +1,7 @@
 {
   "name": "@typhonjs-utils/better-ajv-errors",
   "description": "Provides parsing of `ajv` errors output to format error messages and create code frames.",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "author": "Michael Leahy <support@typhonjs.io> (https://github.com/typhonrt)",
   "type": "module",
   "main": "./src/BetterErrors.js",
