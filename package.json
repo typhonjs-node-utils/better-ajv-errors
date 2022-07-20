@@ -15,7 +15,7 @@
     "object-hash": "^3.0.0"
   },
   "devDependencies": {
-    "@typhonjs-utils/build-test": "^0.2.0",
+    "@typhonjs-build-test/node": "^0.0.2",
     "ajv": "^8.0.0",
     "ajv-errors": "^3.0.0",
     "ajv-formats": "^2.0.0",
