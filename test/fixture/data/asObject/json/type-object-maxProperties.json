@@ -2,18 +2,18 @@
    "/type-object-maxProperties": [
       {
          "codeFrame": "  1 | {\n> 2 |   \"type-object-maxProperties\": {\n    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  3 |     \"one\": false,\n  4 |     \"too\": \"many\"\n  5 |   }",
-         "dataPath": "/type-object-maxProperties",
+         "instancePath": "/type-object-maxProperties",
          "error": {
             "keyword": "maxProperties",
-            "dataPath": "/type-object-maxProperties",
+            "instancePath": "/type-object-maxProperties",
             "params": {
                "limit": 1
             },
-            "message": "should NOT have more than 1 items",
+            "message": "must NOT have more than 1 properties",
             "schemaPath": "#/properties/type-object-maxProperties/maxProperties"
          },
          "keyword": "maxProperties",
-         "message": "/type-object-maxProperties should NOT have more than 1 items"
+         "message": "/type-object-maxProperties must NOT have more than 1 properties"
       }
    ]
 }

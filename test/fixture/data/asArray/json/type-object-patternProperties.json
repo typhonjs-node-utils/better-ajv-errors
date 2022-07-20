@@ -1,17 +1,17 @@
 [
    {
       "codeFrame": "  3 |     \"S_1\": \"ok\",\n  4 |     \"I_1\": 1,\n> 5 |     \"S_2\": false\n    |            ^^^^^\n  6 |   }\n  7 | }\n  8 |",
-      "dataPath": "/type-object-patternProperties/S_2",
+      "instancePath": "/type-object-patternProperties/S_2",
       "error": {
          "keyword": "type",
-         "dataPath": "/type-object-patternProperties/S_2",
+         "instancePath": "/type-object-patternProperties/S_2",
          "params": {
             "type": "string"
          },
-         "message": "should be string",
+         "message": "must be string",
          "schemaPath": "#/properties/type-object-patternProperties/patternProperties/%5ES_/type"
       },
       "keyword": "type",
-      "message": "/type-object-patternProperties/S_2 should be string"
+      "message": "/type-object-patternProperties/S_2 must be string"
    }
 ]

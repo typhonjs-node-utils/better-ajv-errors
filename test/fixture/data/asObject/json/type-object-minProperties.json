@@ -2,18 +2,18 @@
    "/type-object-minProperties": [
       {
          "codeFrame": "  1 | {\n> 2 |   \"type-object-minProperties\": {\n    |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  3 |     \"too\": \"few\"\n  4 |   }\n  5 | }",
-         "dataPath": "/type-object-minProperties",
+         "instancePath": "/type-object-minProperties",
          "error": {
             "keyword": "minProperties",
-            "dataPath": "/type-object-minProperties",
+            "instancePath": "/type-object-minProperties",
             "params": {
                "limit": 2
             },
-            "message": "should NOT have fewer than 2 items",
+            "message": "must NOT have fewer than 2 properties",
             "schemaPath": "#/properties/type-object-minProperties/minProperties"
          },
          "keyword": "minProperties",
-         "message": "/type-object-minProperties should NOT have fewer than 2 items"
+         "message": "/type-object-minProperties must NOT have fewer than 2 properties"
       }
    ]
 }

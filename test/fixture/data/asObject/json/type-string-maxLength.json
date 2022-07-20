@@ -2,18 +2,18 @@
    "/type-string-maxLength": [
       {
          "codeFrame": "  1 | {\n> 2 |   \"type-string-maxLength\": \"max3\"\n    |                            ^^^^^^\n  3 | }\n  4 |",
-         "dataPath": "/type-string-maxLength",
+         "instancePath": "/type-string-maxLength",
          "error": {
             "keyword": "maxLength",
-            "dataPath": "/type-string-maxLength",
+            "instancePath": "/type-string-maxLength",
             "params": {
                "limit": 3
             },
-            "message": "should NOT have more than 3 characters",
+            "message": "must NOT have more than 3 characters",
             "schemaPath": "#/properties/type-string-maxLength/maxLength"
          },
          "keyword": "maxLength",
-         "message": "/type-string-maxLength should NOT have more than 3 characters"
+         "message": "/type-string-maxLength must NOT have more than 3 characters"
       }
    ]
 }

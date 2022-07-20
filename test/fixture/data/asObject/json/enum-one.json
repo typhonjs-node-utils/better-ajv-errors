@@ -2,20 +2,20 @@
    "/enum-one": [
       {
          "codeFrame": "  1 | {\n> 2 |   \"enum-one\": false\n    |               ^^^^^\n  3 | }\n  4 |",
-         "dataPath": "/enum-one",
+         "instancePath": "/enum-one",
          "error": {
             "keyword": "enum",
-            "dataPath": "/enum-one",
+            "instancePath": "/enum-one",
             "params": {
                "allowedValues": [
                   "ONE"
                ]
             },
-            "message": "should be equal to one of the allowed values",
+            "message": "must be equal to one of the allowed values",
             "schemaPath": "#/properties/enum-one/enum"
          },
          "keyword": "enum",
-         "message": "/enum-one should be equal to one of the allowed values: 'ONE'"
+         "message": "/enum-one must be equal to one of the allowed values: 'ONE'"
       }
    ]
 }

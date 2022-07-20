@@ -2,18 +2,18 @@
    "/type-array-maxItems": [
       {
          "codeFrame": "  1 | {\n> 2 |   \"type-array-maxItems\": [\n    |   ^^^^^^^^^^^^^^^^^^^^^\n  3 |     \"onlyOneA\",\n  4 |     \"onlyOneB\"\n  5 |   ]",
-         "dataPath": "/type-array-maxItems",
+         "instancePath": "/type-array-maxItems",
          "error": {
             "keyword": "maxItems",
-            "dataPath": "/type-array-maxItems",
+            "instancePath": "/type-array-maxItems",
             "params": {
                "limit": 1
             },
-            "message": "should NOT have more than 1 items",
+            "message": "must NOT have more than 1 items",
             "schemaPath": "#/properties/type-array-maxItems/maxItems"
          },
          "keyword": "maxItems",
-         "message": "/type-array-maxItems should NOT have more than 1 items"
+         "message": "/type-array-maxItems must NOT have more than 1 items"
       }
    ]
 }

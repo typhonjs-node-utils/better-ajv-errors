@@ -2,18 +2,18 @@
    "/type-object-additionalProperties-type-boolean/three": [
       {
          "codeFrame": "  3 |     \"one\": \"valid\",\n  4 |     \"two\": false,\n> 5 |     \"three\": \"not boolean\"\n    |              ^^^^^^^^^^^^^\n  6 |   }\n  7 | }\n  8 |",
-         "dataPath": "/type-object-additionalProperties-type-boolean/three",
+         "instancePath": "/type-object-additionalProperties-type-boolean/three",
          "error": {
             "keyword": "type",
-            "dataPath": "/type-object-additionalProperties-type-boolean/three",
+            "instancePath": "/type-object-additionalProperties-type-boolean/three",
             "params": {
                "type": "boolean"
             },
-            "message": "should be boolean",
+            "message": "must be boolean",
             "schemaPath": "#/properties/type-object-additionalProperties-type-boolean/additionalProperties/type"
          },
          "keyword": "type",
-         "message": "/type-object-additionalProperties-type-boolean/three should be boolean"
+         "message": "/type-object-additionalProperties-type-boolean/three must be boolean"
       }
    ]
 }

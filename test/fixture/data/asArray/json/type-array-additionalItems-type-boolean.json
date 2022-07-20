@@ -1,17 +1,17 @@
 [
    {
       "codeFrame": "  3 |     \"is fine\",\n  4 |     true,\n> 5 |     \"not fine\"\n    |     ^^^^^^^^^^\n  6 |   ]\n  7 | }\n  8 |",
-      "dataPath": "/type-array-additionalItems-type-boolean/2",
+      "instancePath": "/type-array-additionalItems-type-boolean/2",
       "error": {
          "keyword": "type",
-         "dataPath": "/type-array-additionalItems-type-boolean/2",
+         "instancePath": "/type-array-additionalItems-type-boolean/2",
          "params": {
             "type": "boolean"
          },
-         "message": "should be boolean",
+         "message": "must be boolean",
          "schemaPath": "#/properties/type-array-additionalItems-type-boolean/additionalItems/type"
       },
       "keyword": "type",
-      "message": "/type-array-additionalItems-type-boolean/2 should be boolean"
+      "message": "/type-array-additionalItems-type-boolean/2 must be boolean"
    }
 ]

@@ -1,4 +1,4 @@
-/duplicate should be object
+/duplicate must be object
   1 | {
 > 2 |   "duplicate": false,
     |                ^^^^^
@@ -6,7 +6,7 @@
   4 |   "enum-three": false,
   5 |   "enum-two": false,
 
-/enum-one should be equal to one of the allowed values: 'ONE'
+/enum-one must be equal to one of the allowed values: 'ONE'
   1 | {
   2 |   "duplicate": false,
 > 3 |   "enum-one": false,
@@ -15,7 +15,7 @@
   5 |   "enum-two": false,
   6 |   "errorMessage": false,
 
-/enum-two should be equal to one of the allowed values: 'ONE' or 'TWO'
+/enum-two must be equal to one of the allowed values: 'ONE' or 'TWO'
   3 |   "enum-one": false,
   4 |   "enum-three": false,
 > 5 |   "enum-two": false,
@@ -24,7 +24,7 @@
   7 |   "not-type-string": "well it's a string",
   8 |   "type-array-additionalItems-false": [
 
-/enum-three should be equal to one of the allowed values: 'ONE', 'TWO', or 'THREE'
+/enum-three must be equal to one of the allowed values: 'ONE', 'TWO', or 'THREE'
   2 |   "duplicate": false,
   3 |   "enum-one": false,
 > 4 |   "enum-three": false,
@@ -42,7 +42,7 @@
   8 |   "type-array-additionalItems-false": [
   9 |     "is fine",
 
-/type-array-additionalItems-false should NOT have more than 2 items
+/type-array-additionalItems-false must NOT have more than 2 items
    6 |   "errorMessage": false,
    7 |   "not-type-string": "well it's a string",
 >  8 |   "type-array-additionalItems-false": [
@@ -51,7 +51,7 @@
   10 |     true,
   11 |     "not fine"
 
-/type-array-additionalItems-type-boolean/2 should be boolean
+/type-array-additionalItems-type-boolean/2 must be boolean
   14 |     "is fine",
   15 |     true,
 > 16 |     "not fine"
@@ -60,7 +60,7 @@
   18 |   "type-array-contains": [
   19 |     "not boolean",
 
-/type-array-contains/0 should be boolean
+/type-array-contains/0 must be boolean
   17 |   ],
   18 |   "type-array-contains": [
 > 19 |     "not boolean",
@@ -69,7 +69,7 @@
   21 |     "not boolean",
   22 |     "not boolean"
 
-/type-array-contains/1 should be boolean
+/type-array-contains/1 must be boolean
   18 |   "type-array-contains": [
   19 |     "not boolean",
 > 20 |     "not boolean",
@@ -78,7 +78,7 @@
   22 |     "not boolean"
   23 |   ],
 
-/type-array-contains/2 should be boolean
+/type-array-contains/2 must be boolean
   19 |     "not boolean",
   20 |     "not boolean",
 > 21 |     "not boolean",
@@ -87,7 +87,7 @@
   23 |   ],
   24 |   "type-array-entry-object-required": [{}],
 
-/type-array-contains/3 should be boolean
+/type-array-contains/3 must be boolean
   20 |     "not boolean",
   21 |     "not boolean",
 > 22 |     "not boolean"
@@ -96,7 +96,7 @@
   24 |   "type-array-entry-object-required": [{}],
   25 |   "type-array-entry-object-required-long": [{
 
-/type-array-contains should contain at least 1 valid item(s)
+/type-array-contains must contain at least 1 valid item(s)
   16 |     "not fine"
   17 |   ],
 > 18 |   "type-array-contains": [
@@ -105,7 +105,7 @@
   20 |     "not boolean",
   21 |     "not boolean",
 
-/type-array-entry-object-required/0 should have required property 'key'
+/type-array-entry-object-required/0 must have required property 'key'
   22 |     "not boolean"
   23 |   ],
 > 24 |   "type-array-entry-object-required": [{}],
@@ -114,7 +114,7 @@
   26 |     "notkey": false,
   27 |     "notkey1": false,
 
-/type-array-entry-object-required-long/0 should have required property 'key'
+/type-array-entry-object-required-long/0 must have required property 'key'
   23 |   ],
   24 |   "type-array-entry-object-required": [{}],
 > 25 |   "type-array-entry-object-required-long": [{
@@ -124,7 +124,7 @@
   29 |     "notkey3": false
   30 |   }],
 
-/type-array-maxItems should NOT have more than 1 items
+/type-array-maxItems must NOT have more than 1 items
   29 |     "notkey3": false
   30 |   }],
 > 31 |   "type-array-maxItems": [
@@ -133,7 +133,7 @@
   33 |     "onlyOneB"
   34 |   ],
 
-/type-array-minItems should NOT have fewer than 2 items
+/type-array-minItems must NOT have fewer than 2 items
   33 |     "onlyOneB"
   34 |   ],
 > 35 |   "type-array-minItems": [
@@ -142,7 +142,7 @@
   37 |   ],
   38 |   "type-array-tuple-type": [
 
-/type-array-tuple-type/0 should be string
+/type-array-tuple-type/0 must be string
   37 |   ],
   38 |   "type-array-tuple-type": [
 > 39 |     false,
@@ -151,7 +151,7 @@
   41 |   ],
   42 |   "type-array-uniqueItems": [
 
-/type-array-uniqueItems should NOT have duplicate items (items ## 1 and 0 are identical)
+/type-array-uniqueItems must NOT have duplicate items (items ## 1 and 0 are identical)
   40 |     false
   41 |   ],
 > 42 |   "type-array-uniqueItems": [
@@ -160,7 +160,7 @@
   44 |     "sameItem"
   45 |   ],
 
-/type-number-minimum should be >= 1
+/type-number-minimum must be >= 1
   44 |     "sameItem"
   45 |   ],
 > 46 |   "type-number-minimum": 0,
@@ -169,7 +169,7 @@
   48 |   "type-object-additionalProperties-false": {
   49 |     "one": "valid",
 
-/type-number-multipleOf should be multiple of 10
+/type-number-multipleOf must be multiple of 10
   45 |   ],
   46 |   "type-number-minimum": 0,
 > 47 |   "type-number-multipleOf": 5,
@@ -178,7 +178,7 @@
   49 |     "one": "valid",
   50 |     "two": false,
 
-/type-object-additionalProperties-false should NOT have additional properties: 'two'
+/type-object-additionalProperties-false must NOT have additional properties: 'two'
   48 |   "type-object-additionalProperties-false": {
   49 |     "one": "valid",
 > 50 |     "two": false,
@@ -187,7 +187,7 @@
   52 |   },
   53 |   "type-object-additionalProperties-type-boolean": {
 
-/type-object-additionalProperties-false should NOT have additional properties: 'three'
+/type-object-additionalProperties-false must NOT have additional properties: 'three'
   49 |     "one": "valid",
   50 |     "two": false,
 > 51 |     "three": false
@@ -196,7 +196,7 @@
   53 |   "type-object-additionalProperties-type-boolean": {
   54 |     "one": "valid",
 
-/type-object-additionalProperties-type-boolean/three should be boolean
+/type-object-additionalProperties-type-boolean/three must be boolean
   54 |     "one": "valid",
   55 |     "two": false,
 > 56 |     "three": "not boolean"
@@ -205,7 +205,7 @@
   58 |   "type-object-dependencies-properties": {
   59 |     "one": "depends on two"
 
-/type-object-dependencies-properties should have property two when property one is present
+/type-object-dependencies-properties must have property two when property one is present
   56 |     "three": "not boolean"
   57 |   },
 > 58 |   "type-object-dependencies-properties": {
@@ -218,7 +218,7 @@
   62 |     "one": "depends on two",
   63 |     "two": false
 
-/type-object-dependencies-schema/two should be string
+/type-object-dependencies-schema/two must be string
   61 |   "type-object-dependencies-schema": {
   62 |     "one": "depends on two",
 > 63 |     "two": false
@@ -227,7 +227,7 @@
   65 |   "type-object-maxProperties": {
   66 |     "one": false,
 
-/type-object-maxProperties should NOT have more than 1 items
+/type-object-maxProperties must NOT have more than 1 properties
   63 |     "two": false
   64 |   },
 > 65 |   "type-object-maxProperties": {
@@ -236,7 +236,7 @@
   67 |     "too": "many"
   68 |   },
 
-/type-object-minProperties should NOT have fewer than 2 items
+/type-object-minProperties must NOT have fewer than 2 properties
   67 |     "too": "many"
   68 |   },
 > 69 |   "type-object-minProperties": {
@@ -245,7 +245,7 @@
   71 |   },
   72 |   "type-object-patternProperties": {
 
-/type-object-patternProperties/S_2 should be string
+/type-object-patternProperties/S_2 must be string
   73 |     "S_1": "ok",
   74 |     "I_1": 1,
 > 75 |     "S_2": false
@@ -254,7 +254,7 @@
   77 |   "type-object-propertyNames-pattern": {
   78 |     "not pattern [A-Z]": false
 
-/type-object-propertyNames-pattern should match pattern "^[A-Z]$"
+/type-object-propertyNames-pattern must match pattern "^[A-Z]$"
   75 |     "S_2": false
   76 |   },
 > 77 |   "type-object-propertyNames-pattern": {
@@ -267,7 +267,7 @@
   81 |     "two": false
   82 |   },
 
-/type-object-propertyNames-pattern property name 'not pattern [A-Z]' is invalid
+/type-object-propertyNames-pattern property name must be valid
   75 |     "S_2": false
   76 |   },
 > 77 |   "type-object-propertyNames-pattern": {
@@ -276,7 +276,7 @@
   79 |   },
   80 |   "type-object-required": {
 
-/type-object-required should have required property 'one'
+/type-object-required must have required property 'one'
   78 |     "not pattern [A-Z]": false
   79 |   },
 > 80 |   "type-object-required": {
@@ -285,7 +285,7 @@
   82 |   },
   83 |   "type-string": false,
 
-/type-string should be string
+/type-string must be string
   81 |     "two": false
   82 |   },
 > 83 |   "type-string": false,
@@ -294,7 +294,7 @@
   85 |   "type-string-format-date": "not date",
   86 |   "type-string-format-date-time": "not date time",
 
-/not-type-string should NOT be valid
+/not-type-string must NOT be valid
    5 |   "enum-two": false,
    6 |   "errorMessage": false,
 >  7 |   "not-type-string": "well it's a string",
@@ -303,7 +303,7 @@
    9 |     "is fine",
   10 |     true,
 
-/type-string-const should be equal to constant: 'const'
+/type-string-const must be equal to constant: 'const'
   82 |   },
   83 |   "type-string": false,
 > 84 |   "type-string-const": "not const",
@@ -312,7 +312,7 @@
   86 |   "type-string-format-date-time": "not date time",
   87 |   "type-string-format-time": "not time",
 
-/type-string-format-date should match format "date"
+/type-string-format-date must match format "date"
   83 |   "type-string": false,
   84 |   "type-string-const": "not const",
 > 85 |   "type-string-format-date": "not date",
@@ -321,7 +321,7 @@
   87 |   "type-string-format-time": "not time",
   88 |   "type-string-formatMinimum-date": "2020-01-01",
 
-/type-string-format-date-time should match format "date-time"
+/type-string-format-date-time must match format "date-time"
   84 |   "type-string-const": "not const",
   85 |   "type-string-format-date": "not date",
 > 86 |   "type-string-format-date-time": "not date time",
@@ -330,7 +330,7 @@
   88 |   "type-string-formatMinimum-date": "2020-01-01",
   89 |   "type-string-maxLength": "max3",
 
-/type-string-format-time should match format "time"
+/type-string-format-time must match format "time"
   85 |   "type-string-format-date": "not date",
   86 |   "type-string-format-date-time": "not date time",
 > 87 |   "type-string-format-time": "not time",
@@ -348,7 +348,7 @@
   90 |   "type-string-minLength": "need6",
   91 |   "type-string-null": false,
 
-/type-string-maxLength should NOT have more than 3 characters
+/type-string-maxLength must NOT have more than 3 characters
   87 |   "type-string-format-time": "not time",
   88 |   "type-string-formatMinimum-date": "2020-01-01",
 > 89 |   "type-string-maxLength": "max3",
@@ -357,7 +357,7 @@
   91 |   "type-string-null": false,
   92 |   "type-string-null-boolean": 1,
 
-/type-string-minLength should NOT have fewer than 6 characters
+/type-string-minLength must NOT have fewer than 6 characters
   88 |   "type-string-formatMinimum-date": "2020-01-01",
   89 |   "type-string-maxLength": "max3",
 > 90 |   "type-string-minLength": "need6",
@@ -384,7 +384,7 @@
   94 | }
   95 |
 
-/type-string-pattern should match pattern "^(\([0-9]{3}\))?[0-9]{3}-[0-9]{4}$"
+/type-string-pattern must match pattern "^(\([0-9]{3}\))?[0-9]{3}-[0-9]{4}$"
   91 |   "type-string-null": false,
   92 |   "type-string-null-boolean": 1,
 > 93 |   "type-string-pattern": "not phone number"

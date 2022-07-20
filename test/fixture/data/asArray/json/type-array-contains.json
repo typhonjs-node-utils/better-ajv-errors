@@ -1,77 +1,77 @@
 [
    {
       "codeFrame": "  1 | {\n  2 |   \"type-array-contains\": [\n> 3 |     \"not boolean\",\n    |     ^^^^^^^^^^^^^\n  4 |     \"not boolean\",\n  5 |     \"not boolean\",\n  6 |     \"not boolean\"",
-      "dataPath": "/type-array-contains/0",
+      "instancePath": "/type-array-contains/0",
       "error": {
          "keyword": "type",
-         "dataPath": "/type-array-contains/0",
+         "instancePath": "/type-array-contains/0",
          "params": {
             "type": "boolean"
          },
-         "message": "should be boolean",
+         "message": "must be boolean",
          "schemaPath": "#/properties/type-array-contains/contains/type"
       },
       "keyword": "type",
-      "message": "/type-array-contains/0 should be boolean"
+      "message": "/type-array-contains/0 must be boolean"
    },
    {
       "codeFrame": "  2 |   \"type-array-contains\": [\n  3 |     \"not boolean\",\n> 4 |     \"not boolean\",\n    |     ^^^^^^^^^^^^^\n  5 |     \"not boolean\",\n  6 |     \"not boolean\"\n  7 |   ]",
-      "dataPath": "/type-array-contains/1",
+      "instancePath": "/type-array-contains/1",
       "error": {
          "keyword": "type",
-         "dataPath": "/type-array-contains/1",
+         "instancePath": "/type-array-contains/1",
          "params": {
             "type": "boolean"
          },
-         "message": "should be boolean",
+         "message": "must be boolean",
          "schemaPath": "#/properties/type-array-contains/contains/type"
       },
       "keyword": "type",
-      "message": "/type-array-contains/1 should be boolean"
+      "message": "/type-array-contains/1 must be boolean"
    },
    {
       "codeFrame": "  3 |     \"not boolean\",\n  4 |     \"not boolean\",\n> 5 |     \"not boolean\",\n    |     ^^^^^^^^^^^^^\n  6 |     \"not boolean\"\n  7 |   ]\n  8 | }",
-      "dataPath": "/type-array-contains/2",
+      "instancePath": "/type-array-contains/2",
       "error": {
          "keyword": "type",
-         "dataPath": "/type-array-contains/2",
+         "instancePath": "/type-array-contains/2",
          "params": {
             "type": "boolean"
          },
-         "message": "should be boolean",
+         "message": "must be boolean",
          "schemaPath": "#/properties/type-array-contains/contains/type"
       },
       "keyword": "type",
-      "message": "/type-array-contains/2 should be boolean"
+      "message": "/type-array-contains/2 must be boolean"
    },
    {
       "codeFrame": "  4 |     \"not boolean\",\n  5 |     \"not boolean\",\n> 6 |     \"not boolean\"\n    |     ^^^^^^^^^^^^^\n  7 |   ]\n  8 | }\n  9 |",
-      "dataPath": "/type-array-contains/3",
+      "instancePath": "/type-array-contains/3",
       "error": {
          "keyword": "type",
-         "dataPath": "/type-array-contains/3",
+         "instancePath": "/type-array-contains/3",
          "params": {
             "type": "boolean"
          },
-         "message": "should be boolean",
+         "message": "must be boolean",
          "schemaPath": "#/properties/type-array-contains/contains/type"
       },
       "keyword": "type",
-      "message": "/type-array-contains/3 should be boolean"
+      "message": "/type-array-contains/3 must be boolean"
    },
    {
       "codeFrame": "  1 | {\n> 2 |   \"type-array-contains\": [\n    |   ^^^^^^^^^^^^^^^^^^^^^\n  3 |     \"not boolean\",\n  4 |     \"not boolean\",\n  5 |     \"not boolean\",",
-      "dataPath": "/type-array-contains",
+      "instancePath": "/type-array-contains",
       "error": {
          "keyword": "contains",
-         "dataPath": "/type-array-contains",
+         "instancePath": "/type-array-contains",
          "params": {
             "minContains": 1
          },
-         "message": "should contain at least 1 valid item(s)",
+         "message": "must contain at least 1 valid item(s)",
          "schemaPath": "#/properties/type-array-contains/contains"
       },
       "keyword": "contains",
-      "message": "/type-array-contains should contain at least 1 valid item(s)"
+      "message": "/type-array-contains must contain at least 1 valid item(s)"
    }
 ]

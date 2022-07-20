@@ -1,17 +1,17 @@
 [
    {
       "codeFrame": "  1 | {\n> 2 |   \"duplicate\": false\n    |                ^^^^^\n  3 | }\n  4 |",
-      "dataPath": "/duplicate",
+      "instancePath": "/duplicate",
       "error": {
          "keyword": "type",
-         "dataPath": "/duplicate",
+         "instancePath": "/duplicate",
          "params": {
             "type": "object"
          },
-         "message": "should be object",
+         "message": "must be object",
          "schemaPath": "#/definitions/object1/type"
       },
       "keyword": "type",
-      "message": "/duplicate should be object"
+      "message": "/duplicate must be object"
    }
 ]

@@ -1,17 +1,17 @@
 [
    {
       "codeFrame": "  1 | {\n> 2 |   \"type-string-minLength\": \"need6\"\n    |                            ^^^^^^^\n  3 | }\n  4 |",
-      "dataPath": "/type-string-minLength",
+      "instancePath": "/type-string-minLength",
       "error": {
          "keyword": "minLength",
-         "dataPath": "/type-string-minLength",
+         "instancePath": "/type-string-minLength",
          "params": {
             "limit": 6
          },
-         "message": "should NOT have fewer than 6 characters",
+         "message": "must NOT have fewer than 6 characters",
          "schemaPath": "#/properties/type-string-minLength/minLength"
       },
       "keyword": "minLength",
-      "message": "/type-string-minLength should NOT have fewer than 6 characters"
+      "message": "/type-string-minLength must NOT have fewer than 6 characters"
    }
 ]

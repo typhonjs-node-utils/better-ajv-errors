@@ -1,20 +1,20 @@
 [
    {
       "codeFrame": "  1 | {\n> 2 |   \"errorMessage\": false\n    |                   ^^^^^\n  3 | }\n  4 |",
-      "dataPath": "/errorMessage",
+      "instancePath": "/errorMessage",
       "error": {
          "keyword": "errorMessage",
-         "dataPath": "/errorMessage",
+         "instancePath": "/errorMessage",
          "params": {
             "errors": [
                {
                   "keyword": "type",
-                  "dataPath": "/errorMessage",
+                  "instancePath": "/errorMessage",
                   "schemaPath": "#/properties/errorMessage/type",
                   "params": {
                      "type": "string"
                   },
-                  "message": "should be string",
+                  "message": "must be string",
                   "emUsed": true
                }
             ]

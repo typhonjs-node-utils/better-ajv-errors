@@ -1,60 +1,60 @@
 [
    {
       "codeFrame": "  1 | {\n> 2 |   \"duplicate\": false,\n    |                ^^^^^\n  3 |   \"enum-one\": false,\n  4 |   \"enum-three\": false,\n  5 |   \"enum-two\": false,",
-      "dataPath": "/duplicate",
+      "instancePath": "/duplicate",
       "error": {
+         "instancePath": "/duplicate",
          "keyword": "type",
-         "dataPath": "/duplicate",
          "params": {
             "type": "object"
          },
-         "message": "should be object",
+         "message": "must be object",
          "schemaPath": "#/definitions/object1/type"
       },
       "keyword": "type",
-      "message": "/duplicate should be object"
+      "message": "/duplicate must be object"
    },
    {
       "codeFrame": "  1 | {\n  2 |   \"duplicate\": false,\n> 3 |   \"enum-one\": false,\n    |               ^^^^^\n  4 |   \"enum-three\": false,\n  5 |   \"enum-two\": false,\n  6 |   \"errorMessage\": false,",
-      "dataPath": "/enum-one",
+      "instancePath": "/enum-one",
       "error": {
+         "instancePath": "/enum-one",
          "keyword": "enum",
-         "dataPath": "/enum-one",
          "params": {
             "allowedValues": [
                "ONE"
             ]
          },
-         "message": "should be equal to one of the allowed values",
+         "message": "must be equal to one of the allowed values",
          "schemaPath": "#/properties/enum-one/enum"
       },
       "keyword": "enum",
-      "message": "/enum-one should be equal to one of the allowed values: 'ONE'"
+      "message": "/enum-one must be equal to one of the allowed values: 'ONE'"
    },
    {
       "codeFrame": "  3 |   \"enum-one\": false,\n  4 |   \"enum-three\": false,\n> 5 |   \"enum-two\": false,\n    |               ^^^^^\n  6 |   \"errorMessage\": false,\n  7 |   \"not-type-string\": \"well it's a string\",\n  8 |   \"type-array-additionalItems-false\": [",
-      "dataPath": "/enum-two",
+      "instancePath": "/enum-two",
       "error": {
+         "instancePath": "/enum-two",
          "keyword": "enum",
-         "dataPath": "/enum-two",
          "params": {
             "allowedValues": [
                "ONE",
                "TWO"
             ]
          },
-         "message": "should be equal to one of the allowed values",
+         "message": "must be equal to one of the allowed values",
          "schemaPath": "#/properties/enum-two/enum"
       },
       "keyword": "enum",
-      "message": "/enum-two should be equal to one of the allowed values: 'ONE' or 'TWO'"
+      "message": "/enum-two must be equal to one of the allowed values: 'ONE' or 'TWO'"
    },
    {
       "codeFrame": "  2 |   \"duplicate\": false,\n  3 |   \"enum-one\": false,\n> 4 |   \"enum-three\": false,\n    |                 ^^^^^\n  5 |   \"enum-two\": false,\n  6 |   \"errorMessage\": false,\n  7 |   \"not-type-string\": \"well it's a string\",",
-      "dataPath": "/enum-three",
+      "instancePath": "/enum-three",
       "error": {
+         "instancePath": "/enum-three",
          "keyword": "enum",
-         "dataPath": "/enum-three",
          "params": {
             "allowedValues": [
                "ONE",
@@ -62,28 +62,28 @@
                "THREE"
             ]
          },
-         "message": "should be equal to one of the allowed values",
+         "message": "must be equal to one of the allowed values",
          "schemaPath": "#/properties/enum-three/enum"
       },
       "keyword": "enum",
-      "message": "/enum-three should be equal to one of the allowed values: 'ONE', 'TWO', or 'THREE'"
+      "message": "/enum-three must be equal to one of the allowed values: 'ONE', 'TWO', or 'THREE'"
    },
    {
       "codeFrame": "  4 |   \"enum-three\": false,\n  5 |   \"enum-two\": false,\n> 6 |   \"errorMessage\": false,\n    |                   ^^^^^\n  7 |   \"not-type-string\": \"well it's a string\",\n  8 |   \"type-array-additionalItems-false\": [\n  9 |     \"is fine\",",
-      "dataPath": "/errorMessage",
+      "instancePath": "/errorMessage",
       "error": {
+         "instancePath": "/errorMessage",
          "keyword": "errorMessage",
-         "dataPath": "/errorMessage",
          "params": {
             "errors": [
                {
-                  "keyword": "type",
-                  "dataPath": "/errorMessage",
+                  "instancePath": "/errorMessage",
                   "schemaPath": "#/properties/errorMessage/type",
+                  "keyword": "type",
                   "params": {
                      "type": "string"
                   },
-                  "message": "should be string",
+                  "message": "must be string",
                   "emUsed": true
                }
             ]
@@ -96,494 +96,494 @@
    },
    {
       "codeFrame": "   6 |   \"errorMessage\": false,\n   7 |   \"not-type-string\": \"well it's a string\",\n>  8 |   \"type-array-additionalItems-false\": [\n     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n   9 |     \"is fine\",\n  10 |     true,\n  11 |     \"not fine\"",
-      "dataPath": "/type-array-additionalItems-false",
+      "instancePath": "/type-array-additionalItems-false",
       "error": {
+         "instancePath": "/type-array-additionalItems-false",
          "keyword": "additionalItems",
-         "dataPath": "/type-array-additionalItems-false",
          "params": {
             "limit": 2
          },
-         "message": "should NOT have more than 2 items",
+         "message": "must NOT have more than 2 items",
          "schemaPath": "#/properties/type-array-additionalItems-false/additionalItems"
       },
       "keyword": "additionalItems",
-      "message": "/type-array-additionalItems-false should NOT have more than 2 items"
+      "message": "/type-array-additionalItems-false must NOT have more than 2 items"
    },
    {
       "codeFrame": "  14 |     \"is fine\",\n  15 |     true,\n> 16 |     \"not fine\"\n     |     ^^^^^^^^^^\n  17 |   ],\n  18 |   \"type-array-contains\": [\n  19 |     \"not boolean\",",
-      "dataPath": "/type-array-additionalItems-type-boolean/2",
+      "instancePath": "/type-array-additionalItems-type-boolean/2",
       "error": {
+         "instancePath": "/type-array-additionalItems-type-boolean/2",
          "keyword": "type",
-         "dataPath": "/type-array-additionalItems-type-boolean/2",
          "params": {
             "type": "boolean"
          },
-         "message": "should be boolean",
+         "message": "must be boolean",
          "schemaPath": "#/properties/type-array-additionalItems-type-boolean/additionalItems/type"
       },
       "keyword": "type",
-      "message": "/type-array-additionalItems-type-boolean/2 should be boolean"
+      "message": "/type-array-additionalItems-type-boolean/2 must be boolean"
    },
    {
       "codeFrame": "  17 |   ],\n  18 |   \"type-array-contains\": [\n> 19 |     \"not boolean\",\n     |     ^^^^^^^^^^^^^\n  20 |     \"not boolean\",\n  21 |     \"not boolean\",\n  22 |     \"not boolean\"",
-      "dataPath": "/type-array-contains/0",
+      "instancePath": "/type-array-contains/0",
       "error": {
+         "instancePath": "/type-array-contains/0",
          "keyword": "type",
-         "dataPath": "/type-array-contains/0",
          "params": {
             "type": "boolean"
          },
-         "message": "should be boolean",
+         "message": "must be boolean",
          "schemaPath": "#/properties/type-array-contains/contains/type"
       },
       "keyword": "type",
-      "message": "/type-array-contains/0 should be boolean"
+      "message": "/type-array-contains/0 must be boolean"
    },
    {
       "codeFrame": "  18 |   \"type-array-contains\": [\n  19 |     \"not boolean\",\n> 20 |     \"not boolean\",\n     |     ^^^^^^^^^^^^^\n  21 |     \"not boolean\",\n  22 |     \"not boolean\"\n  23 |   ],",
-      "dataPath": "/type-array-contains/1",
+      "instancePath": "/type-array-contains/1",
       "error": {
+         "instancePath": "/type-array-contains/1",
          "keyword": "type",
-         "dataPath": "/type-array-contains/1",
          "params": {
             "type": "boolean"
          },
-         "message": "should be boolean",
+         "message": "must be boolean",
          "schemaPath": "#/properties/type-array-contains/contains/type"
       },
       "keyword": "type",
-      "message": "/type-array-contains/1 should be boolean"
+      "message": "/type-array-contains/1 must be boolean"
    },
    {
       "codeFrame": "  19 |     \"not boolean\",\n  20 |     \"not boolean\",\n> 21 |     \"not boolean\",\n     |     ^^^^^^^^^^^^^\n  22 |     \"not boolean\"\n  23 |   ],\n  24 |   \"type-array-entry-object-required\": [{}],",
-      "dataPath": "/type-array-contains/2",
+      "instancePath": "/type-array-contains/2",
       "error": {
+         "instancePath": "/type-array-contains/2",
          "keyword": "type",
-         "dataPath": "/type-array-contains/2",
          "params": {
             "type": "boolean"
          },
-         "message": "should be boolean",
+         "message": "must be boolean",
          "schemaPath": "#/properties/type-array-contains/contains/type"
       },
       "keyword": "type",
-      "message": "/type-array-contains/2 should be boolean"
+      "message": "/type-array-contains/2 must be boolean"
    },
    {
       "codeFrame": "  20 |     \"not boolean\",\n  21 |     \"not boolean\",\n> 22 |     \"not boolean\"\n     |     ^^^^^^^^^^^^^\n  23 |   ],\n  24 |   \"type-array-entry-object-required\": [{}],\n  25 |   \"type-array-entry-object-required-long\": [{",
-      "dataPath": "/type-array-contains/3",
+      "instancePath": "/type-array-contains/3",
       "error": {
+         "instancePath": "/type-array-contains/3",
          "keyword": "type",
-         "dataPath": "/type-array-contains/3",
          "params": {
             "type": "boolean"
          },
-         "message": "should be boolean",
+         "message": "must be boolean",
          "schemaPath": "#/properties/type-array-contains/contains/type"
       },
       "keyword": "type",
-      "message": "/type-array-contains/3 should be boolean"
+      "message": "/type-array-contains/3 must be boolean"
    },
    {
       "codeFrame": "  16 |     \"not fine\"\n  17 |   ],\n> 18 |   \"type-array-contains\": [\n     |   ^^^^^^^^^^^^^^^^^^^^^\n  19 |     \"not boolean\",\n  20 |     \"not boolean\",\n  21 |     \"not boolean\",",
-      "dataPath": "/type-array-contains",
+      "instancePath": "/type-array-contains",
       "error": {
+         "instancePath": "/type-array-contains",
          "keyword": "contains",
-         "dataPath": "/type-array-contains",
          "params": {
             "minContains": 1
          },
-         "message": "should contain at least 1 valid item(s)",
+         "message": "must contain at least 1 valid item(s)",
          "schemaPath": "#/properties/type-array-contains/contains"
       },
       "keyword": "contains",
-      "message": "/type-array-contains should contain at least 1 valid item(s)"
+      "message": "/type-array-contains must contain at least 1 valid item(s)"
    },
    {
       "codeFrame": "  22 |     \"not boolean\"\n  23 |   ],\n> 24 |   \"type-array-entry-object-required\": [{}],\n     |                                        ^^\n  25 |   \"type-array-entry-object-required-long\": [{\n  26 |     \"notkey\": false,\n  27 |     \"notkey1\": false,",
-      "dataPath": "/type-array-entry-object-required/0",
+      "instancePath": "/type-array-entry-object-required/0",
       "error": {
+         "instancePath": "/type-array-entry-object-required/0",
          "keyword": "required",
-         "dataPath": "/type-array-entry-object-required/0",
          "params": {
             "missingProperty": "key"
          },
-         "message": "should have required property 'key'",
+         "message": "must have required property 'key'",
          "schemaPath": "#/properties/type-array-entry-object-required/items/required"
       },
       "keyword": "required",
-      "message": "/type-array-entry-object-required/0 should have required property 'key'"
+      "message": "/type-array-entry-object-required/0 must have required property 'key'"
    },
    {
       "codeFrame": "  23 |   ],\n  24 |   \"type-array-entry-object-required\": [{}],\n> 25 |   \"type-array-entry-object-required-long\": [{\n> 26 |     \"notkey\": false,\n> 27 |     \"notkey1\": false,\n  28 |     \"notkey2\": false,\n  29 |     \"notkey3\": false\n  30 |   }],",
-      "dataPath": "/type-array-entry-object-required-long/0",
+      "instancePath": "/type-array-entry-object-required-long/0",
       "error": {
+         "instancePath": "/type-array-entry-object-required-long/0",
          "keyword": "required",
-         "dataPath": "/type-array-entry-object-required-long/0",
          "params": {
             "missingProperty": "key"
          },
-         "message": "should have required property 'key'",
+         "message": "must have required property 'key'",
          "schemaPath": "#/properties/type-array-entry-object-required-long/items/required"
       },
       "keyword": "required",
-      "message": "/type-array-entry-object-required-long/0 should have required property 'key'"
+      "message": "/type-array-entry-object-required-long/0 must have required property 'key'"
    },
    {
       "codeFrame": "  29 |     \"notkey3\": false\n  30 |   }],\n> 31 |   \"type-array-maxItems\": [\n     |   ^^^^^^^^^^^^^^^^^^^^^\n  32 |     \"onlyOneA\",\n  33 |     \"onlyOneB\"\n  34 |   ],",
-      "dataPath": "/type-array-maxItems",
+      "instancePath": "/type-array-maxItems",
       "error": {
+         "instancePath": "/type-array-maxItems",
          "keyword": "maxItems",
-         "dataPath": "/type-array-maxItems",
          "params": {
             "limit": 1
          },
-         "message": "should NOT have more than 1 items",
+         "message": "must NOT have more than 1 items",
          "schemaPath": "#/properties/type-array-maxItems/maxItems"
       },
       "keyword": "maxItems",
-      "message": "/type-array-maxItems should NOT have more than 1 items"
+      "message": "/type-array-maxItems must NOT have more than 1 items"
    },
    {
       "codeFrame": "  33 |     \"onlyOneB\"\n  34 |   ],\n> 35 |   \"type-array-minItems\": [\n     |   ^^^^^^^^^^^^^^^^^^^^^\n  36 |     \"needTwo\"\n  37 |   ],\n  38 |   \"type-array-tuple-type\": [",
-      "dataPath": "/type-array-minItems",
+      "instancePath": "/type-array-minItems",
       "error": {
+         "instancePath": "/type-array-minItems",
          "keyword": "minItems",
-         "dataPath": "/type-array-minItems",
          "params": {
             "limit": 2
          },
-         "message": "should NOT have fewer than 2 items",
+         "message": "must NOT have fewer than 2 items",
          "schemaPath": "#/properties/type-array-minItems/minItems"
       },
       "keyword": "minItems",
-      "message": "/type-array-minItems should NOT have fewer than 2 items"
+      "message": "/type-array-minItems must NOT have fewer than 2 items"
    },
    {
       "codeFrame": "  37 |   ],\n  38 |   \"type-array-tuple-type\": [\n> 39 |     false,\n     |     ^^^^^\n  40 |     false\n  41 |   ],\n  42 |   \"type-array-uniqueItems\": [",
-      "dataPath": "/type-array-tuple-type/0",
+      "instancePath": "/type-array-tuple-type/0",
       "error": {
+         "instancePath": "/type-array-tuple-type/0",
          "keyword": "type",
-         "dataPath": "/type-array-tuple-type/0",
          "params": {
             "type": "string"
          },
-         "message": "should be string",
+         "message": "must be string",
          "schemaPath": "#/properties/type-array-tuple-type/items/0/type"
       },
       "keyword": "type",
-      "message": "/type-array-tuple-type/0 should be string"
+      "message": "/type-array-tuple-type/0 must be string"
    },
    {
       "codeFrame": "  40 |     false\n  41 |   ],\n> 42 |   \"type-array-uniqueItems\": [\n     |   ^^^^^^^^^^^^^^^^^^^^^^^^\n  43 |     \"sameItem\",\n  44 |     \"sameItem\"\n  45 |   ],",
-      "dataPath": "/type-array-uniqueItems",
+      "instancePath": "/type-array-uniqueItems",
       "error": {
+         "instancePath": "/type-array-uniqueItems",
          "keyword": "uniqueItems",
-         "dataPath": "/type-array-uniqueItems",
          "params": {
             "i": 0,
             "j": 1
          },
-         "message": "should NOT have duplicate items (items ## 1 and 0 are identical)",
+         "message": "must NOT have duplicate items (items ## 1 and 0 are identical)",
          "schemaPath": "#/properties/type-array-uniqueItems/uniqueItems"
       },
       "keyword": "uniqueItems",
-      "message": "/type-array-uniqueItems should NOT have duplicate items (items ## 1 and 0 are identical)"
+      "message": "/type-array-uniqueItems must NOT have duplicate items (items ## 1 and 0 are identical)"
    },
    {
       "codeFrame": "  44 |     \"sameItem\"\n  45 |   ],\n> 46 |   \"type-number-minimum\": 0,\n     |                          ^\n  47 |   \"type-number-multipleOf\": 5,\n  48 |   \"type-object-additionalProperties-false\": {\n  49 |     \"one\": \"valid\",",
-      "dataPath": "/type-number-minimum",
+      "instancePath": "/type-number-minimum",
       "error": {
+         "instancePath": "/type-number-minimum",
          "keyword": "minimum",
-         "dataPath": "/type-number-minimum",
          "params": {
             "comparison": ">=",
             "limit": 1
          },
-         "message": "should be >= 1",
+         "message": "must be >= 1",
          "schemaPath": "#/properties/type-number-minimum/minimum"
       },
       "keyword": "minimum",
-      "message": "/type-number-minimum should be >= 1"
+      "message": "/type-number-minimum must be >= 1"
    },
    {
       "codeFrame": "  45 |   ],\n  46 |   \"type-number-minimum\": 0,\n> 47 |   \"type-number-multipleOf\": 5,\n     |                             ^\n  48 |   \"type-object-additionalProperties-false\": {\n  49 |     \"one\": \"valid\",\n  50 |     \"two\": false,",
-      "dataPath": "/type-number-multipleOf",
+      "instancePath": "/type-number-multipleOf",
       "error": {
+         "instancePath": "/type-number-multipleOf",
          "keyword": "multipleOf",
-         "dataPath": "/type-number-multipleOf",
          "params": {
             "multipleOf": 10
          },
-         "message": "should be multiple of 10",
+         "message": "must be multiple of 10",
          "schemaPath": "#/properties/type-number-multipleOf/multipleOf"
       },
       "keyword": "multipleOf",
-      "message": "/type-number-multipleOf should be multiple of 10"
+      "message": "/type-number-multipleOf must be multiple of 10"
    },
    {
       "codeFrame": "  48 |   \"type-object-additionalProperties-false\": {\n  49 |     \"one\": \"valid\",\n> 50 |     \"two\": false,\n     |     ^^^^^\n  51 |     \"three\": false\n  52 |   },\n  53 |   \"type-object-additionalProperties-type-boolean\": {",
-      "dataPath": "/type-object-additionalProperties-false",
+      "instancePath": "/type-object-additionalProperties-false",
       "error": {
+         "instancePath": "/type-object-additionalProperties-false",
          "keyword": "additionalProperties",
-         "dataPath": "/type-object-additionalProperties-false",
          "params": {
             "additionalProperty": "two"
          },
-         "message": "should NOT have additional properties",
+         "message": "must NOT have additional properties",
          "schemaPath": "#/properties/type-object-additionalProperties-false/additionalProperties"
       },
       "keyword": "additionalProperties",
-      "message": "/type-object-additionalProperties-false should NOT have additional properties: 'two'"
+      "message": "/type-object-additionalProperties-false must NOT have additional properties: 'two'"
    },
    {
       "codeFrame": "  49 |     \"one\": \"valid\",\n  50 |     \"two\": false,\n> 51 |     \"three\": false\n     |     ^^^^^^^\n  52 |   },\n  53 |   \"type-object-additionalProperties-type-boolean\": {\n  54 |     \"one\": \"valid\",",
-      "dataPath": "/type-object-additionalProperties-false",
+      "instancePath": "/type-object-additionalProperties-false",
       "error": {
+         "instancePath": "/type-object-additionalProperties-false",
          "keyword": "additionalProperties",
-         "dataPath": "/type-object-additionalProperties-false",
          "params": {
             "additionalProperty": "three"
          },
-         "message": "should NOT have additional properties",
+         "message": "must NOT have additional properties",
          "schemaPath": "#/properties/type-object-additionalProperties-false/additionalProperties"
       },
       "keyword": "additionalProperties",
-      "message": "/type-object-additionalProperties-false should NOT have additional properties: 'three'"
+      "message": "/type-object-additionalProperties-false must NOT have additional properties: 'three'"
    },
    {
       "codeFrame": "  54 |     \"one\": \"valid\",\n  55 |     \"two\": false,\n> 56 |     \"three\": \"not boolean\"\n     |              ^^^^^^^^^^^^^\n  57 |   },\n  58 |   \"type-object-dependencies-properties\": {\n  59 |     \"one\": \"depends on two\"",
-      "dataPath": "/type-object-additionalProperties-type-boolean/three",
+      "instancePath": "/type-object-additionalProperties-type-boolean/three",
       "error": {
+         "instancePath": "/type-object-additionalProperties-type-boolean/three",
          "keyword": "type",
-         "dataPath": "/type-object-additionalProperties-type-boolean/three",
          "params": {
             "type": "boolean"
          },
-         "message": "should be boolean",
+         "message": "must be boolean",
          "schemaPath": "#/properties/type-object-additionalProperties-type-boolean/additionalProperties/type"
       },
       "keyword": "type",
-      "message": "/type-object-additionalProperties-type-boolean/three should be boolean"
+      "message": "/type-object-additionalProperties-type-boolean/three must be boolean"
    },
    {
       "codeFrame": "  56 |     \"three\": \"not boolean\"\n  57 |   },\n> 58 |   \"type-object-dependencies-properties\": {\n     |                                          ^\n> 59 |     \"one\": \"depends on two\"\n     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n> 60 |   },\n     | ^^^^\n  61 |   \"type-object-dependencies-schema\": {\n  62 |     \"one\": \"depends on two\",\n  63 |     \"two\": false",
-      "dataPath": "/type-object-dependencies-properties",
+      "instancePath": "/type-object-dependencies-properties",
       "error": {
+         "instancePath": "/type-object-dependencies-properties",
          "keyword": "dependencies",
-         "dataPath": "/type-object-dependencies-properties",
          "params": {
             "property": "one",
             "missingProperty": "two",
             "depsCount": 1,
             "deps": "two"
          },
-         "message": "should have property two when property one is present",
+         "message": "must have property two when property one is present",
          "schemaPath": "#/properties/type-object-dependencies-properties/dependencies"
       },
       "keyword": "dependencies",
-      "message": "/type-object-dependencies-properties should have property two when property one is present"
+      "message": "/type-object-dependencies-properties must have property two when property one is present"
    },
    {
       "codeFrame": "  61 |   \"type-object-dependencies-schema\": {\n  62 |     \"one\": \"depends on two\",\n> 63 |     \"two\": false\n     |            ^^^^^\n  64 |   },\n  65 |   \"type-object-maxProperties\": {\n  66 |     \"one\": false,",
-      "dataPath": "/type-object-dependencies-schema/two",
+      "instancePath": "/type-object-dependencies-schema/two",
       "error": {
+         "instancePath": "/type-object-dependencies-schema/two",
          "keyword": "type",
-         "dataPath": "/type-object-dependencies-schema/two",
          "params": {
             "type": "string"
          },
-         "message": "should be string",
+         "message": "must be string",
          "schemaPath": "#/properties/type-object-dependencies-schema/dependencies/one/properties/two/type"
       },
       "keyword": "type",
-      "message": "/type-object-dependencies-schema/two should be string"
+      "message": "/type-object-dependencies-schema/two must be string"
    },
    {
       "codeFrame": "  63 |     \"two\": false\n  64 |   },\n> 65 |   \"type-object-maxProperties\": {\n     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  66 |     \"one\": false,\n  67 |     \"too\": \"many\"\n  68 |   },",
-      "dataPath": "/type-object-maxProperties",
+      "instancePath": "/type-object-maxProperties",
       "error": {
+         "instancePath": "/type-object-maxProperties",
          "keyword": "maxProperties",
-         "dataPath": "/type-object-maxProperties",
          "params": {
             "limit": 1
          },
-         "message": "should NOT have more than 1 items",
+         "message": "must NOT have more than 1 properties",
          "schemaPath": "#/properties/type-object-maxProperties/maxProperties"
       },
       "keyword": "maxProperties",
-      "message": "/type-object-maxProperties should NOT have more than 1 items"
+      "message": "/type-object-maxProperties must NOT have more than 1 properties"
    },
    {
       "codeFrame": "  67 |     \"too\": \"many\"\n  68 |   },\n> 69 |   \"type-object-minProperties\": {\n     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  70 |     \"too\": \"few\"\n  71 |   },\n  72 |   \"type-object-patternProperties\": {",
-      "dataPath": "/type-object-minProperties",
+      "instancePath": "/type-object-minProperties",
       "error": {
+         "instancePath": "/type-object-minProperties",
          "keyword": "minProperties",
-         "dataPath": "/type-object-minProperties",
          "params": {
             "limit": 2
          },
-         "message": "should NOT have fewer than 2 items",
+         "message": "must NOT have fewer than 2 properties",
          "schemaPath": "#/properties/type-object-minProperties/minProperties"
       },
       "keyword": "minProperties",
-      "message": "/type-object-minProperties should NOT have fewer than 2 items"
+      "message": "/type-object-minProperties must NOT have fewer than 2 properties"
    },
    {
       "codeFrame": "  73 |     \"S_1\": \"ok\",\n  74 |     \"I_1\": 1,\n> 75 |     \"S_2\": false\n     |            ^^^^^\n  76 |   },\n  77 |   \"type-object-propertyNames-pattern\": {\n  78 |     \"not pattern [A-Z]\": false",
-      "dataPath": "/type-object-patternProperties/S_2",
+      "instancePath": "/type-object-patternProperties/S_2",
       "error": {
+         "instancePath": "/type-object-patternProperties/S_2",
          "keyword": "type",
-         "dataPath": "/type-object-patternProperties/S_2",
          "params": {
             "type": "string"
          },
-         "message": "should be string",
+         "message": "must be string",
          "schemaPath": "#/properties/type-object-patternProperties/patternProperties/%5ES_/type"
       },
       "keyword": "type",
-      "message": "/type-object-patternProperties/S_2 should be string"
+      "message": "/type-object-patternProperties/S_2 must be string"
    },
    {
       "codeFrame": "  75 |     \"S_2\": false\n  76 |   },\n> 77 |   \"type-object-propertyNames-pattern\": {\n     |                                        ^\n> 78 |     \"not pattern [A-Z]\": false\n     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n> 79 |   },\n     | ^^^^\n  80 |   \"type-object-required\": {\n  81 |     \"two\": false\n  82 |   },",
-      "dataPath": "/type-object-propertyNames-pattern",
+      "instancePath": "/type-object-propertyNames-pattern",
       "error": {
+         "instancePath": "/type-object-propertyNames-pattern",
          "keyword": "pattern",
-         "dataPath": "/type-object-propertyNames-pattern",
          "params": {
             "pattern": "^[A-Z]$"
          },
+         "message": "must match pattern \"^[A-Z]$\"",
          "propertyName": "not pattern [A-Z]",
-         "message": "should match pattern \"^[A-Z]$\"",
          "schemaPath": "#/properties/type-object-propertyNames-pattern/propertyNames/pattern"
       },
       "keyword": "pattern",
-      "message": "/type-object-propertyNames-pattern should match pattern \"^[A-Z]$\""
+      "message": "/type-object-propertyNames-pattern must match pattern \"^[A-Z]$\""
    },
    {
       "codeFrame": "  75 |     \"S_2\": false\n  76 |   },\n> 77 |   \"type-object-propertyNames-pattern\": {\n     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  78 |     \"not pattern [A-Z]\": false\n  79 |   },\n  80 |   \"type-object-required\": {",
-      "dataPath": "/type-object-propertyNames-pattern",
+      "instancePath": "/type-object-propertyNames-pattern",
       "error": {
+         "instancePath": "/type-object-propertyNames-pattern",
          "keyword": "propertyNames",
-         "dataPath": "/type-object-propertyNames-pattern",
          "params": {
             "propertyName": "not pattern [A-Z]"
          },
-         "message": "property name 'not pattern [A-Z]' is invalid",
+         "message": "property name must be valid",
          "schemaPath": "#/properties/type-object-propertyNames-pattern/propertyNames"
       },
       "keyword": "propertyNames",
-      "message": "/type-object-propertyNames-pattern property name 'not pattern [A-Z]' is invalid"
+      "message": "/type-object-propertyNames-pattern property name must be valid"
    },
    {
       "codeFrame": "  78 |     \"not pattern [A-Z]\": false\n  79 |   },\n> 80 |   \"type-object-required\": {\n     |   ^^^^^^^^^^^^^^^^^^^^^^\n  81 |     \"two\": false\n  82 |   },\n  83 |   \"type-string\": false,",
-      "dataPath": "/type-object-required",
+      "instancePath": "/type-object-required",
       "error": {
+         "instancePath": "/type-object-required",
          "keyword": "required",
-         "dataPath": "/type-object-required",
          "params": {
             "missingProperty": "one"
          },
-         "message": "should have required property 'one'",
+         "message": "must have required property 'one'",
          "schemaPath": "#/properties/type-object-required/required"
       },
       "keyword": "required",
-      "message": "/type-object-required should have required property 'one'"
+      "message": "/type-object-required must have required property 'one'"
    },
    {
       "codeFrame": "  81 |     \"two\": false\n  82 |   },\n> 83 |   \"type-string\": false,\n     |                  ^^^^^\n  84 |   \"type-string-const\": \"not const\",\n  85 |   \"type-string-format-date\": \"not date\",\n  86 |   \"type-string-format-date-time\": \"not date time\",",
-      "dataPath": "/type-string",
+      "instancePath": "/type-string",
       "error": {
+         "instancePath": "/type-string",
          "keyword": "type",
-         "dataPath": "/type-string",
          "params": {
             "type": "string"
          },
-         "message": "should be string",
+         "message": "must be string",
          "schemaPath": "#/properties/type-string/type"
       },
       "keyword": "type",
-      "message": "/type-string should be string"
+      "message": "/type-string must be string"
    },
    {
       "codeFrame": "   5 |   \"enum-two\": false,\n   6 |   \"errorMessage\": false,\n>  7 |   \"not-type-string\": \"well it's a string\",\n     |                      ^^^^^^^^^^^^^^^^^^^^\n   8 |   \"type-array-additionalItems-false\": [\n   9 |     \"is fine\",\n  10 |     true,",
-      "dataPath": "/not-type-string",
+      "instancePath": "/not-type-string",
       "error": {
+         "instancePath": "/not-type-string",
          "keyword": "not",
-         "dataPath": "/not-type-string",
          "params": {},
-         "message": "should NOT be valid",
+         "message": "must NOT be valid",
          "schemaPath": "#/properties/not-type-string/not"
       },
       "keyword": "not",
-      "message": "/not-type-string should NOT be valid"
+      "message": "/not-type-string must NOT be valid"
    },
    {
       "codeFrame": "  82 |   },\n  83 |   \"type-string\": false,\n> 84 |   \"type-string-const\": \"not const\",\n     |                        ^^^^^^^^^^^\n  85 |   \"type-string-format-date\": \"not date\",\n  86 |   \"type-string-format-date-time\": \"not date time\",\n  87 |   \"type-string-format-time\": \"not time\",",
-      "dataPath": "/type-string-const",
+      "instancePath": "/type-string-const",
       "error": {
+         "instancePath": "/type-string-const",
          "keyword": "const",
-         "dataPath": "/type-string-const",
          "params": {
             "allowedValue": "const"
          },
-         "message": "should be equal to constant",
+         "message": "must be equal to constant",
          "schemaPath": "#/properties/type-string-const/const"
       },
       "keyword": "const",
-      "message": "/type-string-const should be equal to constant: 'const'"
+      "message": "/type-string-const must be equal to constant: 'const'"
    },
    {
       "codeFrame": "  83 |   \"type-string\": false,\n  84 |   \"type-string-const\": \"not const\",\n> 85 |   \"type-string-format-date\": \"not date\",\n     |                              ^^^^^^^^^^\n  86 |   \"type-string-format-date-time\": \"not date time\",\n  87 |   \"type-string-format-time\": \"not time\",\n  88 |   \"type-string-formatMinimum-date\": \"2020-01-01\",",
-      "dataPath": "/type-string-format-date",
+      "instancePath": "/type-string-format-date",
       "error": {
+         "instancePath": "/type-string-format-date",
          "keyword": "format",
-         "dataPath": "/type-string-format-date",
          "params": {
             "format": "date"
          },
-         "message": "should match format \"date\"",
+         "message": "must match format \"date\"",
          "schemaPath": "#/properties/type-string-format-date/format"
       },
       "keyword": "format",
-      "message": "/type-string-format-date should match format \"date\""
+      "message": "/type-string-format-date must match format \"date\""
    },
    {
       "codeFrame": "  84 |   \"type-string-const\": \"not const\",\n  85 |   \"type-string-format-date\": \"not date\",\n> 86 |   \"type-string-format-date-time\": \"not date time\",\n     |                                   ^^^^^^^^^^^^^^^\n  87 |   \"type-string-format-time\": \"not time\",\n  88 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n  89 |   \"type-string-maxLength\": \"max3\",",
-      "dataPath": "/type-string-format-date-time",
+      "instancePath": "/type-string-format-date-time",
       "error": {
+         "instancePath": "/type-string-format-date-time",
          "keyword": "format",
-         "dataPath": "/type-string-format-date-time",
          "params": {
             "format": "date-time"
          },
-         "message": "should match format \"date-time\"",
+         "message": "must match format \"date-time\"",
          "schemaPath": "#/properties/type-string-format-date-time/format"
       },
       "keyword": "format",
-      "message": "/type-string-format-date-time should match format \"date-time\""
+      "message": "/type-string-format-date-time must match format \"date-time\""
    },
    {
       "codeFrame": "  85 |   \"type-string-format-date\": \"not date\",\n  86 |   \"type-string-format-date-time\": \"not date time\",\n> 87 |   \"type-string-format-time\": \"not time\",\n     |                              ^^^^^^^^^^\n  88 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n  89 |   \"type-string-maxLength\": \"max3\",\n  90 |   \"type-string-minLength\": \"need6\",",
-      "dataPath": "/type-string-format-time",
+      "instancePath": "/type-string-format-time",
       "error": {
+         "instancePath": "/type-string-format-time",
          "keyword": "format",
-         "dataPath": "/type-string-format-time",
          "params": {
             "format": "time"
          },
-         "message": "should match format \"time\"",
+         "message": "must match format \"time\"",
          "schemaPath": "#/properties/type-string-format-time/format"
       },
       "keyword": "format",
-      "message": "/type-string-format-time should match format \"time\""
+      "message": "/type-string-format-time must match format \"time\""
    },
    {
       "codeFrame": "  86 |   \"type-string-format-date-time\": \"not date time\",\n  87 |   \"type-string-format-time\": \"not time\",\n> 88 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n     |                                     ^^^^^^^^^^^^\n  89 |   \"type-string-maxLength\": \"max3\",\n  90 |   \"type-string-minLength\": \"need6\",\n  91 |   \"type-string-null\": false,",
-      "dataPath": "/type-string-formatMinimum-date",
+      "instancePath": "/type-string-formatMinimum-date",
       "error": {
+         "instancePath": "/type-string-formatMinimum-date",
          "keyword": "formatMinimum",
-         "dataPath": "/type-string-formatMinimum-date",
          "params": {
             "comparison": ">=",
             "limit": "2021-01-01"
@@ -596,47 +596,47 @@
    },
    {
       "codeFrame": "  87 |   \"type-string-format-time\": \"not time\",\n  88 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n> 89 |   \"type-string-maxLength\": \"max3\",\n     |                            ^^^^^^\n  90 |   \"type-string-minLength\": \"need6\",\n  91 |   \"type-string-null\": false,\n  92 |   \"type-string-null-boolean\": 1,",
-      "dataPath": "/type-string-maxLength",
+      "instancePath": "/type-string-maxLength",
       "error": {
+         "instancePath": "/type-string-maxLength",
          "keyword": "maxLength",
-         "dataPath": "/type-string-maxLength",
          "params": {
             "limit": 3
          },
-         "message": "should NOT have more than 3 characters",
+         "message": "must NOT have more than 3 characters",
          "schemaPath": "#/properties/type-string-maxLength/maxLength"
       },
       "keyword": "maxLength",
-      "message": "/type-string-maxLength should NOT have more than 3 characters"
+      "message": "/type-string-maxLength must NOT have more than 3 characters"
    },
    {
       "codeFrame": "  88 |   \"type-string-formatMinimum-date\": \"2020-01-01\",\n  89 |   \"type-string-maxLength\": \"max3\",\n> 90 |   \"type-string-minLength\": \"need6\",\n     |                            ^^^^^^^\n  91 |   \"type-string-null\": false,\n  92 |   \"type-string-null-boolean\": 1,\n  93 |   \"type-string-pattern\": \"not phone number\"",
-      "dataPath": "/type-string-minLength",
+      "instancePath": "/type-string-minLength",
       "error": {
+         "instancePath": "/type-string-minLength",
          "keyword": "minLength",
-         "dataPath": "/type-string-minLength",
          "params": {
             "limit": 6
          },
-         "message": "should NOT have fewer than 6 characters",
+         "message": "must NOT have fewer than 6 characters",
          "schemaPath": "#/properties/type-string-minLength/minLength"
       },
       "keyword": "minLength",
-      "message": "/type-string-minLength should NOT have fewer than 6 characters"
+      "message": "/type-string-minLength must NOT have fewer than 6 characters"
    },
    {
       "codeFrame": "  89 |   \"type-string-maxLength\": \"max3\",\n  90 |   \"type-string-minLength\": \"need6\",\n> 91 |   \"type-string-null\": false,\n     |                       ^^^^^\n  92 |   \"type-string-null-boolean\": 1,\n  93 |   \"type-string-pattern\": \"not phone number\"\n  94 | }",
-      "dataPath": "/type-string-null",
+      "instancePath": "/type-string-null",
       "error": {
+         "instancePath": "/type-string-null",
          "keyword": "type",
-         "dataPath": "/type-string-null",
          "params": {
             "type": [
                "string",
                "null"
             ]
          },
-         "message": "should be string,null",
+         "message": "must be string,null",
          "schemaPath": "#/properties/type-string-null/type"
       },
       "keyword": "type",
@@ -644,10 +644,10 @@
    },
    {
       "codeFrame": "  90 |   \"type-string-minLength\": \"need6\",\n  91 |   \"type-string-null\": false,\n> 92 |   \"type-string-null-boolean\": 1,\n     |                               ^\n  93 |   \"type-string-pattern\": \"not phone number\"\n  94 | }\n  95 |",
-      "dataPath": "/type-string-null-boolean",
+      "instancePath": "/type-string-null-boolean",
       "error": {
+         "instancePath": "/type-string-null-boolean",
          "keyword": "type",
-         "dataPath": "/type-string-null-boolean",
          "params": {
             "type": [
                "string",
@@ -655,7 +655,7 @@
                "boolean"
             ]
          },
-         "message": "should be string,null,boolean",
+         "message": "must be string,null,boolean",
          "schemaPath": "#/properties/type-string-null-boolean/type"
       },
       "keyword": "type",
@@ -663,17 +663,17 @@
    },
    {
       "codeFrame": "  91 |   \"type-string-null\": false,\n  92 |   \"type-string-null-boolean\": 1,\n> 93 |   \"type-string-pattern\": \"not phone number\"\n     |                          ^^^^^^^^^^^^^^^^^^\n  94 | }\n  95 |",
-      "dataPath": "/type-string-pattern",
+      "instancePath": "/type-string-pattern",
       "error": {
+         "instancePath": "/type-string-pattern",
          "keyword": "pattern",
-         "dataPath": "/type-string-pattern",
          "params": {
             "pattern": "^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$"
          },
-         "message": "should match pattern \"^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$\"",
+         "message": "must match pattern \"^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$\"",
          "schemaPath": "#/properties/type-string-pattern/pattern"
       },
       "keyword": "pattern",
-      "message": "/type-string-pattern should match pattern \"^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$\""
+      "message": "/type-string-pattern must match pattern \"^(\\([0-9]{3}\\))?[0-9]{3}-[0-9]{4}$\""
    }
 ]

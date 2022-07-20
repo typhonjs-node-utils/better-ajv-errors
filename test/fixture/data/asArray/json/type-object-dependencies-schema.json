@@ -1,17 +1,17 @@
 [
    {
       "codeFrame": "  2 |   \"type-object-dependencies-schema\": {\n  3 |     \"one\": \"depends on two\",\n> 4 |     \"two\": false\n    |            ^^^^^\n  5 |   }\n  6 | }\n  7 |",
-      "dataPath": "/type-object-dependencies-schema/two",
+      "instancePath": "/type-object-dependencies-schema/two",
       "error": {
          "keyword": "type",
-         "dataPath": "/type-object-dependencies-schema/two",
+         "instancePath": "/type-object-dependencies-schema/two",
          "params": {
             "type": "string"
          },
-         "message": "should be string",
+         "message": "must be string",
          "schemaPath": "#/properties/type-object-dependencies-schema/dependencies/one/properties/two/type"
       },
       "keyword": "type",
-      "message": "/type-object-dependencies-schema/two should be string"
+      "message": "/type-object-dependencies-schema/two must be string"
    }
 ]

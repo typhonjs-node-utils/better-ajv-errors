@@ -86,7 +86,7 @@ describe('betterErrors compare output', () =>
 });
 
 const s_RESULT_REGEX =
-`/type-array-contains/0 should be boolean
+`/type-array-contains/0 must be boolean
   1 | {
   2 |   "type-array-contains": [
 > 3 |     "not boolean",
@@ -95,7 +95,7 @@ const s_RESULT_REGEX =
   5 |     "not boolean",
   6 |     "not boolean"
 
-/type-array-contains/1 should be boolean
+/type-array-contains/1 must be boolean
   2 |   "type-array-contains": [
   3 |     "not boolean",
 > 4 |     "not boolean",

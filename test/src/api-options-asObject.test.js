@@ -50,7 +50,7 @@ const s_ERRORS =
 [
    {
       keyword: 'type',
-      dataPath: '/author',
+      instancePath: '/author',
       schemaPath: '#/definitions/author/type',
       params: {
          type: 'string'
@@ -69,10 +69,10 @@ const s_RESULTS_NO_OPTIONS =
    "/author": [
       {
          codeFrame: "",
-         dataPath: "/author",
+         instancePath: "/author",
          error: {
             keyword: "type",
-            dataPath: "/author",
+            instancePath: "/author",
             schemaPath: "#/definitions/author/type",
             params: {
                type: "string"
@@ -91,10 +91,10 @@ const s_RESULTS_JUST_FILE_WITH_HIGHLIGHTCODE =
    "/author": [
       {
          codeFrame: "\u001b[0m \u001b[90m 1 |\u001b[39m {\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 2 |\u001b[39m    \u001b[32m\"author\"\u001b[39m\u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 3 |\u001b[39m }\u001b[0m",
-         dataPath: "/author",
+         instancePath: "/author",
          error: {
             keyword: "type",
-            dataPath: "/author",
+            instancePath: "/author",
             schemaPath: "#/definitions/author/type",
             params: {
                type: "string"
@@ -112,10 +112,10 @@ const s_RESULTS_FILE_WITH_HIGHLIGHTCODE_FALSE =
    "/author": [
       {
          codeFrame: "  1 | {\n> 2 |    \"author\": false\n    |              ^^^^^\n  3 | }",
-         dataPath: "/author",
+         instancePath: "/author",
          error: {
             keyword: "type",
-            dataPath: "/author",
+            instancePath: "/author",
             schemaPath: "#/definitions/author/type",
             params: {
                type: "string"
@@ -133,10 +133,10 @@ const s_RESULTS_WITH_WRAPLENGTH_20 =
    "/author": [
       {
          codeFrame: "",
-         dataPath: "/author",
+         instancePath: "/author",
          error: {
             keyword: "type",
-            dataPath: "/author",
+            instancePath: "/author",
             schemaPath: "#/definitions/author/type",
             params: {
                type: "string"

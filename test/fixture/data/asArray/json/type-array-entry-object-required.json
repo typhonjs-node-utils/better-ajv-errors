@@ -1,17 +1,17 @@
 [
    {
       "codeFrame": "  1 | {\n> 2 |   \"type-array-entry-object-required\": [{}]\n    |                                        ^^\n  3 | }\n  4 |",
-      "dataPath": "/type-array-entry-object-required/0",
+      "instancePath": "/type-array-entry-object-required/0",
       "error": {
          "keyword": "required",
-         "dataPath": "/type-array-entry-object-required/0",
+         "instancePath": "/type-array-entry-object-required/0",
          "params": {
             "missingProperty": "key"
          },
-         "message": "should have required property 'key'",
+         "message": "must have required property 'key'",
          "schemaPath": "#/properties/type-array-entry-object-required/items/required"
       },
       "keyword": "required",
-      "message": "/type-array-entry-object-required/0 should have required property 'key'"
+      "message": "/type-array-entry-object-required/0 must have required property 'key'"
    }
 ]
